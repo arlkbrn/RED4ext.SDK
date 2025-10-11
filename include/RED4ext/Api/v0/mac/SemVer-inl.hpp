@@ -91,7 +91,7 @@ RED4EXT_INLINE std::wstring std::to_wstring(const RED4ext::v0::SemVer& aVersion)
     return stream.str();
 }
 
-RED4EXT_INLINE std::string to_string(const RED4ext::v0::SemVer& aVersion)
+RED4EXT_INLINE std::string std::to_string(const RED4ext::v0::SemVer& aVersion)
 {
     std::stringstream stream;
     stream << aVersion.major << "." << aVersion.minor << "." << aVersion.patch;
