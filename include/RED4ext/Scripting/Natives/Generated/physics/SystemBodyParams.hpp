@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace physics
 {
-struct __declspec(align(0x10)) SystemBodyParams
+struct RED4EXT_ALIGN(0x10) SystemBodyParams
 {
     static constexpr const char* NAME = "physicsSystemBodyParams";
     static constexpr const char* ALIAS = NAME;

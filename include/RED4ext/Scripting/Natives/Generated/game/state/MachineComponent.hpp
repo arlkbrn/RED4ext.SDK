@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game::state
 {
-struct __declspec(align(0x10)) MachineComponent : game::PlayerControlledComponent
+struct RED4EXT_ALIGN(0x10) MachineComponent : game::PlayerControlledComponent
 {
     static constexpr const char* NAME = "gamestateMachineComponent";
     static constexpr const char* ALIAS = NAME;

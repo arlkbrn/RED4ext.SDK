@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Matrix
+struct RED4EXT_ALIGN(0x10) Matrix
 {
     static constexpr const char* NAME = "Matrix";
     static constexpr const char* ALIAS = NAME;

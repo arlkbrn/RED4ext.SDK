@@ -11,7 +11,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) CEvaluatorVectorStartEnd : IEvaluatorVector
+struct RED4EXT_ALIGN(0x10) CEvaluatorVectorStartEnd : IEvaluatorVector
 {
     static constexpr const char* NAME = "CEvaluatorVectorStartEnd";
     static constexpr const char* ALIAS = NAME;

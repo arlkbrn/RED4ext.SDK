@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace effect
 {
-struct __declspec(align(0x10)) DecalPlayData : effect::PlacedTrackItemPlayData
+struct RED4EXT_ALIGN(0x10) DecalPlayData : effect::PlacedTrackItemPlayData
 {
     static constexpr const char* NAME = "effectDecalPlayData";
     static constexpr const char* ALIAS = NAME;

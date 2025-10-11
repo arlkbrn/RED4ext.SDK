@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) AreaEnteredEvent : ent::TriggerEvent
+struct RED4EXT_ALIGN(0x10) AreaEnteredEvent : ent::TriggerEvent
 {
     static constexpr const char* NAME = "entAreaEnteredEvent";
     static constexpr const char* ALIAS = "AreaEnteredEvent";

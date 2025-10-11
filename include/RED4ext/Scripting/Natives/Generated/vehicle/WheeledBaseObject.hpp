@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-struct __declspec(align(0x10)) WheeledBaseObject : vehicle::BaseObject
+struct RED4EXT_ALIGN(0x10) WheeledBaseObject : vehicle::BaseObject
 {
     static constexpr const char* NAME = "vehicleWheeledBaseObject";
     static constexpr const char* ALIAS = "WheeledObject";

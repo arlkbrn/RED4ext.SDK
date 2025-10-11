@@ -16,7 +16,7 @@ namespace game { struct Object; }
 
 namespace game::events
 {
-struct __declspec(align(0x10)) DeviceStartPlayerCameraControlEvent : red::Event
+struct RED4EXT_ALIGN(0x10) DeviceStartPlayerCameraControlEvent : red::Event
 {
     static constexpr const char* NAME = "gameeventsDeviceStartPlayerCameraControlEvent";
     static constexpr const char* ALIAS = "DeviceStartPlayerCameraControlEvent";

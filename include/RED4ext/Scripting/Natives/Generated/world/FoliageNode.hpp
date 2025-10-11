@@ -19,7 +19,7 @@ namespace world { struct FoliageCompiledResource; }
 
 namespace world
 {
-struct __declspec(align(0x10)) FoliageNode : world::Node
+struct RED4EXT_ALIGN(0x10) FoliageNode : world::Node
 {
     static constexpr const char* NAME = "worldFoliageNode";
     static constexpr const char* ALIAS = NAME;

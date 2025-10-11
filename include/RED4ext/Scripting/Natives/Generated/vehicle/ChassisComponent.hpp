@@ -15,7 +15,7 @@ namespace physics { struct SystemResource; }
 
 namespace vehicle
 {
-struct __declspec(align(0x10)) ChassisComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) ChassisComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "vehicleChassisComponent";
     static constexpr const char* ALIAS = NAME;

@@ -21,7 +21,7 @@ namespace game { struct SmartObjectTransformSequenceDictionary; }
 
 namespace game
 {
-struct __declspec(align(0x10)) SmartObjectsCompiledResource : res::StreamedResource
+struct RED4EXT_ALIGN(0x10) SmartObjectsCompiledResource : res::StreamedResource
 {
     static constexpr const char* NAME = "gameSmartObjectsCompiledResource";
     static constexpr const char* ALIAS = NAME;

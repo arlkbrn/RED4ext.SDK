@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) GarmentSkinnedMeshComponent : ent::SkinnedMeshComponent
+struct RED4EXT_ALIGN(0x10) GarmentSkinnedMeshComponent : ent::SkinnedMeshComponent
 {
     static constexpr const char* NAME = "entGarmentSkinnedMeshComponent";
     static constexpr const char* ALIAS = NAME;

@@ -16,7 +16,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) EntityStubComponentPS : game::ComponentPS
+struct RED4EXT_ALIGN(0x10) EntityStubComponentPS : game::ComponentPS
 {
     static constexpr const char* NAME = "gameEntityStubComponentPS";
     static constexpr const char* ALIAS = NAME;

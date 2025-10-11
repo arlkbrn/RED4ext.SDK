@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace ink::anim
 {
-struct __declspec(align(0x10)) ColorInterpolator : ink::anim::Interpolator
+struct RED4EXT_ALIGN(0x10) ColorInterpolator : ink::anim::Interpolator
 {
     static constexpr const char* NAME = "inkanimColorInterpolator";
     static constexpr const char* ALIAS = "inkAnimColor";

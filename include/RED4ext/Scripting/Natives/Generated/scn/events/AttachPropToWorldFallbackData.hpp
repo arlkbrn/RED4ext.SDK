@@ -17,7 +17,7 @@ namespace anim { struct AnimSet; }
 
 namespace scn::events
 {
-struct __declspec(align(0x10)) AttachPropToWorldFallbackData
+struct RED4EXT_ALIGN(0x10) AttachPropToWorldFallbackData
 {
     static constexpr const char* NAME = "scneventsAttachPropToWorldFallbackData";
     static constexpr const char* ALIAS = NAME;

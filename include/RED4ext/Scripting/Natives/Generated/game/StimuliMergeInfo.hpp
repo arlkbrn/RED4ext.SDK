@@ -18,7 +18,7 @@ namespace game { struct Object; }
 
 namespace game
 {
-struct __declspec(align(0x10)) StimuliMergeInfo
+struct RED4EXT_ALIGN(0x10) StimuliMergeInfo
 {
     static constexpr const char* NAME = "gameStimuliMergeInfo";
     static constexpr const char* ALIAS = "StimuliMergeInfo";

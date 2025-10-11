@@ -23,7 +23,7 @@ struct CMesh;
 
 namespace ent
 {
-struct __declspec(align(0x10)) MeshComponent : ent::IVisualComponent
+struct RED4EXT_ALIGN(0x10) MeshComponent : ent::IVisualComponent
 {
     static constexpr const char* NAME = "entMeshComponent";
     static constexpr const char* ALIAS = "MeshComponent";

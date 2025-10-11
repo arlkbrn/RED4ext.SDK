@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) VirtualCompoundWidget : ink::CompoundWidget
+struct RED4EXT_ALIGN(0x10) VirtualCompoundWidget : ink::CompoundWidget
 {
     static constexpr const char* NAME = "inkVirtualCompoundWidget";
     static constexpr const char* ALIAS = NAME;

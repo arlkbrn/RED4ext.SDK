@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game::interactions
 {
-struct __declspec(align(0x10)) COrientedBoxDefinition : game::interactions::IShapeDefinition
+struct RED4EXT_ALIGN(0x10) COrientedBoxDefinition : game::interactions::IShapeDefinition
 {
     static constexpr const char* NAME = "gameinteractionsCOrientedBoxDefinition";
     static constexpr const char* ALIAS = NAME;

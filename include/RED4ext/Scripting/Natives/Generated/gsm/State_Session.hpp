@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace gsm
 {
-struct __declspec(align(0x10)) State_Session : gsm::State
+struct RED4EXT_ALIGN(0x10) State_Session : gsm::State
 {
     static constexpr const char* NAME = "gsmState_Session";
     static constexpr const char* ALIAS = NAME;

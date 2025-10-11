@@ -15,7 +15,7 @@ namespace RED4ext
 {
 namespace game::influence
 {
-struct __declspec(align(0x10)) ObstacleComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) ObstacleComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "gameinfluenceObstacleComponent";
     static constexpr const char* ALIAS = "InfluenceObstacleComponent";

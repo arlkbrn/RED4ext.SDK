@@ -17,7 +17,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) AnimTargetBasicData
+struct RED4EXT_ALIGN(0x10) AnimTargetBasicData
 {
     static constexpr const char* NAME = "scnAnimTargetBasicData";
     static constexpr const char* ALIAS = NAME;

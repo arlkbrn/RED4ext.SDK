@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) ScrollAreaWidget : ink::CompoundWidget
+struct RED4EXT_ALIGN(0x10) ScrollAreaWidget : ink::CompoundWidget
 {
     static constexpr const char* NAME = "inkScrollAreaWidget";
     static constexpr const char* ALIAS = "inkScrollArea";

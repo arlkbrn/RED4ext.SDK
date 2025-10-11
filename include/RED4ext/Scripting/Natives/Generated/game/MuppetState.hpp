@@ -22,7 +22,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) MuppetState
+struct RED4EXT_ALIGN(0x10) MuppetState
 {
     static constexpr const char* NAME = "gameMuppetState";
     static constexpr const char* ALIAS = NAME;

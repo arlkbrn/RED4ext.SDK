@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace anim
 {
-struct __declspec(align(0x10)) AnimFeature_MeleeIKData : anim::AnimFeature
+struct RED4EXT_ALIGN(0x10) AnimFeature_MeleeIKData : anim::AnimFeature
 {
     static constexpr const char* NAME = "animAnimFeature_MeleeIKData";
     static constexpr const char* ALIAS = "AnimFeature_MeleeIKData";

@@ -16,7 +16,7 @@ namespace game { struct IMovingPlatformMovement; }
 
 namespace game
 {
-struct __declspec(align(0x10)) MovingPlatformSavedData
+struct RED4EXT_ALIGN(0x10) MovingPlatformSavedData
 {
     static constexpr const char* NAME = "gameMovingPlatformSavedData";
     static constexpr const char* ALIAS = NAME;

@@ -11,7 +11,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) EffectData_MeleeTireHit
+struct RED4EXT_ALIGN(0x10) EffectData_MeleeTireHit
 {
     static constexpr const char* NAME = "gameEffectData_MeleeTireHit";
     static constexpr const char* ALIAS = NAME;

@@ -15,7 +15,7 @@ namespace audio { struct AmbientAreaSettings; }
 
 namespace ent
 {
-struct __declspec(align(0x10)) AmbientSoundEmitterComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) AmbientSoundEmitterComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "entAmbientSoundEmitterComponent";
     static constexpr const char* ALIAS = NAME;

@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) HudMeshComponent : ent::MeshComponent
+struct RED4EXT_ALIGN(0x10) HudMeshComponent : ent::MeshComponent
 {
     static constexpr const char* NAME = "HudMeshComponent";
     static constexpr const char* ALIAS = NAME;

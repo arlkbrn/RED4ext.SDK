@@ -16,7 +16,7 @@ namespace RED4ext
 {
 namespace rend
 {
-struct __declspec(align(0x10)) RenderParticleBlobEmitterInfo
+struct RED4EXT_ALIGN(0x10) RenderParticleBlobEmitterInfo
 {
     static constexpr const char* NAME = "rendRenderParticleBlobEmitterInfo";
     static constexpr const char* ALIAS = NAME;

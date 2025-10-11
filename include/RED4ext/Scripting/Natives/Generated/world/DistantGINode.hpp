@@ -16,7 +16,7 @@ struct CBitmapTexture;
 
 namespace world
 {
-struct __declspec(align(0x10)) DistantGINode : world::Node
+struct RED4EXT_ALIGN(0x10) DistantGINode : world::Node
 {
     static constexpr const char* NAME = "worldDistantGINode";
     static constexpr const char* ALIAS = NAME;

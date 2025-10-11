@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) FlexWidget : ink::CompoundWidget
+struct RED4EXT_ALIGN(0x10) FlexWidget : ink::CompoundWidget
 {
     static constexpr const char* NAME = "inkFlexWidget";
     static constexpr const char* ALIAS = "inkFlex";

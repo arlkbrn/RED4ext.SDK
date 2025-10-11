@@ -18,7 +18,7 @@ namespace game { struct SmartObjectDefinition; }
 
 namespace world
 {
-struct __declspec(align(0x10)) OffMeshSmartObjectUserData : world::OffMeshUserData
+struct RED4EXT_ALIGN(0x10) OffMeshSmartObjectUserData : world::OffMeshUserData
 {
     static constexpr const char* NAME = "worldOffMeshSmartObjectUserData";
     static constexpr const char* ALIAS = NAME;

@@ -19,7 +19,7 @@ RED4EXT_ASSERT_SIZE(Transform, 0x20);
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Transform
+struct RED4EXT_ALIGN(0x10) Transform
 {
     static constexpr const char* NAME = "Transform";
     static constexpr const char* ALIAS = NAME;

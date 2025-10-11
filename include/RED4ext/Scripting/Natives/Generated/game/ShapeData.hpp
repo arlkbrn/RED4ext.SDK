@@ -16,7 +16,7 @@ namespace game { struct HitShapeUserData; }
 
 namespace game
 {
-struct __declspec(align(0x10)) ShapeData
+struct RED4EXT_ALIGN(0x10) ShapeData
 {
     static constexpr const char* NAME = "gameShapeData";
     static constexpr const char* ALIAS = "HitShapeData";

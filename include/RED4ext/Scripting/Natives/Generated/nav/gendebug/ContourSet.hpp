@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace nav::gendebug
 {
-struct __declspec(align(0x10)) ContourSet
+struct RED4EXT_ALIGN(0x10) ContourSet
 {
     static constexpr const char* NAME = "navgendebugContourSet";
     static constexpr const char* ALIAS = NAME;

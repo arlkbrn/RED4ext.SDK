@@ -17,7 +17,7 @@ namespace anim { struct EventsContainer; }
 
 namespace scn
 {
-struct __declspec(align(0x10)) AnimationRid
+struct RED4EXT_ALIGN(0x10) AnimationRid
 {
     static constexpr const char* NAME = "scnAnimationRid";
     static constexpr const char* ALIAS = NAME;

@@ -23,7 +23,7 @@ namespace game::ui { struct BaseWorldMapMappinController; }
 
 namespace game::ui
 {
-struct __declspec(align(0x10)) WorldMapMenuGameController : game::ui::MappinsContainerController
+struct RED4EXT_ALIGN(0x10) WorldMapMenuGameController : game::ui::MappinsContainerController
 {
     static constexpr const char* NAME = "gameuiWorldMapMenuGameController";
     static constexpr const char* ALIAS = "WorldMapMenuGameController";

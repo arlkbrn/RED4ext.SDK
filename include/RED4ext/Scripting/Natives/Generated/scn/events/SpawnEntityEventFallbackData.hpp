@@ -17,7 +17,7 @@ namespace anim { struct AnimSet; }
 
 namespace scn::events
 {
-struct __declspec(align(0x10)) SpawnEntityEventFallbackData
+struct RED4EXT_ALIGN(0x10) SpawnEntityEventFallbackData
 {
     static constexpr const char* NAME = "scneventsSpawnEntityEventFallbackData";
     static constexpr const char* ALIAS = NAME;

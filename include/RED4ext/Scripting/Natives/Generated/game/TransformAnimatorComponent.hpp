@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) TransformAnimatorComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) TransformAnimatorComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "gameTransformAnimatorComponent";
     static constexpr const char* ALIAS = NAME;

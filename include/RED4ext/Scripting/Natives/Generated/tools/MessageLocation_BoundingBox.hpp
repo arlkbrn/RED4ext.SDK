@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace tools
 {
-struct __declspec(align(0x10)) MessageLocation_BoundingBox : tools::IMessageLocation
+struct RED4EXT_ALIGN(0x10) MessageLocation_BoundingBox : tools::IMessageLocation
 {
     static constexpr const char* NAME = "toolsMessageLocation_BoundingBox";
     static constexpr const char* ALIAS = NAME;

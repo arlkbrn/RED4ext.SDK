@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game::state
 {
-struct __declspec(align(0x10)) MachineeventPostponedParameterVector : game::state::MachineeventPostponedParameterBase
+struct RED4EXT_ALIGN(0x10) MachineeventPostponedParameterVector : game::state::MachineeventPostponedParameterBase
 {
     static constexpr const char* NAME = "gamestateMachineeventPostponedParameterVector";
     static constexpr const char* ALIAS = "PSMPostponedParameterVector";

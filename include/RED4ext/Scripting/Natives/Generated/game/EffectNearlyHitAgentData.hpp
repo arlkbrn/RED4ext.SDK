@@ -15,7 +15,7 @@ namespace ent { struct Entity; }
 
 namespace game
 {
-struct __declspec(align(0x10)) EffectNearlyHitAgentData
+struct RED4EXT_ALIGN(0x10) EffectNearlyHitAgentData
 {
     static constexpr const char* NAME = "gameEffectNearlyHitAgentData";
     static constexpr const char* ALIAS = NAME;

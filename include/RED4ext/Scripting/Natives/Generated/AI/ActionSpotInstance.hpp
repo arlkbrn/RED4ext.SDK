@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) ActionSpotInstance : AI::SmartSpotInstance
+struct RED4EXT_ALIGN(0x10) ActionSpotInstance : AI::SmartSpotInstance
 {
     static constexpr const char* NAME = "AIActionSpotInstance";
     static constexpr const char* ALIAS = NAME;

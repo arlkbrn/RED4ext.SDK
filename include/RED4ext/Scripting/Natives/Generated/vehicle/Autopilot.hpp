@@ -11,7 +11,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-struct __declspec(align(0x10)) Autopilot
+struct RED4EXT_ALIGN(0x10) Autopilot
 {
     static constexpr const char* NAME = "vehicleAutopilot";
     static constexpr const char* ALIAS = NAME;

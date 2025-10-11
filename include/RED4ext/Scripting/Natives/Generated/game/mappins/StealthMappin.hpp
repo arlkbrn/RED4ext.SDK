@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::mappins
 {
-struct __declspec(align(0x10)) StealthMappin : game::mappins::RuntimeMappin
+struct RED4EXT_ALIGN(0x10) StealthMappin : game::mappins::RuntimeMappin
 {
     static constexpr const char* NAME = "gamemappinsStealthMappin";
     static constexpr const char* ALIAS = "StealthMappin";

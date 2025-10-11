@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace game::mappins
 {
-struct __declspec(align(0x10)) MappinEntry
+struct RED4EXT_ALIGN(0x10) MappinEntry
 {
     static constexpr const char* NAME = "gamemappinsMappinEntry";
     static constexpr const char* ALIAS = "MappinEntry";

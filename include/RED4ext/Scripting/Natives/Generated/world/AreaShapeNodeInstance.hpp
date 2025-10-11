@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) AreaShapeNodeInstance : world::INodeInstance
+struct RED4EXT_ALIGN(0x10) AreaShapeNodeInstance : world::INodeInstance
 {
     static constexpr const char* NAME = "worldAreaShapeNodeInstance";
     static constexpr const char* ALIAS = NAME;

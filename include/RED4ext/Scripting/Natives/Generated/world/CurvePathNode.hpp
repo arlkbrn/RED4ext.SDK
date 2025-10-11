@@ -20,7 +20,7 @@ namespace anim { struct Rig; }
 
 namespace world
 {
-struct __declspec(align(0x10)) CurvePathNode : world::SplineNode
+struct RED4EXT_ALIGN(0x10) CurvePathNode : world::SplineNode
 {
     static constexpr const char* NAME = "worldCurvePathNode";
     static constexpr const char* ALIAS = NAME;

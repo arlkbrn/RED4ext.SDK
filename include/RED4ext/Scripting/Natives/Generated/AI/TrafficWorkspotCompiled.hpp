@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) TrafficWorkspotCompiled : world::TrafficSpotCompiled
+struct RED4EXT_ALIGN(0x10) TrafficWorkspotCompiled : world::TrafficSpotCompiled
 {
     static constexpr const char* NAME = "AITrafficWorkspotCompiled";
     static constexpr const char* ALIAS = NAME;

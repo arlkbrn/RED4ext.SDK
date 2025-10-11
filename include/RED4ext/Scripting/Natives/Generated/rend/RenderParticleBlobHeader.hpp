@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace rend
 {
-struct __declspec(align(0x10)) RenderParticleBlobHeader
+struct RED4EXT_ALIGN(0x10) RenderParticleBlobHeader
 {
     static constexpr const char* NAME = "rendRenderParticleBlobHeader";
     static constexpr const char* ALIAS = NAME;

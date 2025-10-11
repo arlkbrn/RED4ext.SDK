@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace work
 {
-struct __declspec(align(0x10)) SyncMasterEntryAnim : work::EntryAnim
+struct RED4EXT_ALIGN(0x10) SyncMasterEntryAnim : work::EntryAnim
 {
     static constexpr const char* NAME = "workSyncMasterEntryAnim";
     static constexpr const char* ALIAS = NAME;

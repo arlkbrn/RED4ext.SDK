@@ -16,7 +16,7 @@ struct Bink;
 
 namespace ink
 {
-struct __declspec(align(0x10)) VideoWidget : ink::LeafWidget
+struct RED4EXT_ALIGN(0x10) VideoWidget : ink::LeafWidget
 {
     static constexpr const char* NAME = "inkVideoWidget";
     static constexpr const char* ALIAS = "inkVideo";

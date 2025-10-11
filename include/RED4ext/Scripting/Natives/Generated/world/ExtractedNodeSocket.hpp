@@ -16,7 +16,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) ExtractedNodeSocket
+struct RED4EXT_ALIGN(0x10) ExtractedNodeSocket
 {
     static constexpr const char* NAME = "worldExtractedNodeSocket";
     static constexpr const char* ALIAS = NAME;

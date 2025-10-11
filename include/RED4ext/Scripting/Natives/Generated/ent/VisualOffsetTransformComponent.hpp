@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) VisualOffsetTransformComponent : ent::TransformComponent
+struct RED4EXT_ALIGN(0x10) VisualOffsetTransformComponent : ent::TransformComponent
 {
     static constexpr const char* NAME = "entVisualOffsetTransformComponent";
     static constexpr const char* ALIAS = NAME;

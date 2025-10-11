@@ -21,7 +21,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) HUDLayer : ink::FullScreenLayer
+struct RED4EXT_ALIGN(0x10) HUDLayer : ink::FullScreenLayer
 {
     static constexpr const char* NAME = "inkHUDLayer";
     static constexpr const char* ALIAS = NAME;

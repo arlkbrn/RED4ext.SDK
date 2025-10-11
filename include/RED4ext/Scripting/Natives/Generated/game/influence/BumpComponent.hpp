@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace game::influence
 {
-struct __declspec(align(0x10)) BumpComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) BumpComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "gameinfluenceBumpComponent";
     static constexpr const char* ALIAS = "BumpComponent";

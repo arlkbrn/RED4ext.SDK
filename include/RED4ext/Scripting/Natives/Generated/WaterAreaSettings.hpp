@@ -14,7 +14,7 @@ namespace RED4ext
 {
 struct CBitmapTexture;
 
-struct __declspec(align(0x10)) WaterAreaSettings : IAreaSettings
+struct RED4EXT_ALIGN(0x10) WaterAreaSettings : IAreaSettings
 {
     static constexpr const char* NAME = "WaterAreaSettings";
     static constexpr const char* ALIAS = NAME;

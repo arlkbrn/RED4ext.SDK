@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) ActionTeleportScriptProxy : CActionScriptProxy
+struct RED4EXT_ALIGN(0x10) ActionTeleportScriptProxy : CActionScriptProxy
 {
     static constexpr const char* NAME = "ActionTeleportScriptProxy";
     static constexpr const char* ALIAS = NAME;

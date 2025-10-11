@@ -16,7 +16,7 @@ struct Spline;
 
 namespace world
 {
-struct __declspec(align(0x10)) StreamingQueryRoadData
+struct RED4EXT_ALIGN(0x10) StreamingQueryRoadData
 {
     static constexpr const char* NAME = "worldStreamingQueryRoadData";
     static constexpr const char* ALIAS = NAME;

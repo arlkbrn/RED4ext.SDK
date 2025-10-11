@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace work
 {
-struct __declspec(align(0x10)) WorkspotInstance : ISerializable
+struct RED4EXT_ALIGN(0x10) WorkspotInstance : ISerializable
 {
     static constexpr const char* NAME = "workWorkspotInstance";
     static constexpr const char* ALIAS = NAME;

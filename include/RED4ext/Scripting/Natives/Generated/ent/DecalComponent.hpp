@@ -19,7 +19,7 @@ struct IMaterial;
 
 namespace ent
 {
-struct __declspec(align(0x10)) DecalComponent : ent::IVisualComponent
+struct RED4EXT_ALIGN(0x10) DecalComponent : ent::IVisualComponent
 {
     static constexpr const char* NAME = "entDecalComponent";
     static constexpr const char* ALIAS = NAME;

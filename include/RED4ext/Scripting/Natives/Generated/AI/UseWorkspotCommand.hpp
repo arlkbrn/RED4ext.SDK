@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) UseWorkspotCommand : AI::BaseUseWorkspotCommand
+struct RED4EXT_ALIGN(0x10) UseWorkspotCommand : AI::BaseUseWorkspotCommand
 {
     static constexpr const char* NAME = "AIUseWorkspotCommand";
     static constexpr const char* ALIAS = NAME;

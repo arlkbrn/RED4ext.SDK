@@ -16,7 +16,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) MountDescriptor
+struct RED4EXT_ALIGN(0x10) MountDescriptor
 {
     static constexpr const char* NAME = "gameMountDescriptor";
     static constexpr const char* ALIAS = NAME;

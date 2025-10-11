@@ -20,7 +20,7 @@ namespace RED4ext
 {
 namespace scn::events
 {
-struct __declspec(align(0x10)) AttachPropToPerformer : scn::SceneEvent
+struct RED4EXT_ALIGN(0x10) AttachPropToPerformer : scn::SceneEvent
 {
     static constexpr const char* NAME = "scneventsAttachPropToPerformer";
     static constexpr const char* ALIAS = NAME;

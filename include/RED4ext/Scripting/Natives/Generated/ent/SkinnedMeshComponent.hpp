@@ -29,7 +29,7 @@ struct CMesh;
 
 namespace ent
 {
-struct __declspec(align(0x10)) SkinnedMeshComponent : ent::ISkinTargetComponent
+struct RED4EXT_ALIGN(0x10) SkinnedMeshComponent : ent::ISkinTargetComponent
 {
     static constexpr const char* NAME = "entSkinnedMeshComponent";
     static constexpr const char* ALIAS = NAME;

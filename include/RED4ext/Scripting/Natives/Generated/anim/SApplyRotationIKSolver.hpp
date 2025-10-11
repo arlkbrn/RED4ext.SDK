@@ -11,7 +11,7 @@ namespace RED4ext
 {
 namespace anim
 {
-struct __declspec(align(0x10)) SApplyRotationIKSolver
+struct RED4EXT_ALIGN(0x10) SApplyRotationIKSolver
 {
     static constexpr const char* NAME = "animSApplyRotationIKSolver";
     static constexpr const char* ALIAS = NAME;

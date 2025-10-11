@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) VehicleCoversComponent : ent::IComponent
+struct RED4EXT_ALIGN(0x10) VehicleCoversComponent : ent::IComponent
 {
     static constexpr const char* NAME = "AIVehicleCoversComponent";
     static constexpr const char* ALIAS = NAME;

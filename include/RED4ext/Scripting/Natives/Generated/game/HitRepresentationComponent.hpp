@@ -20,7 +20,7 @@ namespace game { struct HitRepresentationResource; }
 
 namespace game
 {
-struct __declspec(align(0x10)) HitRepresentationComponent : ent::SlotComponent
+struct RED4EXT_ALIGN(0x10) HitRepresentationComponent : ent::SlotComponent
 {
     static constexpr const char* NAME = "gameHitRepresentationComponent";
     static constexpr const char* ALIAS = "HitRepresentationComponent";

@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::influence
 {
-struct __declspec(align(0x10)) ObstacleAgent : game::influence::IAgent
+struct RED4EXT_ALIGN(0x10) ObstacleAgent : game::influence::IAgent
 {
     static constexpr const char* NAME = "gameinfluenceObstacleAgent";
     static constexpr const char* ALIAS = "InfluenceObstacleAgent";

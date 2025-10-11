@@ -25,7 +25,7 @@ namespace AI { struct Archetype; }
 
 namespace vehicle
 {
-struct __declspec(align(0x10)) BaseObject : game::Object
+struct RED4EXT_ALIGN(0x10) BaseObject : game::Object
 {
     static constexpr const char* NAME = "vehicleBaseObject";
     static constexpr const char* ALIAS = "VehicleObject";

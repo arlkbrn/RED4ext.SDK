@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) PalladiaAdvertisementWidgetComponent : AdvertisementWidgetComponent
+struct RED4EXT_ALIGN(0x10) PalladiaAdvertisementWidgetComponent : AdvertisementWidgetComponent
 {
     static constexpr const char* NAME = "PalladiaAdvertisementWidgetComponent";
     static constexpr const char* ALIAS = NAME;

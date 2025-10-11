@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) Window : ink::CanvasWidget
+struct RED4EXT_ALIGN(0x10) Window : ink::CanvasWidget
 {
     static constexpr const char* NAME = "inkWindow";
     static constexpr const char* ALIAS = NAME;

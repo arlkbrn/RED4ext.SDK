@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) WorldMapPlayerMappinController : game::ui::BaseWorldMapMappinController
+struct RED4EXT_ALIGN(0x10) WorldMapPlayerMappinController : game::ui::BaseWorldMapMappinController
 {
     static constexpr const char* NAME = "gameuiWorldMapPlayerMappinController";
     static constexpr const char* ALIAS = "WorldMapPlayerMappinController";

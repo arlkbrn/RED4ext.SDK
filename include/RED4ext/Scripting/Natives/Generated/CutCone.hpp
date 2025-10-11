@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) CutCone
+struct RED4EXT_ALIGN(0x10) CutCone
 {
     static constexpr const char* NAME = "CutCone";
     static constexpr const char* ALIAS = NAME;

@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game::projectile
 {
-struct __declspec(align(0x10)) ProjectilePreviewEvent : game::projectile::SpawnerPreviewEvent
+struct RED4EXT_ALIGN(0x10) ProjectilePreviewEvent : game::projectile::SpawnerPreviewEvent
 {
     static constexpr const char* NAME = "gameprojectileProjectilePreviewEvent";
     static constexpr const char* ALIAS = NAME;

@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace sense
 {
-struct __declspec(align(0x10)) SensorObject : ISerializable
+struct RED4EXT_ALIGN(0x10) SensorObject : ISerializable
 {
     static constexpr const char* NAME = "senseSensorObject";
     static constexpr const char* ALIAS = "SensorObject";

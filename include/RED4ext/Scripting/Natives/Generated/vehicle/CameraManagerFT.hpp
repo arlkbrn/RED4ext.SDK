@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-struct __declspec(align(0x10)) CameraManagerFT : vehicle::CameraManager
+struct RED4EXT_ALIGN(0x10) CameraManagerFT : vehicle::CameraManager
 {
     static constexpr const char* NAME = "vehicleCameraManagerFT";
     static constexpr const char* ALIAS = "VehicleCameraManagerFT";

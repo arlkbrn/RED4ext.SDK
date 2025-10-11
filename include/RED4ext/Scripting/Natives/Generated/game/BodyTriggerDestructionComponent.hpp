@@ -16,7 +16,7 @@ namespace physics { struct FilterData; }
 
 namespace game
 {
-struct __declspec(align(0x10)) BodyTriggerDestructionComponent : game::ITriggerDestructionComponent
+struct RED4EXT_ALIGN(0x10) BodyTriggerDestructionComponent : game::ITriggerDestructionComponent
 {
     static constexpr const char* NAME = "gameBodyTriggerDestructionComponent";
     static constexpr const char* ALIAS = NAME;

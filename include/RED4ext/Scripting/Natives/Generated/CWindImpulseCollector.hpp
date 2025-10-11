@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) CWindImpulseCollector : ISceneStorageCustomData
+struct RED4EXT_ALIGN(0x10) CWindImpulseCollector : ISceneStorageCustomData
 {
     static constexpr const char* NAME = "CWindImpulseCollector";
     static constexpr const char* ALIAS = NAME;

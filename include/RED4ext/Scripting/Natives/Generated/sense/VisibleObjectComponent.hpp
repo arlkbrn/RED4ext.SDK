@@ -15,7 +15,7 @@ namespace sense { struct VisibleObject; }
 
 namespace sense
 {
-struct __declspec(align(0x10)) VisibleObjectComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) VisibleObjectComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "senseVisibleObjectComponent";
     static constexpr const char* ALIAS = "VisibleObjectComponent";

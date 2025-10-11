@@ -12,7 +12,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) SplinePoint
+struct RED4EXT_ALIGN(0x10) SplinePoint
 {
     static constexpr const char* NAME = "SplinePoint";
     static constexpr const char* ALIAS = NAME;

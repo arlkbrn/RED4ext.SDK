@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) TargetTrackerComponent : game::Component
+struct RED4EXT_ALIGN(0x10) TargetTrackerComponent : game::Component
 {
     static constexpr const char* NAME = "AITargetTrackerComponent";
     static constexpr const char* ALIAS = "TargetTrackerComponent";

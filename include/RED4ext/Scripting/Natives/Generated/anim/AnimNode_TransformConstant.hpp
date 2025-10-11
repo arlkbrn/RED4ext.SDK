@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace anim
 {
-struct __declspec(align(0x10)) AnimNode_TransformConstant : anim::AnimNode_TransformValue
+struct RED4EXT_ALIGN(0x10) AnimNode_TransformConstant : anim::AnimNode_TransformValue
 {
     static constexpr const char* NAME = "animAnimNode_TransformConstant";
     static constexpr const char* ALIAS = NAME;

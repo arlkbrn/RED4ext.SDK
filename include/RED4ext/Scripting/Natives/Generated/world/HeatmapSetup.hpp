@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) HeatmapSetup
+struct RED4EXT_ALIGN(0x10) HeatmapSetup
 {
     static constexpr const char* NAME = "worldHeatmapSetup";
     static constexpr const char* ALIAS = NAME;

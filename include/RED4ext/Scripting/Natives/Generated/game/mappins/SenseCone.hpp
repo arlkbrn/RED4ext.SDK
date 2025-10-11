@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::mappins
 {
-struct __declspec(align(0x10)) SenseCone
+struct RED4EXT_ALIGN(0x10) SenseCone
 {
     static constexpr const char* NAME = "gamemappinsSenseCone";
     static constexpr const char* ALIAS = NAME;

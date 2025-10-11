@@ -17,7 +17,7 @@ namespace physics { struct FilterData; }
 
 namespace ent
 {
-struct __declspec(align(0x10)) PhysicalTriggerComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) PhysicalTriggerComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "entPhysicalTriggerComponent";
     static constexpr const char* ALIAS = "PhysicalTriggerComponent";

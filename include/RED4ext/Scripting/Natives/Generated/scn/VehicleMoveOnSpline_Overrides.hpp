@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) VehicleMoveOnSpline_Overrides : quest::IVehicleMoveOnSpline_Overrides
+struct RED4EXT_ALIGN(0x10) VehicleMoveOnSpline_Overrides : quest::IVehicleMoveOnSpline_Overrides
 {
     static constexpr const char* NAME = "scnVehicleMoveOnSpline_Overrides";
     static constexpr const char* ALIAS = NAME;

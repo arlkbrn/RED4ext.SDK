@@ -17,7 +17,7 @@ namespace world { struct HeatmapLayer; }
 
 namespace world
 {
-struct __declspec(align(0x10)) HeatmapResource : CResource
+struct RED4EXT_ALIGN(0x10) HeatmapResource : CResource
 {
     static constexpr const char* NAME = "worldHeatmapResource";
     static constexpr const char* ALIAS = NAME;

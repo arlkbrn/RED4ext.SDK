@@ -25,7 +25,7 @@ struct IParticleDrawer;
 struct IParticleModule;
 struct IRenderResourceBlob;
 
-struct __declspec(align(0x10)) CParticleEmitter : IParticleModule
+struct RED4EXT_ALIGN(0x10) CParticleEmitter : IParticleModule
 {
     static constexpr const char* NAME = "CParticleEmitter";
     static constexpr const char* ALIAS = NAME;

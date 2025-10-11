@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) RuntimeSystemWeather : world::IRuntimeSystem
+struct RED4EXT_ALIGN(0x10) RuntimeSystemWeather : world::IRuntimeSystem
 {
     static constexpr const char* NAME = "worldRuntimeSystemWeather";
     static constexpr const char* ALIAS = NAME;

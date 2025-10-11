@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-struct __declspec(align(0x10)) CinematicCameraShotEffect_VectorDamper : vehicle::TimedCinematicCameraShotEffect
+struct RED4EXT_ALIGN(0x10) CinematicCameraShotEffect_VectorDamper : vehicle::TimedCinematicCameraShotEffect
 {
     static constexpr const char* NAME = "vehicleCinematicCameraShotEffect_VectorDamper";
     static constexpr const char* ALIAS = "CameraShotEffect_VectorDamper";

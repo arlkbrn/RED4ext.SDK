@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace scn::prv
 {
-struct __declspec(align(0x10)) SpawnDespawnItem
+struct RED4EXT_ALIGN(0x10) SpawnDespawnItem
 {
     static constexpr const char* NAME = "scnprvSpawnDespawnItem";
     static constexpr const char* ALIAS = NAME;

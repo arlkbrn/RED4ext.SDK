@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace physics
 {
-struct __declspec(align(0x10)) TriggerShape
+struct RED4EXT_ALIGN(0x10) TriggerShape
 {
     static constexpr const char* NAME = "physicsTriggerShape";
     static constexpr const char* ALIAS = NAME;

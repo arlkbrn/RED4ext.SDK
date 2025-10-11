@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) DamageIndicatorGameController : game::ui::HUDGameController
+struct RED4EXT_ALIGN(0x10) DamageIndicatorGameController : game::ui::HUDGameController
 {
     static constexpr const char* NAME = "gameuiDamageIndicatorGameController";
     static constexpr const char* ALIAS = "DamageIndicatorGameController";

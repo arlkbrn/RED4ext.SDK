@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace physics
 {
-struct __declspec(align(0x10)) SectorEntry
+struct RED4EXT_ALIGN(0x10) SectorEntry
 {
     static constexpr const char* NAME = "physicsSectorEntry";
     static constexpr const char* ALIAS = NAME;

@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace rend
 {
-struct __declspec(align(0x10)) RenderMeshBlob : IRenderResourceBlob
+struct RED4EXT_ALIGN(0x10) RenderMeshBlob : IRenderResourceBlob
 {
     static constexpr const char* NAME = "rendRenderMeshBlob";
     static constexpr const char* ALIAS = NAME;

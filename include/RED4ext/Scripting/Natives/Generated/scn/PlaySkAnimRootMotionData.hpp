@@ -17,7 +17,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) PlaySkAnimRootMotionData
+struct RED4EXT_ALIGN(0x10) PlaySkAnimRootMotionData
 {
     static constexpr const char* NAME = "scnPlaySkAnimRootMotionData";
     static constexpr const char* ALIAS = NAME;

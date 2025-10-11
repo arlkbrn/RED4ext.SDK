@@ -18,7 +18,7 @@ struct CMesh;
 
 namespace world
 {
-struct __declspec(align(0x10)) FoliageRawItem : ISerializable
+struct RED4EXT_ALIGN(0x10) FoliageRawItem : ISerializable
 {
     static constexpr const char* NAME = "worldFoliageRawItem";
     static constexpr const char* ALIAS = NAME;

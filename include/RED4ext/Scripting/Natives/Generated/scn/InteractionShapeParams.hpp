@@ -15,7 +15,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) InteractionShapeParams : ISerializable
+struct RED4EXT_ALIGN(0x10) InteractionShapeParams : ISerializable
 {
     static constexpr const char* NAME = "scnInteractionShapeParams";
     static constexpr const char* ALIAS = NAME;

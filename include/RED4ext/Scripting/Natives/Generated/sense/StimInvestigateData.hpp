@@ -16,7 +16,7 @@ namespace ent { struct Entity; }
 
 namespace sense
 {
-struct __declspec(align(0x10)) StimInvestigateData
+struct RED4EXT_ALIGN(0x10) StimInvestigateData
 {
     static constexpr const char* NAME = "senseStimInvestigateData";
     static constexpr const char* ALIAS = "stimInvestigateData";

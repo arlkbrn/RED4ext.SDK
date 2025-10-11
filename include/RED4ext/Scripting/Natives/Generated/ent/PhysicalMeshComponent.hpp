@@ -18,7 +18,7 @@ namespace physics { struct FilterData; }
 
 namespace ent
 {
-struct __declspec(align(0x10)) PhysicalMeshComponent : ent::MeshComponent
+struct RED4EXT_ALIGN(0x10) PhysicalMeshComponent : ent::MeshComponent
 {
     static constexpr const char* NAME = "entPhysicalMeshComponent";
     static constexpr const char* ALIAS = "PhysicalMeshComponent";

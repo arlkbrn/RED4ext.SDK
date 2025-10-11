@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace cp
 {
-struct __declspec(align(0x10)) ConveyorObject : game::Object
+struct RED4EXT_ALIGN(0x10) ConveyorObject : game::Object
 {
     static constexpr const char* NAME = "cpConveyorObject";
     static constexpr const char* ALIAS = NAME;

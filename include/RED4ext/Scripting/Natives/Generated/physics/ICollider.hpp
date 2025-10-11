@@ -19,7 +19,7 @@ namespace physics { struct FilterData; }
 
 namespace physics
 {
-struct __declspec(align(0x10)) ICollider : ISerializable
+struct RED4EXT_ALIGN(0x10) ICollider : ISerializable
 {
     static constexpr const char* NAME = "physicsICollider";
     static constexpr const char* ALIAS = NAME;

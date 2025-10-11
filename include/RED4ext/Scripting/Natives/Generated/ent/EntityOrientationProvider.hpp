@@ -17,7 +17,7 @@ namespace ent { struct SlotComponent; }
 
 namespace ent
 {
-struct __declspec(align(0x10)) EntityOrientationProvider : ent::IOrientationProvider
+struct RED4EXT_ALIGN(0x10) EntityOrientationProvider : ent::IOrientationProvider
 {
     static constexpr const char* NAME = "entEntityOrientationProvider";
     static constexpr const char* ALIAS = NAME;

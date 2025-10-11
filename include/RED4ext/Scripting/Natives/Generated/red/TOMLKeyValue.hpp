@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace red
 {
-struct __declspec(align(0x10)) TOMLKeyValue : red::TOMLBaseValue
+struct RED4EXT_ALIGN(0x10) TOMLKeyValue : red::TOMLBaseValue
 {
     static constexpr const char* NAME = "redTOMLKeyValue";
     static constexpr const char* ALIAS = NAME;

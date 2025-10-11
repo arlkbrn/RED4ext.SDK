@@ -27,7 +27,7 @@ struct MorphTargetMesh;
 
 namespace ent
 {
-struct __declspec(align(0x10)) MorphTargetSkinnedMeshComponent : ent::ISkinTargetComponent
+struct RED4EXT_ALIGN(0x10) MorphTargetSkinnedMeshComponent : ent::ISkinTargetComponent
 {
     static constexpr const char* NAME = "entMorphTargetSkinnedMeshComponent";
     static constexpr const char* ALIAS = NAME;

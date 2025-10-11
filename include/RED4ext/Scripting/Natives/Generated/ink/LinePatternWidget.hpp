@@ -15,7 +15,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) LinePatternWidget : ink::ImageWidget
+struct RED4EXT_ALIGN(0x10) LinePatternWidget : ink::ImageWidget
 {
     static constexpr const char* NAME = "inkLinePatternWidget";
     static constexpr const char* ALIAS = "inkLinePattern";

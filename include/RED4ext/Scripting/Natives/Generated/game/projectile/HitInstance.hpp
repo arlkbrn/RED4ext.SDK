@@ -18,7 +18,7 @@ namespace game { struct WeakspotObject; }
 
 namespace game::projectile
 {
-struct __declspec(align(0x10)) HitInstance
+struct RED4EXT_ALIGN(0x10) HitInstance
 {
     static constexpr const char* NAME = "gameprojectileHitInstance";
     static constexpr const char* ALIAS = NAME;

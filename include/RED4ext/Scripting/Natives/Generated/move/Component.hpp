@@ -21,7 +21,7 @@ namespace RED4ext
 {
 namespace move
 {
-struct __declspec(align(0x10)) Component : ent::IMoverComponent
+struct RED4EXT_ALIGN(0x10) Component : ent::IMoverComponent
 {
     static constexpr const char* NAME = "moveComponent";
     static constexpr const char* ALIAS = NAME;

@@ -18,7 +18,7 @@ namespace game::interactions { struct InteractionDescriptorResource; }
 
 namespace game::interactions
 {
-struct __declspec(align(0x10)) Component : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) Component : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "gameinteractionsComponent";
     static constexpr const char* ALIAS = "InteractionComponent";

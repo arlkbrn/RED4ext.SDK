@@ -29,7 +29,7 @@ struct CIESDataResource;
 
 namespace world
 {
-struct __declspec(align(0x10)) AdvertisementLightData
+struct RED4EXT_ALIGN(0x10) AdvertisementLightData
 {
     static constexpr const char* NAME = "worldAdvertisementLightData";
     static constexpr const char* ALIAS = NAME;

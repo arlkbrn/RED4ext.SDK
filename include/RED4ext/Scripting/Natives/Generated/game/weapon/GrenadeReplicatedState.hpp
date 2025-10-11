@@ -17,7 +17,7 @@ namespace game { struct Object; }
 
 namespace game::weapon
 {
-struct __declspec(align(0x10)) GrenadeReplicatedState : net::IEntityState
+struct RED4EXT_ALIGN(0x10) GrenadeReplicatedState : net::IEntityState
 {
     static constexpr const char* NAME = "gameweaponGrenadeReplicatedState";
     static constexpr const char* ALIAS = NAME;

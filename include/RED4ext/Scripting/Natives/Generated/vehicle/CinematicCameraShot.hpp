@@ -19,7 +19,7 @@ namespace vehicle { struct CinematicCameraShotStopCondition; }
 
 namespace vehicle
 {
-struct __declspec(align(0x10)) CinematicCameraShot : IScriptable
+struct RED4EXT_ALIGN(0x10) CinematicCameraShot : IScriptable
 {
     static constexpr const char* NAME = "vehicleCinematicCameraShot";
     static constexpr const char* ALIAS = NAME;

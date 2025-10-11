@@ -20,7 +20,7 @@ namespace world { struct EnvironmentAreaParameters; }
 
 namespace game
 {
-struct __declspec(align(0x10)) PhotoModeBackgroundCameraComponent : ent::BaseCameraComponent
+struct RED4EXT_ALIGN(0x10) PhotoModeBackgroundCameraComponent : ent::BaseCameraComponent
 {
     static constexpr const char* NAME = "gamePhotoModeBackgroundCameraComponent";
     static constexpr const char* ALIAS = NAME;

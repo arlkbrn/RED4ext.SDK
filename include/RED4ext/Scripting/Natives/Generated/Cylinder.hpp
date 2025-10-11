@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Cylinder
+struct RED4EXT_ALIGN(0x10) Cylinder
 {
     static constexpr const char* NAME = "Cylinder";
     static constexpr const char* ALIAS = NAME;

@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) RagdollNotifyVelocityTresholdEvent : red::Event
+struct RED4EXT_ALIGN(0x10) RagdollNotifyVelocityTresholdEvent : red::Event
 {
     static constexpr const char* NAME = "entRagdollNotifyVelocityTresholdEvent";
     static constexpr const char* ALIAS = "RagdollNotifyVelocityTresholdEvent";

@@ -15,7 +15,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) HitShapeBase : game::IHitShape
+struct RED4EXT_ALIGN(0x10) HitShapeBase : game::IHitShape
 {
     static constexpr const char* NAME = "gameHitShapeBase";
     static constexpr const char* ALIAS = "HitShapeBase";

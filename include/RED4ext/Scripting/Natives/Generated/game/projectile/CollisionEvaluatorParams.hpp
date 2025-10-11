@@ -17,7 +17,7 @@ namespace game { struct Object; }
 
 namespace game::projectile
 {
-struct __declspec(align(0x10)) CollisionEvaluatorParams : IScriptable
+struct RED4EXT_ALIGN(0x10) CollisionEvaluatorParams : IScriptable
 {
     static constexpr const char* NAME = "gameprojectileCollisionEvaluatorParams";
     static constexpr const char* ALIAS = "CollisionEvaluatorParams";

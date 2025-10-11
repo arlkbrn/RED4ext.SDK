@@ -34,7 +34,7 @@ namespace ink { struct WidgetLogicController; }
 
 namespace ink
 {
-struct __declspec(align(0x10)) Widget : IScriptable
+struct RED4EXT_ALIGN(0x10) Widget : IScriptable
 {
     static constexpr const char* NAME = "inkWidget";
     static constexpr const char* ALIAS = NAME;

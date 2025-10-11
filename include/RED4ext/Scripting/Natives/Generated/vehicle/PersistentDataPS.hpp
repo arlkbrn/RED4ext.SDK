@@ -17,7 +17,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-struct __declspec(align(0x10)) PersistentDataPS : game::ComponentPS
+struct RED4EXT_ALIGN(0x10) PersistentDataPS : game::ComponentPS
 {
     static constexpr const char* NAME = "vehiclePersistentDataPS";
     static constexpr const char* ALIAS = NAME;

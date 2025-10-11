@@ -18,7 +18,7 @@ RED4EXT_ASSERT_SIZE(Box, 0x20);
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Box
+struct RED4EXT_ALIGN(0x10) Box
 {
     static constexpr const char* NAME = "Box";
     static constexpr const char* ALIAS = NAME;

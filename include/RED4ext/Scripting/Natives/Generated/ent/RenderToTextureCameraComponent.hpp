@@ -22,7 +22,7 @@ namespace world { struct EnvironmentAreaParameters; }
 
 namespace ent
 {
-struct __declspec(align(0x10)) RenderToTextureCameraComponent : ent::BaseCameraComponent
+struct RED4EXT_ALIGN(0x10) RenderToTextureCameraComponent : ent::BaseCameraComponent
 {
     static constexpr const char* NAME = "entRenderToTextureCameraComponent";
     static constexpr const char* ALIAS = NAME;

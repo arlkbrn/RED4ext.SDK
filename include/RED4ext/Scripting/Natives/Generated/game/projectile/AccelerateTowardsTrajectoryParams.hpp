@@ -17,7 +17,7 @@ namespace game { struct Object; }
 
 namespace game::projectile
 {
-struct __declspec(align(0x10)) AccelerateTowardsTrajectoryParams : game::projectile::TrajectoryParams
+struct RED4EXT_ALIGN(0x10) AccelerateTowardsTrajectoryParams : game::projectile::TrajectoryParams
 {
     static constexpr const char* NAME = "gameprojectileAccelerateTowardsTrajectoryParams";
     static constexpr const char* ALIAS = "AccelerateTowardsTrajectoryParams";

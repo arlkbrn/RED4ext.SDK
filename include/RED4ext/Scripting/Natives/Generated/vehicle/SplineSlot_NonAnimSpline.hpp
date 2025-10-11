@@ -11,7 +11,7 @@ namespace RED4ext
 {
 namespace vehicle
 {
-struct __declspec(align(0x10)) SplineSlot_NonAnimSpline
+struct RED4EXT_ALIGN(0x10) SplineSlot_NonAnimSpline
 {
     static constexpr const char* NAME = "vehicleSplineSlot_NonAnimSpline";
     static constexpr const char* ALIAS = NAME;

@@ -17,7 +17,7 @@ RED4EXT_ASSERT_SIZE(Quaternion, 0x10);
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Quaternion
+struct RED4EXT_ALIGN(0x10) Quaternion
 {
     static constexpr const char* NAME = "Quaternion";
     static constexpr const char* ALIAS = NAME;

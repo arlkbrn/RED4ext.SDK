@@ -49,3 +49,7 @@
 #ifndef RED4EXT_CALL
 #define RED4EXT_CALL __fastcall
 #endif
+
+#ifndef RED4EXT_ALIGN
+#define RED4EXT_ALIGN(N) __declspec(align(N))
+#endif

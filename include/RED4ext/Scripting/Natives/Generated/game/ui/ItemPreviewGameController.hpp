@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) ItemPreviewGameController : game::ui::PreviewGameController
+struct RED4EXT_ALIGN(0x10) ItemPreviewGameController : game::ui::PreviewGameController
 {
     static constexpr const char* NAME = "gameuiItemPreviewGameController";
     static constexpr const char* ALIAS = "inkItemPreviewGameController";

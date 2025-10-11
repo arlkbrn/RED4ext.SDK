@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) SceneCustomData_ColorFadeParams : ISceneStorageCustomData
+struct RED4EXT_ALIGN(0x10) SceneCustomData_ColorFadeParams : ISceneStorageCustomData
 {
     static constexpr const char* NAME = "SceneCustomData_ColorFadeParams";
     static constexpr const char* ALIAS = NAME;

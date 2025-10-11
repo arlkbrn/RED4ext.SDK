@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) LocationInformation
+struct RED4EXT_ALIGN(0x10) LocationInformation
 {
     static constexpr const char* NAME = "AILocationInformation";
     static constexpr const char* ALIAS = "LocationInformation";

@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace quest
 {
-struct __declspec(align(0x10)) PlayEnv_OverrideGlobalLight : quest::IEnvironmentManagerNodeType
+struct RED4EXT_ALIGN(0x10) PlayEnv_OverrideGlobalLight : quest::IEnvironmentManagerNodeType
 {
     static constexpr const char* NAME = "questPlayEnv_OverrideGlobalLight";
     static constexpr const char* ALIAS = NAME;

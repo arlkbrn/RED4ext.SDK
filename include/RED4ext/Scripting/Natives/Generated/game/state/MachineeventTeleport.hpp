@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::state
 {
-struct __declspec(align(0x10)) MachineeventTeleport : red::Event
+struct RED4EXT_ALIGN(0x10) MachineeventTeleport : red::Event
 {
     static constexpr const char* NAME = "gamestateMachineeventTeleport";
     static constexpr const char* ALIAS = "PSMTeleportEvent";

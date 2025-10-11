@@ -18,7 +18,7 @@ namespace scn { struct EventBlendWorkspotSetupParameters; }
 
 namespace scn
 {
-struct __declspec(align(0x10)) PlaySkAnimEvent : scn::PlayFPPControlAnimEvent
+struct RED4EXT_ALIGN(0x10) PlaySkAnimEvent : scn::PlayFPPControlAnimEvent
 {
     static constexpr const char* NAME = "scnPlaySkAnimEvent";
     static constexpr const char* ALIAS = NAME;

@@ -21,7 +21,7 @@ struct CMesh;
 
 namespace world
 {
-struct __declspec(align(0x10)) BendedMeshNode : world::Node
+struct RED4EXT_ALIGN(0x10) BendedMeshNode : world::Node
 {
     static constexpr const char* NAME = "worldBendedMeshNode";
     static constexpr const char* ALIAS = NAME;

@@ -16,7 +16,7 @@ namespace game::state { struct MachineparameterTypeLadderDescription; }
 
 namespace game::state
 {
-struct __declspec(align(0x10)) MachineComponentReplicatedState : net::IComponentState
+struct RED4EXT_ALIGN(0x10) MachineComponentReplicatedState : net::IComponentState
 {
     static constexpr const char* NAME = "gamestateMachineComponentReplicatedState";
     static constexpr const char* ALIAS = NAME;

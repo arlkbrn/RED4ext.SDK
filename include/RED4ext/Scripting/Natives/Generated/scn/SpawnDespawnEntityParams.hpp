@@ -16,7 +16,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) SpawnDespawnEntityParams
+struct RED4EXT_ALIGN(0x10) SpawnDespawnEntityParams
 {
     static constexpr const char* NAME = "scnSpawnDespawnEntityParams";
     static constexpr const char* ALIAS = NAME;

@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) TextInputWidget : ink::TextWidget
+struct RED4EXT_ALIGN(0x10) TextInputWidget : ink::TextWidget
 {
     static constexpr const char* NAME = "inkTextInputWidget";
     static constexpr const char* ALIAS = "inkTextInput";

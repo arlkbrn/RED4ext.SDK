@@ -16,7 +16,7 @@ struct AreaShapeOutline;
 
 namespace game
 {
-struct __declspec(align(0x10)) StaticAreaShapeComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) StaticAreaShapeComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "gameStaticAreaShapeComponent";
     static constexpr const char* ALIAS = "AreaShapeComponent";

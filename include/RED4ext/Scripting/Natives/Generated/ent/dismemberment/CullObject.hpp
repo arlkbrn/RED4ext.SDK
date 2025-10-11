@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace ent::dismemberment
 {
-struct __declspec(align(0x10)) CullObject
+struct RED4EXT_ALIGN(0x10) CullObject
 {
     static constexpr const char* NAME = "entdismembermentCullObject";
     static constexpr const char* ALIAS = NAME;

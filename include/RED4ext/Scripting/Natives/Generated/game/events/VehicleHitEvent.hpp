@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game::events
 {
-struct __declspec(align(0x10)) VehicleHitEvent : game::events::HitEvent
+struct RED4EXT_ALIGN(0x10) VehicleHitEvent : game::events::HitEvent
 {
     static constexpr const char* NAME = "gameeventsVehicleHitEvent";
     static constexpr const char* ALIAS = "gameVehicleHitEvent";

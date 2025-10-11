@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) CarriedObjectAttached : red::Event
+struct RED4EXT_ALIGN(0x10) CarriedObjectAttached : red::Event
 {
     static constexpr const char* NAME = "gameCarriedObjectAttached";
     static constexpr const char* ALIAS = "CarriedObjectAttached";

@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) DriverCombatMappinController : game::ui::InteractionMappinController
+struct RED4EXT_ALIGN(0x10) DriverCombatMappinController : game::ui::InteractionMappinController
 {
     static constexpr const char* NAME = "gameuiDriverCombatMappinController";
     static constexpr const char* ALIAS = "DriverCombatMappinController";

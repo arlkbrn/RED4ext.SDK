@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) CParticleDrawerBeam : CParticleDrawerFacingBeam
+struct RED4EXT_ALIGN(0x10) CParticleDrawerBeam : CParticleDrawerFacingBeam
 {
     static constexpr const char* NAME = "CParticleDrawerBeam";
     static constexpr const char* ALIAS = NAME;

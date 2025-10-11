@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) WidgetBaseComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) WidgetBaseComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "WidgetBaseComponent";
     static constexpr const char* ALIAS = NAME;

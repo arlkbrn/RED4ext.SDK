@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace rend
 {
-struct __declspec(align(0x10)) TextureRegionPart : ISerializable
+struct RED4EXT_ALIGN(0x10) TextureRegionPart : ISerializable
 {
     static constexpr const char* NAME = "rendTextureRegionPart";
     static constexpr const char* ALIAS = NAME;

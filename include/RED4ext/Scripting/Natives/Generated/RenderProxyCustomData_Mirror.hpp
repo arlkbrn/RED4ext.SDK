@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) RenderProxyCustomData_Mirror : IRenderProxyCustomData
+struct RED4EXT_ALIGN(0x10) RenderProxyCustomData_Mirror : IRenderProxyCustomData
 {
     static constexpr const char* NAME = "RenderProxyCustomData_Mirror";
     static constexpr const char* ALIAS = NAME;

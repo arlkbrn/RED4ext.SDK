@@ -23,7 +23,7 @@ namespace ink { struct ShapeCollectionResource; }
 
 namespace ink
 {
-struct __declspec(align(0x10)) ShapeWidget : ink::BaseShapeWidget
+struct RED4EXT_ALIGN(0x10) ShapeWidget : ink::BaseShapeWidget
 {
     static constexpr const char* NAME = "inkShapeWidget";
     static constexpr const char* ALIAS = "inkShape";

@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) MountedWeaponTarget
+struct RED4EXT_ALIGN(0x10) MountedWeaponTarget
 {
     static constexpr const char* NAME = "gameuiMountedWeaponTarget";
     static constexpr const char* ALIAS = NAME;

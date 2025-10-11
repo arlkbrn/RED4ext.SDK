@@ -37,7 +37,7 @@ namespace scn { struct TimedCondition; }
 
 namespace scn
 {
-struct __declspec(align(0x10)) ChoiceNode : scn::SceneGraphNode
+struct RED4EXT_ALIGN(0x10) ChoiceNode : scn::SceneGraphNode
 {
     static constexpr const char* NAME = "scnChoiceNode";
     static constexpr const char* ALIAS = NAME;

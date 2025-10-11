@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::state
 {
-struct __declspec(align(0x10)) MachineResultVector
+struct RED4EXT_ALIGN(0x10) MachineResultVector
 {
     static constexpr const char* NAME = "gamestateMachineResultVector";
     static constexpr const char* ALIAS = "StateResultVector";

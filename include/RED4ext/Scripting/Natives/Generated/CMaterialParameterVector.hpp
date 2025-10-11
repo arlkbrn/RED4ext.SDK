@@ -11,7 +11,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) CMaterialParameterVector : CMaterialParameter
+struct RED4EXT_ALIGN(0x10) CMaterialParameterVector : CMaterialParameter
 {
     static constexpr const char* NAME = "CMaterialParameterVector";
     static constexpr const char* ALIAS = NAME;

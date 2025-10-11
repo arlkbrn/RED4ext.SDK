@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace minimap
 {
-struct __declspec(align(0x10)) LayerHighlightRequestData
+struct RED4EXT_ALIGN(0x10) LayerHighlightRequestData
 {
     static constexpr const char* NAME = "minimapLayerHighlightRequestData";
     static constexpr const char* ALIAS = "LayerHighlightRequestData";

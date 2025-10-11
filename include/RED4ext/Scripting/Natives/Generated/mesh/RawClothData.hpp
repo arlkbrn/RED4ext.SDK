@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace mesh
 {
-struct __declspec(align(0x10)) RawClothData
+struct RED4EXT_ALIGN(0x10) RawClothData
 {
     static constexpr const char* NAME = "meshRawClothData";
     static constexpr const char* ALIAS = NAME;

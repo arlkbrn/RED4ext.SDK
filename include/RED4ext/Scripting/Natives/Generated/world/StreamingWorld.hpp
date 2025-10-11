@@ -21,7 +21,7 @@ namespace world { struct StreamingQueryDataResource; }
 
 namespace world
 {
-struct __declspec(align(0x10)) StreamingWorld : CResource
+struct RED4EXT_ALIGN(0x10) StreamingWorld : CResource
 {
     static constexpr const char* NAME = "worldStreamingWorld";
     static constexpr const char* ALIAS = NAME;

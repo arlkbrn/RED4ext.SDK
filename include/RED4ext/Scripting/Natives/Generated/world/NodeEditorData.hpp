@@ -17,7 +17,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) NodeEditorData : ISerializable
+struct RED4EXT_ALIGN(0x10) NodeEditorData : ISerializable
 {
     static constexpr const char* NAME = "worldNodeEditorData";
     static constexpr const char* ALIAS = NAME;

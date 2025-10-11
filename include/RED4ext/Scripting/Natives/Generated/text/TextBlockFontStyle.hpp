@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace text
 {
-struct __declspec(align(0x10)) TextBlockFontStyle
+struct RED4EXT_ALIGN(0x10) TextBlockFontStyle
 {
     static constexpr const char* NAME = "textTextBlockFontStyle";
     static constexpr const char* ALIAS = NAME;

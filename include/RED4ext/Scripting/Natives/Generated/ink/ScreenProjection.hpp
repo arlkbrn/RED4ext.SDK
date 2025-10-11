@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace ink
 {
-struct __declspec(align(0x10)) ScreenProjection : IScriptable
+struct RED4EXT_ALIGN(0x10) ScreenProjection : IScriptable
 {
     static constexpr const char* NAME = "inkScreenProjection";
     static constexpr const char* ALIAS = NAME;

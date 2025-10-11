@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) LookAtEvent : scn::SceneEvent
+struct RED4EXT_ALIGN(0x10) LookAtEvent : scn::SceneEvent
 {
     static constexpr const char* NAME = "scnLookAtEvent";
     static constexpr const char* ALIAS = NAME;

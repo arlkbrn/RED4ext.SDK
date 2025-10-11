@@ -16,7 +16,7 @@ namespace anim { struct IAnimationBuffer; }
 
 namespace scn
 {
-struct __declspec(align(0x10)) CameraAnimationRid
+struct RED4EXT_ALIGN(0x10) CameraAnimationRid
 {
     static constexpr const char* NAME = "scnCameraAnimationRid";
     static constexpr const char* ALIAS = NAME;

@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace scn
 {
-struct __declspec(align(0x10)) PoseCorrectionEvent : scn::SceneEvent
+struct RED4EXT_ALIGN(0x10) PoseCorrectionEvent : scn::SceneEvent
 {
     static constexpr const char* NAME = "scnPoseCorrectionEvent";
     static constexpr const char* ALIAS = NAME;

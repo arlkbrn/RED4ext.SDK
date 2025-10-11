@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace scn::events
 {
-struct __declspec(align(0x10)) AttachPropToWorldCachedFallbackBone
+struct RED4EXT_ALIGN(0x10) AttachPropToWorldCachedFallbackBone
 {
     static constexpr const char* NAME = "scneventsAttachPropToWorldCachedFallbackBone";
     static constexpr const char* ALIAS = NAME;

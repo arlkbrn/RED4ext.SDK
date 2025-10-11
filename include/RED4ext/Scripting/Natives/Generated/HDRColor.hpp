@@ -9,7 +9,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) HDRColor
+struct RED4EXT_ALIGN(0x10) HDRColor
 {
     static constexpr const char* NAME = "HDRColor";
     static constexpr const char* ALIAS = NAME;

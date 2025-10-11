@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) AmbientPaletteExclusionAreaNodeInstance : world::AreaShapeNodeInstance
+struct RED4EXT_ALIGN(0x10) AmbientPaletteExclusionAreaNodeInstance : world::AreaShapeNodeInstance
 {
     static constexpr const char* NAME = "worldAmbientPaletteExclusionAreaNodeInstance";
     static constexpr const char* ALIAS = NAME;

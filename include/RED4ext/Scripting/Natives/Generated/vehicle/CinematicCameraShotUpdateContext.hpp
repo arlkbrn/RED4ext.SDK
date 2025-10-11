@@ -17,7 +17,7 @@ namespace vehicle { struct CinematicCameraComponent; }
 
 namespace vehicle
 {
-struct __declspec(align(0x10)) CinematicCameraShotUpdateContext
+struct RED4EXT_ALIGN(0x10) CinematicCameraShotUpdateContext
 {
     static constexpr const char* NAME = "vehicleCinematicCameraShotUpdateContext";
     static constexpr const char* ALIAS = NAME;

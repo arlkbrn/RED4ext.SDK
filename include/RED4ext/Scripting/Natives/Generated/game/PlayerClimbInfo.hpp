@@ -16,7 +16,7 @@ namespace world::geometry { struct DescriptionResult; }
 
 namespace game
 {
-struct __declspec(align(0x10)) PlayerClimbInfo : IScriptable
+struct RED4EXT_ALIGN(0x10) PlayerClimbInfo : IScriptable
 {
     static constexpr const char* NAME = "gamePlayerClimbInfo";
     static constexpr const char* ALIAS = "PlayerClimbInfo";

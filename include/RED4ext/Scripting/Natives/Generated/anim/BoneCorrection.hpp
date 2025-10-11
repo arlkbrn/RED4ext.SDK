@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace anim
 {
-struct __declspec(align(0x10)) BoneCorrection
+struct RED4EXT_ALIGN(0x10) BoneCorrection
 {
     static constexpr const char* NAME = "animBoneCorrection";
     static constexpr const char* ALIAS = NAME;

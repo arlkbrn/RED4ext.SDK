@@ -20,7 +20,7 @@ namespace game::weapon { struct Object; }
 
 namespace game::damage
 {
-struct __declspec(align(0x10)) AttackData : IScriptable
+struct RED4EXT_ALIGN(0x10) AttackData : IScriptable
 {
     static constexpr const char* NAME = "gamedamageAttackData";
     static constexpr const char* ALIAS = "AttackData";

@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) ItemFactorySystem : game::IItemFactorySystem
+struct RED4EXT_ALIGN(0x10) ItemFactorySystem : game::IItemFactorySystem
 {
     static constexpr const char* NAME = "gameItemFactorySystem";
     static constexpr const char* ALIAS = NAME;

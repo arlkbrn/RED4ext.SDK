@@ -11,7 +11,7 @@ namespace RED4ext
 {
 namespace anim
 {
-struct __declspec(align(0x10)) SBehaviorConstraintNodeFloorIKLeg
+struct RED4EXT_ALIGN(0x10) SBehaviorConstraintNodeFloorIKLeg
 {
     static constexpr const char* NAME = "animSBehaviorConstraintNodeFloorIKLeg";
     static constexpr const char* ALIAS = NAME;

@@ -23,7 +23,7 @@ namespace world { struct PrefabMetadata; }
 
 namespace world
 {
-struct __declspec(align(0x10)) NodesGroup : ISerializable
+struct RED4EXT_ALIGN(0x10) NodesGroup : ISerializable
 {
     static constexpr const char* NAME = "worldNodesGroup";
     static constexpr const char* ALIAS = NAME;

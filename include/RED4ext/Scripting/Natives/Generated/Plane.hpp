@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Plane
+struct RED4EXT_ALIGN(0x10) Plane
 {
     static constexpr const char* NAME = "Plane";
     static constexpr const char* ALIAS = NAME;

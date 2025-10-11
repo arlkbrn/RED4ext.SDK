@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) PrefabNodeInstance : world::SnappableNodeInstance
+struct RED4EXT_ALIGN(0x10) PrefabNodeInstance : world::SnappableNodeInstance
 {
     static constexpr const char* NAME = "worldPrefabNodeInstance";
     static constexpr const char* ALIAS = NAME;

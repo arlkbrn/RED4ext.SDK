@@ -19,7 +19,7 @@ struct CMesh;
 
 namespace ent
 {
-struct __declspec(align(0x10)) PhysicalDestructionComponent : ent::IVisualComponent
+struct RED4EXT_ALIGN(0x10) PhysicalDestructionComponent : ent::IVisualComponent
 {
     static constexpr const char* NAME = "entPhysicalDestructionComponent";
     static constexpr const char* ALIAS = "PhysicalDestructionComponent";

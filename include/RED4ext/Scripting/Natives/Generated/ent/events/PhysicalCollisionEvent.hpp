@@ -16,7 +16,7 @@ struct IScriptable;
 
 namespace ent::events
 {
-struct __declspec(align(0x10)) PhysicalCollisionEvent : red::Event
+struct RED4EXT_ALIGN(0x10) PhysicalCollisionEvent : red::Event
 {
     static constexpr const char* NAME = "enteventsPhysicalCollisionEvent";
     static constexpr const char* ALIAS = "PhysicalCollisionEvent";

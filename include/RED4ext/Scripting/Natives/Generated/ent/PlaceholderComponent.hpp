@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) PlaceholderComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) PlaceholderComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "entPlaceholderComponent";
     static constexpr const char* ALIAS = NAME;

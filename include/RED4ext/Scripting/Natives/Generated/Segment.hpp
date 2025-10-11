@@ -10,7 +10,7 @@
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Segment
+struct RED4EXT_ALIGN(0x10) Segment
 {
     static constexpr const char* NAME = "Segment";
     static constexpr const char* ALIAS = NAME;

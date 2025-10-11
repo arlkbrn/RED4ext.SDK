@@ -16,7 +16,7 @@ namespace game { struct Object; }
 
 namespace vehicle
 {
-struct __declspec(align(0x10)) NotifyPassengersOfCollision : red::Event
+struct RED4EXT_ALIGN(0x10) NotifyPassengersOfCollision : red::Event
 {
     static constexpr const char* NAME = "vehicleNotifyPassengersOfCollision";
     static constexpr const char* ALIAS = "VehicleNotifyPassengersOfCollision";

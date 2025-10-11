@@ -17,7 +17,7 @@ namespace RED4ext
 {
 namespace anim
 {
-struct __declspec(align(0x10)) AnimNode_AddIkRequest : anim::AnimNode_OnePoseInput
+struct RED4EXT_ALIGN(0x10) AnimNode_AddIkRequest : anim::AnimNode_OnePoseInput
 {
     static constexpr const char* NAME = "animAnimNode_AddIkRequest";
     static constexpr const char* ALIAS = NAME;

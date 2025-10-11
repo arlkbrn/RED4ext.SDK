@@ -14,7 +14,7 @@ namespace RED4ext
 {
 namespace gen
 {
-struct __declspec(align(0x10)) RandomizationDataEntry
+struct RED4EXT_ALIGN(0x10) RandomizationDataEntry
 {
     static constexpr const char* NAME = "genRandomizationDataEntry";
     static constexpr const char* ALIAS = "RandomizationDataEntry";

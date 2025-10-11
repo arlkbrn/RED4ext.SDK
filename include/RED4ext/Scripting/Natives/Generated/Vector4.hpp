@@ -17,7 +17,7 @@ RED4EXT_ASSERT_SIZE(Vector4, 0x10);
 
 namespace RED4ext
 {
-struct __declspec(align(0x10)) Vector4
+struct RED4EXT_ALIGN(0x10) Vector4
 {
     static constexpr const char* NAME = "Vector4";
     static constexpr const char* ALIAS = NAME;

@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace physics
 {
-struct __declspec(align(0x10)) PhysicsJointDriveVelocity
+struct RED4EXT_ALIGN(0x10) PhysicsJointDriveVelocity
 {
     static constexpr const char* NAME = "physicsPhysicsJointDriveVelocity";
     static constexpr const char* ALIAS = NAME;

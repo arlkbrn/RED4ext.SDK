@@ -35,7 +35,7 @@ struct IRenderResourceBlob;
 namespace mesh { struct MeshAppearance; }
 namespace mesh { struct MeshParameter; }
 
-struct __declspec(align(0x10)) CMesh : res::StreamedResource
+struct RED4EXT_ALIGN(0x10) CMesh : res::StreamedResource
 {
     static constexpr const char* NAME = "CMesh";
     static constexpr const char* ALIAS = NAME;

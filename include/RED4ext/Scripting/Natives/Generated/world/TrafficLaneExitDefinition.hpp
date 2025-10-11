@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) TrafficLaneExitDefinition
+struct RED4EXT_ALIGN(0x10) TrafficLaneExitDefinition
 {
     static constexpr const char* NAME = "worldTrafficLaneExitDefinition";
     static constexpr const char* ALIAS = NAME;

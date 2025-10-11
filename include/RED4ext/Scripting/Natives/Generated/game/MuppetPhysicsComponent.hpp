@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) MuppetPhysicsComponent : game::MuppetComponent
+struct RED4EXT_ALIGN(0x10) MuppetPhysicsComponent : game::MuppetComponent
 {
     static constexpr const char* NAME = "gameMuppetPhysicsComponent";
     static constexpr const char* ALIAS = "MuppetPhysicsComponent";

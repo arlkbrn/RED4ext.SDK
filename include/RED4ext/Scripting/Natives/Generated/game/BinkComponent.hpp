@@ -18,7 +18,7 @@ namespace game { struct BinkMeshTargetBinding; }
 
 namespace game
 {
-struct __declspec(align(0x10)) BinkComponent : ent::IVisualComponent
+struct RED4EXT_ALIGN(0x10) BinkComponent : ent::IVisualComponent
 {
     static constexpr const char* NAME = "gameBinkComponent";
     static constexpr const char* ALIAS = "BinkComponent";

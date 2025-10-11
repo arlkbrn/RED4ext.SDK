@@ -21,7 +21,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) SceneAnimationMotionActionParams : IScriptable
+struct RED4EXT_ALIGN(0x10) SceneAnimationMotionActionParams : IScriptable
 {
     static constexpr const char* NAME = "gameSceneAnimationMotionActionParams";
     static constexpr const char* ALIAS = "SceneAnimationMotionActionParams";

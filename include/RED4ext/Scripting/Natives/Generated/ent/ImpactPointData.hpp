@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) ImpactPointData
+struct RED4EXT_ALIGN(0x10) ImpactPointData
 {
     static constexpr const char* NAME = "entImpactPointData";
     static constexpr const char* ALIAS = "ImpactPointData";

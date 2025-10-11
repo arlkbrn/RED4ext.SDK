@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace ent
 {
-struct __declspec(align(0x10)) AppearanceProxyMeshComponent : ent::PhysicalMeshComponent
+struct RED4EXT_ALIGN(0x10) AppearanceProxyMeshComponent : ent::PhysicalMeshComponent
 {
     static constexpr const char* NAME = "entAppearanceProxyMeshComponent";
     static constexpr const char* ALIAS = NAME;

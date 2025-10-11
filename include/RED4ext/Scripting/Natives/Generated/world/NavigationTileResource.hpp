@@ -17,7 +17,7 @@ namespace RED4ext
 {
 namespace world
 {
-struct __declspec(align(0x10)) NavigationTileResource : res::StreamedResource
+struct RED4EXT_ALIGN(0x10) NavigationTileResource : res::StreamedResource
 {
     static constexpr const char* NAME = "worldNavigationTileResource";
     static constexpr const char* ALIAS = NAME;

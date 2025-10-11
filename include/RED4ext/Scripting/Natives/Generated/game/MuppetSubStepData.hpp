@@ -15,7 +15,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) MuppetSubStepData
+struct RED4EXT_ALIGN(0x10) MuppetSubStepData
 {
     static constexpr const char* NAME = "gameMuppetSubStepData";
     static constexpr const char* ALIAS = NAME;

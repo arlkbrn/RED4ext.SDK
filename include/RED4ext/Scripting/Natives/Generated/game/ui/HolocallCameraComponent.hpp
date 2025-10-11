@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) HolocallCameraComponent : ent::RenderToTextureCameraComponent
+struct RED4EXT_ALIGN(0x10) HolocallCameraComponent : ent::RenderToTextureCameraComponent
 {
     static constexpr const char* NAME = "gameuiHolocallCameraComponent";
     static constexpr const char* ALIAS = NAME;

@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) PingComponent : ent::IPlacedComponent
+struct RED4EXT_ALIGN(0x10) PingComponent : ent::IPlacedComponent
 {
     static constexpr const char* NAME = "gamePingComponent";
     static constexpr const char* ALIAS = "PingComponent";

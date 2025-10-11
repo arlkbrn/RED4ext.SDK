@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace AI
 {
-struct __declspec(align(0x10)) ReactionSystem : AI::IReactionSystem
+struct RED4EXT_ALIGN(0x10) ReactionSystem : AI::IReactionSystem
 {
     static constexpr const char* NAME = "AIReactionSystem";
     static constexpr const char* ALIAS = "ReactionSystem";

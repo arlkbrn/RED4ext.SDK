@@ -22,7 +22,7 @@ namespace world { struct Effect; }
 
 namespace ent::dismemberment
 {
-struct __declspec(align(0x10)) EffectResource : ISerializable
+struct RED4EXT_ALIGN(0x10) EffectResource : ISerializable
 {
     static constexpr const char* NAME = "entdismembermentEffectResource";
     static constexpr const char* ALIAS = NAME;

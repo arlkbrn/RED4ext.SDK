@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace game::ui
 {
-struct __declspec(align(0x10)) MinimapHazardWarningMappinController : game::ui::BaseMinimapMappinController
+struct RED4EXT_ALIGN(0x10) MinimapHazardWarningMappinController : game::ui::BaseMinimapMappinController
 {
     static constexpr const char* NAME = "gameuiMinimapHazardWarningMappinController";
     static constexpr const char* ALIAS = "MinimapHazardWarningMappinController";

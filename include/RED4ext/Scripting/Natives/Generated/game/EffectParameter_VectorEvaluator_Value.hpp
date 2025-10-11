@@ -13,7 +13,7 @@ namespace RED4ext
 {
 namespace game
 {
-struct __declspec(align(0x10)) EffectParameter_VectorEvaluator_Value : game::IEffectParameter_VectorEvaluator
+struct RED4EXT_ALIGN(0x10) EffectParameter_VectorEvaluator_Value : game::IEffectParameter_VectorEvaluator
 {
     static constexpr const char* NAME = "gameEffectParameter_VectorEvaluator_Value";
     static constexpr const char* ALIAS = NAME;

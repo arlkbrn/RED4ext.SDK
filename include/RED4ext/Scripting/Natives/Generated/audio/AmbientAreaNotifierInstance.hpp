@@ -12,7 +12,7 @@ namespace RED4ext
 {
 namespace audio
 {
-struct __declspec(align(0x10)) AmbientAreaNotifierInstance : world::ITriggerAreaNotiferInstance
+struct RED4EXT_ALIGN(0x10) AmbientAreaNotifierInstance : world::ITriggerAreaNotiferInstance
 {
     static constexpr const char* NAME = "audioAmbientAreaNotifierInstance";
     static constexpr const char* ALIAS = NAME;
