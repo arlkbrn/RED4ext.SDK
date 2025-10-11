@@ -2,6 +2,8 @@
 
 #if defined(_WIN32)
 #include <RED4ext/win/ResourceLoader.hpp>
+#elif defined(__APPLE__)
+#include <RED4ext/mac/ResourceLoader.hpp>
 #else
 #error Unsupported platform
 #endif

@@ -2,6 +2,8 @@
 
 #if defined(_WIN32)
 #include <RED4ext/win/Span.hpp>
+#elif defined(__APPLE__)
+#include <RED4ext/mac/Span.hpp>
 #else
 #error Unsupported platform
 #endif

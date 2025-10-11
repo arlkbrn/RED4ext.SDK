@@ -2,6 +2,8 @@
 
 #if defined(_WIN32)
 #include <RED4ext/win/LaunchParameters.hpp>
+#elif defined(__APPLE__)
+#include <RED4ext/mac/LaunchParameters.hpp>
 #else
 #error Unsupported platform
 #endif

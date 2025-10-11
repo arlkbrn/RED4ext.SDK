@@ -2,6 +2,8 @@
 
 #if defined(_WIN32)
 #include <RED4ext/Dump/win/Reflection-inl.hpp>
+#elif defined(__APPLE__)
+#include <RED4ext/Dump/mac/Reflection-inl.hpp>
 #else
 #error Unsupported platform
 #endif
