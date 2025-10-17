@@ -18,26 +18,6 @@ protected:
     }
 };
 
-struct GamepadObserverPool : TPoolInfo<GamepadObserverPool>
-{
-    static constexpr auto Name = "GamepadObserverPool";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInputInternal : TPoolInfo<PoolInputInternal>
-{
-    static constexpr auto Name = "PoolInputInternal";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
 struct PoolRoot : TPoolInfo<PoolRoot>
 {
     static constexpr auto Name = "PoolRoot";
@@ -228,36 +208,6 @@ struct PoolScriptDebugger : TPoolInfo<PoolScriptDebugger>
     }
 };
 
-struct PoolLibTree : TPoolInfo<PoolLibTree>
-{
-    static constexpr auto Name = "PoolLibTree";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI : TPoolInfo<PoolAI>
-{
-    static constexpr auto Name = "PoolAI";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTelemetry : TPoolInfo<PoolTelemetry>
-{
-    static constexpr auto Name = "PoolTelemetry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
 struct PoolPhysics : TPoolInfo<PoolPhysics>
 {
     static constexpr auto Name = "PoolPhysics";
@@ -438,2536 +388,6 @@ struct PoolPhysicsCloth : TPoolInfo<PoolPhysicsCloth>
     }
 };
 
-struct PoolRTTI : TPoolInfo<PoolRTTI>
-{
-    static constexpr auto Name = "PoolRTTI";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRTTIFunction : TPoolInfo<PoolRTTIFunction>
-{
-    static constexpr auto Name = "PoolRTTIFunction";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRTTIProperty : TPoolInfo<PoolRTTIProperty>
-{
-    static constexpr auto Name = "PoolRTTIProperty";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTriggers : TPoolInfo<PoolTriggers>
-{
-    static constexpr auto Name = "PoolTriggers";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSpline : TPoolInfo<PoolSpline>
-{
-    static constexpr auto Name = "PoolSpline";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolCurves : TPoolInfo<PoolCurves>
-{
-    static constexpr auto Name = "PoolCurves";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAreas : TPoolInfo<PoolAreas>
-{
-    static constexpr auto Name = "PoolAreas";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEffect : TPoolInfo<PoolEffect>
-{
-    static constexpr auto Name = "PoolEffect";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolIDRegistry : TPoolInfo<PoolIDRegistry>
-{
-    static constexpr auto Name = "PoolIDRegistry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEvents : TPoolInfo<PoolEvents>
-{
-    static constexpr auto Name = "PoolEvents";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEvent : TPoolInfo<PoolEvent>
-{
-    static constexpr auto Name = "PoolEvent";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEventBroker : TPoolInfo<PoolEventBroker>
-{
-    static constexpr auto Name = "PoolEventBroker";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSerializable : TPoolInfo<PoolSerializable>
-{
-    static constexpr auto Name = "PoolSerializable";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolResource : TPoolInfo<PoolResource>
-{
-    static constexpr auto Name = "PoolResource";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolResourceLoadingJobs : TPoolInfo<PoolResourceLoadingJobs>
-{
-    static constexpr auto Name = "PoolResourceLoadingJobs";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInterop : TPoolInfo<PoolInterop>
-{
-    static constexpr auto Name = "PoolInterop";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolString : TPoolInfo<PoolString>
-{
-    static constexpr auto Name = "PoolString";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNetworkServices : TPoolInfo<PoolNetworkServices>
-{
-    static constexpr auto Name = "PoolNetworkServices";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolUI : TPoolInfo<PoolUI>
-{
-    static constexpr auto Name = "PoolUI";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk : TPoolInfo<PoolInk>
-{
-    static constexpr auto Name = "PoolInk";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Uncategorized : TPoolInfo<PoolInk_Uncategorized>
-{
-    static constexpr auto Name = "PoolInk_Uncategorized";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Widgets : TPoolInfo<PoolInk_Widgets>
-{
-    static constexpr auto Name = "PoolInk_Widgets";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Library : TPoolInfo<PoolInk_Library>
-{
-    static constexpr auto Name = "PoolInk_Library";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Events : TPoolInfo<PoolInk_Events>
-{
-    static constexpr auto Name = "PoolInk_Events";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Binding : TPoolInfo<PoolInk_Binding>
-{
-    static constexpr auto Name = "PoolInk_Binding";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Animations : TPoolInfo<PoolInk_Animations>
-{
-    static constexpr auto Name = "PoolInk_Animations";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Rendering : TPoolInfo<PoolInk_Rendering>
-{
-    static constexpr auto Name = "PoolInk_Rendering";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Effects : TPoolInfo<PoolInk_Effects>
-{
-    static constexpr auto Name = "PoolInk_Effects";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Brushes : TPoolInfo<PoolInk_Brushes>
-{
-    static constexpr auto Name = "PoolInk_Brushes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Styles : TPoolInfo<PoolInk_Styles>
-{
-    static constexpr auto Name = "PoolInk_Styles";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Controllers : TPoolInfo<PoolInk_Controllers>
-{
-    static constexpr auto Name = "PoolInk_Controllers";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers : TPoolInfo<PoolInk_Layers>
-{
-    static constexpr auto Name = "PoolInk_Layers";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_StateMachine : TPoolInfo<PoolInk_Layers_StateMachine>
-{
-    static constexpr auto Name = "PoolInk_Layers_StateMachine";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_WorldLayer : TPoolInfo<PoolInk_Layers_WorldLayer>
-{
-    static constexpr auto Name = "PoolInk_Layers_WorldLayer";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_MenuLayer : TPoolInfo<PoolInk_Layers_MenuLayer>
-{
-    static constexpr auto Name = "PoolInk_Layers_MenuLayer";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_LoadingScreen : TPoolInfo<PoolInk_Layers_LoadingScreen>
-{
-    static constexpr auto Name = "PoolInk_Layers_LoadingScreen";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_SystemNotificati : TPoolInfo<PoolInk_Layers_SystemNotificati>
-{
-    static constexpr auto Name = "PoolInk_Layers_SystemNotificati";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_GameNotification : TPoolInfo<PoolInk_Layers_GameNotification>
-{
-    static constexpr auto Name = "PoolInk_Layers_GameNotification";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_ViewportWrapper : TPoolInfo<PoolInk_Layers_ViewportWrapper>
-{
-    static constexpr auto Name = "PoolInk_Layers_ViewportWrapper";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Layers_EventBroker : TPoolInfo<PoolInk_Layers_EventBroker>
-{
-    static constexpr auto Name = "PoolInk_Layers_EventBroker";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Jobs : TPoolInfo<PoolInk_Jobs>
-{
-    static constexpr auto Name = "PoolInk_Jobs";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Text : TPoolInfo<PoolInk_Text>
-{
-    static constexpr auto Name = "PoolInk_Text";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_HitTest : TPoolInfo<PoolInk_HitTest>
-{
-    static constexpr auto Name = "PoolInk_HitTest";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_System : TPoolInfo<PoolInk_System>
-{
-    static constexpr auto Name = "PoolInk_System";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Scripts : TPoolInfo<PoolInk_Scripts>
-{
-    static constexpr auto Name = "PoolInk_Scripts";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Mappins : TPoolInfo<PoolInk_Mappins>
-{
-    static constexpr auto Name = "PoolInk_Mappins";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_MinimapGeometry : TPoolInfo<PoolInk_MinimapGeometry>
-{
-    static constexpr auto Name = "PoolInk_MinimapGeometry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Offscreen : TPoolInfo<PoolInk_Offscreen>
-{
-    static constexpr auto Name = "PoolInk_Offscreen";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Spawning : TPoolInfo<PoolInk_Spawning>
-{
-    static constexpr auto Name = "PoolInk_Spawning";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Resources : TPoolInfo<PoolInk_Resources>
-{
-    static constexpr auto Name = "PoolInk_Resources";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Videos : TPoolInfo<PoolInk_Videos>
-{
-    static constexpr auto Name = "PoolInk_Videos";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Backend : TPoolInfo<PoolInk_Backend>
-{
-    static constexpr auto Name = "PoolInk_Backend";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInk_Debug : TPoolInfo<PoolInk_Debug>
-{
-    static constexpr auto Name = "PoolInk_Debug";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNetworkSessionRecordingTool : TPoolInfo<PoolNetworkSessionRecordingTool>
-{
-    static constexpr auto Name = "PoolNetworkSessionRecordingTool";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNetwork : TPoolInfo<PoolNetwork>
-{
-    static constexpr auto Name = "PoolNetwork";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMultiplayer : TPoolInfo<PoolMultiplayer>
-{
-    static constexpr auto Name = "PoolMultiplayer";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTexture : TPoolInfo<PoolTexture>
-{
-    static constexpr auto Name = "PoolTexture";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMesh : TPoolInfo<PoolMesh>
-{
-    static constexpr auto Name = "PoolMesh";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolBink : TPoolInfo<PoolBink>
-{
-    static constexpr auto Name = "PoolBink";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFont : TPoolInfo<PoolFont>
-{
-    static constexpr auto Name = "PoolFont";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFreeType : TPoolInfo<PoolFreeType>
-{
-    static constexpr auto Name = "PoolFreeType";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFontCache : TPoolInfo<PoolFontCache>
-{
-    static constexpr auto Name = "PoolFontCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolGlyphCache : TPoolInfo<PoolGlyphCache>
-{
-    static constexpr auto Name = "PoolGlyphCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderDebug : TPoolInfo<PoolRenderDebug>
-{
-    static constexpr auto Name = "PoolRenderDebug";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolGIDebug : TPoolInfo<PoolGIDebug>
-{
-    static constexpr auto Name = "PoolGIDebug";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolGPUProfiling : TPoolInfo<PoolGPUProfiling>
-{
-    static constexpr auto Name = "PoolGPUProfiling";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRendering_ : TPoolInfo<PoolRendering_>
-{
-    static constexpr auto Name = "PoolRendering_";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFrameRendering : TPoolInfo<PoolFrameRendering>
-{
-    static constexpr auto Name = "PoolFrameRendering";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDoubleBufferedFrameRenderin : TPoolInfo<PoolDoubleBufferedFrameRenderin>
-{
-    static constexpr auto Name = "PoolDoubleBufferedFrameRenderin";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderingCore : TPoolInfo<PoolRenderingCore>
-{
-    static constexpr auto Name = "PoolRenderingCore";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSurfaceCache : TPoolInfo<PoolSurfaceCache>
-{
-    static constexpr auto Name = "PoolSurfaceCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolShaderCache : TPoolInfo<PoolShaderCache>
-{
-    static constexpr auto Name = "PoolShaderCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolShaderCacheShaders : TPoolInfo<PoolShaderCacheShaders>
-{
-    static constexpr auto Name = "PoolShaderCacheShaders";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolShaderCacheData : TPoolInfo<PoolShaderCacheData>
-{
-    static constexpr auto Name = "PoolShaderCacheData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolShaderCompilation : TPoolInfo<PoolShaderCompilation>
-{
-    static constexpr auto Name = "PoolShaderCompilation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolPSO : TPoolInfo<PoolPSO>
-{
-    static constexpr auto Name = "PoolPSO";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolShaderCacheData_ShaderBinar : TPoolInfo<PoolShaderCacheData_ShaderBinar>
-{
-    static constexpr auto Name = "PoolShaderCacheData_ShaderBinar";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderProxy : TPoolInfo<PoolRenderProxy>
-{
-    static constexpr auto Name = "PoolRenderProxy";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderProxyInternals_Mesh : TPoolInfo<PoolRenderProxyInternals_Mesh>
-{
-    static constexpr auto Name = "PoolRenderProxyInternals_Mesh";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderProxy_CustomData : TPoolInfo<PoolRenderProxy_CustomData>
-{
-    static constexpr auto Name = "PoolRenderProxy_CustomData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderProxy_InstanceData : TPoolInfo<PoolRenderProxy_InstanceData>
-{
-    static constexpr auto Name = "PoolRenderProxy_InstanceData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderProxy_Handles : TPoolInfo<PoolRenderProxy_Handles>
-{
-    static constexpr auto Name = "PoolRenderProxy_Handles";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderResources : TPoolInfo<PoolRenderResources>
-{
-    static constexpr auto Name = "PoolRenderResources";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderMesh : TPoolInfo<PoolRenderMesh>
-{
-    static constexpr auto Name = "PoolRenderMesh";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderDynamicTexture : TPoolInfo<PoolRenderDynamicTexture>
-{
-    static constexpr auto Name = "PoolRenderDynamicTexture";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMaterials : TPoolInfo<PoolMaterials>
-{
-    static constexpr auto Name = "PoolMaterials";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderMaterial : TPoolInfo<PoolRenderMaterial>
-{
-    static constexpr auto Name = "PoolRenderMaterial";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMaterialTechniques : TPoolInfo<PoolMaterialTechniques>
-{
-    static constexpr auto Name = "PoolMaterialTechniques";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMaterialStagePassData : TPoolInfo<PoolMaterialStagePassData>
-{
-    static constexpr auto Name = "PoolMaterialStagePassData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMaterialStagePassCache : TPoolInfo<PoolMaterialStagePassCache>
-{
-    static constexpr auto Name = "PoolMaterialStagePassCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderMaterialParams : TPoolInfo<PoolRenderMaterialParams>
-{
-    static constexpr auto Name = "PoolRenderMaterialParams";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMaterialExtractedData : TPoolInfo<PoolMaterialExtractedData>
-{
-    static constexpr auto Name = "PoolMaterialExtractedData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMaterialModifier : TPoolInfo<PoolMaterialModifier>
-{
-    static constexpr auto Name = "PoolMaterialModifier";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDecals : TPoolInfo<PoolDecals>
-{
-    static constexpr auto Name = "PoolDecals";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolParticleData : TPoolInfo<PoolParticleData>
-{
-    static constexpr auto Name = "PoolParticleData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderGraph : TPoolInfo<PoolRenderGraph>
-{
-    static constexpr auto Name = "PoolRenderGraph";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFlowAllocator : TPoolInfo<PoolFlowAllocator>
-{
-    static constexpr auto Name = "PoolFlowAllocator";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolVideoPlayer : TPoolInfo<PoolVideoPlayer>
-{
-    static constexpr auto Name = "PoolVideoPlayer";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderData : TPoolInfo<PoolRenderData>
-{
-    static constexpr auto Name = "PoolRenderData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolGI : TPoolInfo<PoolGI>
-{
-    static constexpr auto Name = "PoolGI";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderBlobs : TPoolInfo<PoolRenderBlobs>
-{
-    static constexpr auto Name = "PoolRenderBlobs";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderBlobsBuffers : TPoolInfo<PoolRenderBlobsBuffers>
-{
-    static constexpr auto Name = "PoolRenderBlobsBuffers";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderScene : TPoolInfo<PoolRenderScene>
-{
-    static constexpr auto Name = "PoolRenderScene";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderScene_Proxies : TPoolInfo<PoolRenderScene_Proxies>
-{
-    static constexpr auto Name = "PoolRenderScene_Proxies";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderScene_ProxyData : TPoolInfo<PoolRenderScene_ProxyData>
-{
-    static constexpr auto Name = "PoolRenderScene_ProxyData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderScene_PendingOps : TPoolInfo<PoolRenderScene_PendingOps>
-{
-    static constexpr auto Name = "PoolRenderScene_PendingOps";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderScene_RuntimeSystem : TPoolInfo<PoolRenderScene_RuntimeSystem>
-{
-    static constexpr auto Name = "PoolRenderScene_RuntimeSystem";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolVisBVH : TPoolInfo<PoolVisBVH>
-{
-    static constexpr auto Name = "PoolVisBVH";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSkinningData : TPoolInfo<PoolSkinningData>
-{
-    static constexpr auto Name = "PoolSkinningData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFrameInfo : TPoolInfo<PoolFrameInfo>
-{
-    static constexpr auto Name = "PoolFrameInfo";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFoliage : TPoolInfo<PoolFoliage>
-{
-    static constexpr auto Name = "PoolFoliage";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolBatchers : TPoolInfo<PoolBatchers>
-{
-    static constexpr auto Name = "PoolBatchers";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderCommandHandler : TPoolInfo<PoolRenderCommandHandler>
-{
-    static constexpr auto Name = "PoolRenderCommandHandler";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolPostProcessAndEffects : TPoolInfo<PoolPostProcessAndEffects>
-{
-    static constexpr auto Name = "PoolPostProcessAndEffects";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEnvironment : TPoolInfo<PoolEnvironment>
-{
-    static constexpr auto Name = "PoolEnvironment";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolImageProcessing : TPoolInfo<PoolImageProcessing>
-{
-    static constexpr auto Name = "PoolImageProcessing";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRenderingUI : TPoolInfo<PoolRenderingUI>
-{
-    static constexpr auto Name = "PoolRenderingUI";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolReflectionProbes : TPoolInfo<PoolReflectionProbes>
-{
-    static constexpr auto Name = "PoolReflectionProbes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolLighting : TPoolInfo<PoolLighting>
-{
-    static constexpr auto Name = "PoolLighting";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDataRegistry : TPoolInfo<PoolDataRegistry>
-{
-    static constexpr auto Name = "PoolDataRegistry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolCameras : TPoolInfo<PoolCameras>
-{
-    static constexpr auto Name = "PoolCameras";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolRaytrace : TPoolInfo<PoolRaytrace>
-{
-    static constexpr auto Name = "PoolRaytrace";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolVisibilitySystem : TPoolInfo<PoolVisibilitySystem>
-{
-    static constexpr auto Name = "PoolVisibilitySystem";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolVisibilityScene : TPoolInfo<PoolVisibilityScene>
-{
-    static constexpr auto Name = "PoolVisibilityScene";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolOccluderShapes : TPoolInfo<PoolOccluderShapes>
-{
-    static constexpr auto Name = "PoolOccluderShapes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering : TPoolInfo<PoolInkRendering>
-{
-    static constexpr auto Name = "PoolInkRendering";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_Uncategorized : TPoolInfo<PoolInkRendering_Uncategorized>
-{
-    static constexpr auto Name = "PoolInkRendering_Uncategorized";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_OneFrameRender : TPoolInfo<PoolInkRendering_OneFrameRender>
-{
-    static constexpr auto Name = "PoolInkRendering_OneFrameRender";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_Effects : TPoolInfo<PoolInkRendering_Effects>
-{
-    static constexpr auto Name = "PoolInkRendering_Effects";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_Math : TPoolInfo<PoolInkRendering_Math>
-{
-    static constexpr auto Name = "PoolInkRendering_Math";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_Text : TPoolInfo<PoolInkRendering_Text>
-{
-    static constexpr auto Name = "PoolInkRendering_Text";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_World : TPoolInfo<PoolInkRendering_World>
-{
-    static constexpr auto Name = "PoolInkRendering_World";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_Textures : TPoolInfo<PoolInkRendering_Textures>
-{
-    static constexpr auto Name = "PoolInkRendering_Textures";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_FSCComposition : TPoolInfo<PoolInkRendering_FSCComposition>
-{
-    static constexpr auto Name = "PoolInkRendering_FSCComposition";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_Composition : TPoolInfo<PoolInkRendering_Composition>
-{
-    static constexpr auto Name = "PoolInkRendering_Composition";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInkRendering_DrawStack : TPoolInfo<PoolInkRendering_DrawStack>
-{
-    static constexpr auto Name = "PoolInkRendering_DrawStack";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Behaviour : TPoolInfo<PoolAI_Behaviour>
-{
-    static constexpr auto Name = "PoolAI_Behaviour";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Instances : TPoolInfo<PoolAI_Instances>
-{
-    static constexpr auto Name = "PoolAI_Instances";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Script : TPoolInfo<PoolAI_Script>
-{
-    static constexpr auto Name = "PoolAI_Script";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Systems : TPoolInfo<PoolAI_Systems>
-{
-    static constexpr auto Name = "PoolAI_Systems";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Attitudes : TPoolInfo<PoolAI_Attitudes>
-{
-    static constexpr auto Name = "PoolAI_Attitudes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_InfluenceMap : TPoolInfo<PoolAI_InfluenceMap>
-{
-    static constexpr auto Name = "PoolAI_InfluenceMap";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SmartObjects : TPoolInfo<PoolAI_SmartObjects>
-{
-    static constexpr auto Name = "PoolAI_SmartObjects";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Senses : TPoolInfo<PoolAI_Senses>
-{
-    static constexpr auto Name = "PoolAI_Senses";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Components : TPoolInfo<PoolAI_Components>
-{
-    static constexpr auto Name = "PoolAI_Components";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolComponent : TPoolInfo<PoolComponent>
-{
-    static constexpr auto Name = "PoolComponent";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Movement : TPoolInfo<PoolAI_Movement>
-{
-    static constexpr auto Name = "PoolAI_Movement";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_MovementPolicies : TPoolInfo<PoolAI_MovementPolicies>
-{
-    static constexpr auto Name = "PoolAI_MovementPolicies";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Workspots : TPoolInfo<PoolAI_Workspots>
-{
-    static constexpr auto Name = "PoolAI_Workspots";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_GuardAreas : TPoolInfo<PoolAI_GuardAreas>
-{
-    static constexpr auto Name = "PoolAI_GuardAreas";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_TargetTracking : TPoolInfo<PoolAI_TargetTracking>
-{
-    static constexpr auto Name = "PoolAI_TargetTracking";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_TweakActions : TPoolInfo<PoolAI_TweakActions>
-{
-    static constexpr auto Name = "PoolAI_TweakActions";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Vehicles : TPoolInfo<PoolAI_Vehicles>
-{
-    static constexpr auto Name = "PoolAI_Vehicles";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_Legacy : TPoolInfo<PoolAI_Legacy>
-{
-    static constexpr auto Name = "PoolAI_Legacy";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SORuntimeData : TPoolInfo<PoolAI_SORuntimeData>
-{
-    static constexpr auto Name = "PoolAI_SORuntimeData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SOCompiledResources : TPoolInfo<PoolAI_SOCompiledResources>
-{
-    static constexpr auto Name = "PoolAI_SOCompiledResources";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SOCovers : TPoolInfo<PoolAI_SOCovers>
-{
-    static constexpr auto Name = "PoolAI_SOCovers";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SOAnimDB : TPoolInfo<PoolAI_SOAnimDB>
-{
-    static constexpr auto Name = "PoolAI_SOAnimDB";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SONodes : TPoolInfo<PoolAI_SONodes>
-{
-    static constexpr auto Name = "PoolAI_SONodes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAI_SORawResources : TPoolInfo<PoolAI_SORawResources>
-{
-    static constexpr auto Name = "PoolAI_SORawResources";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct Pool_DebugContexts : TPoolInfo<Pool_DebugContexts>
-{
-    static constexpr auto Name = "Pool_DebugContexts";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolJSON : TPoolInfo<PoolJSON>
-{
-    static constexpr auto Name = "PoolJSON";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolScenes : TPoolInfo<PoolScenes>
-{
-    static constexpr auto Name = "PoolScenes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSceneSystem : TPoolInfo<PoolSceneSystem>
-{
-    static constexpr auto Name = "PoolSceneSystem";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSceneResources : TPoolInfo<PoolSceneResources>
-{
-    static constexpr auto Name = "PoolSceneResources";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolHTTP : TPoolInfo<PoolHTTP>
-{
-    static constexpr auto Name = "PoolHTTP";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolHTTP_Curl : TPoolInfo<PoolHTTP_Curl>
-{
-    static constexpr auto Name = "PoolHTTP_Curl";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolHTTP_UWP : TPoolInfo<PoolHTTP_UWP>
-{
-    static constexpr auto Name = "PoolHTTP_UWP";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolHTTP_PS4 : TPoolInfo<PoolHTTP_PS4>
-{
-    static constexpr auto Name = "PoolHTTP_PS4";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNode : TPoolInfo<PoolNode>
-{
-    static constexpr auto Name = "PoolNode";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTicket : TPoolInfo<PoolTicket>
-{
-    static constexpr auto Name = "PoolTicket";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolFoliageNode : TPoolInfo<PoolFoliageNode>
-{
-    static constexpr auto Name = "PoolFoliageNode";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInteriorMap : TPoolInfo<PoolInteriorMap>
-{
-    static constexpr auto Name = "PoolInteriorMap";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMinimap : TPoolInfo<PoolMinimap>
-{
-    static constexpr auto Name = "PoolMinimap";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolWeather : TPoolInfo<PoolWeather>
-{
-    static constexpr auto Name = "PoolWeather";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMarker : TPoolInfo<PoolMarker>
-{
-    static constexpr auto Name = "PoolMarker";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNodeSource : TPoolInfo<PoolNodeSource>
-{
-    static constexpr auto Name = "PoolNodeSource";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNodeInstance : TPoolInfo<PoolNodeInstance>
-{
-    static constexpr auto Name = "PoolNodeInstance";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolIDPathRegistry : TPoolInfo<PoolIDPathRegistry>
-{
-    static constexpr auto Name = "PoolIDPathRegistry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolIDStringRegistry : TPoolInfo<PoolIDStringRegistry>
-{
-    static constexpr auto Name = "PoolIDStringRegistry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolIDStringBuffer : TPoolInfo<PoolIDStringBuffer>
-{
-    static constexpr auto Name = "PoolIDStringBuffer";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolCompiledSetupInfo : TPoolInfo<PoolCompiledSetupInfo>
-{
-    static constexpr auto Name = "PoolCompiledSetupInfo";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMeshLocalBoundsCache : TPoolInfo<PoolMeshLocalBoundsCache>
-{
-    static constexpr auto Name = "PoolMeshLocalBoundsCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolStreamingQuery : TPoolInfo<PoolStreamingQuery>
-{
-    static constexpr auto Name = "PoolStreamingQuery";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSaveData : TPoolInfo<PoolSaveData>
-{
-    static constexpr auto Name = "PoolSaveData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolGameServices : TPoolInfo<PoolGameServices>
-{
-    static constexpr auto Name = "PoolGameServices";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolMultiplayerServer : TPoolInfo<PoolMultiplayerServer>
-{
-    static constexpr auto Name = "PoolMultiplayerServer";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolArchive : TPoolInfo<PoolArchive>
-{
-    static constexpr auto Name = "PoolArchive";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityResource : TPoolInfo<PoolEntityResource>
-{
-    static constexpr auto Name = "PoolEntityResource";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityAssembler : TPoolInfo<PoolEntityAssembler>
-{
-    static constexpr auto Name = "PoolEntityAssembler";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityAppearance : TPoolInfo<PoolEntityAppearance>
-{
-    static constexpr auto Name = "PoolEntityAppearance";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityParameters : TPoolInfo<PoolEntityParameters>
-{
-    static constexpr auto Name = "PoolEntityParameters";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityParameterGarment : TPoolInfo<PoolEntityParameterGarment>
-{
-    static constexpr auto Name = "PoolEntityParameterGarment";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityParameterCorpse : TPoolInfo<PoolEntityParameterCorpse>
-{
-    static constexpr auto Name = "PoolEntityParameterCorpse";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntityParameterHitRepresent : TPoolInfo<PoolEntityParameterHitRepresent>
-{
-    static constexpr auto Name = "PoolEntityParameterHitRepresent";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolEntity : TPoolInfo<PoolEntity>
-{
-    static constexpr auto Name = "PoolEntity";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDismemberment : TPoolInfo<PoolDismemberment>
-{
-    static constexpr auto Name = "PoolDismemberment";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDismemberment_DataBase : TPoolInfo<PoolDismemberment_DataBase>
-{
-    static constexpr auto Name = "PoolDismemberment_DataBase";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDismemberment_Lookup : TPoolInfo<PoolDismemberment_Lookup>
-{
-    static constexpr auto Name = "PoolDismemberment_Lookup";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolDismemberment_RenderData : TPoolInfo<PoolDismemberment_RenderData>
-{
-    static constexpr auto Name = "PoolDismemberment_RenderData";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNavigation : TPoolInfo<PoolNavigation>
-{
-    static constexpr auto Name = "PoolNavigation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNavmeshNavigation : TPoolInfo<PoolNavmeshNavigation>
-{
-    static constexpr auto Name = "PoolNavmeshNavigation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolPathfindingNavigation : TPoolInfo<PoolPathfindingNavigation>
-{
-    static constexpr auto Name = "PoolPathfindingNavigation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficNavigation : TPoolInfo<PoolTrafficNavigation>
-{
-    static constexpr auto Name = "PoolTrafficNavigation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInfluenceMapNavigation : TPoolInfo<PoolInfluenceMapNavigation>
-{
-    static constexpr auto Name = "PoolInfluenceMapNavigation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolOffmeshlinkNavigation : TPoolInfo<PoolOffmeshlinkNavigation>
-{
-    static constexpr auto Name = "PoolOffmeshlinkNavigation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNavigationComponents : TPoolInfo<PoolNavigationComponents>
-{
-    static constexpr auto Name = "PoolNavigationComponents";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNavigationScripts : TPoolInfo<PoolNavigationScripts>
-{
-    static constexpr auto Name = "PoolNavigationScripts";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficLanes : TPoolInfo<PoolTrafficLanes>
-{
-    static constexpr auto Name = "PoolTrafficLanes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficStaticCollisions : TPoolInfo<PoolTrafficStaticCollisions>
-{
-    static constexpr auto Name = "PoolTrafficStaticCollisions";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficDynamicCollisions : TPoolInfo<PoolTrafficDynamicCollisions>
-{
-    static constexpr auto Name = "PoolTrafficDynamicCollisions";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficCrowdAvoidance : TPoolInfo<PoolTrafficCrowdAvoidance>
-{
-    static constexpr auto Name = "PoolTrafficCrowdAvoidance";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficCrowdPaths : TPoolInfo<PoolTrafficCrowdPaths>
-{
-    static constexpr auto Name = "PoolTrafficCrowdPaths";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficCrowdMarbles : TPoolInfo<PoolTrafficCrowdMarbles>
-{
-    static constexpr auto Name = "PoolTrafficCrowdMarbles";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficCrowdLocomotion : TPoolInfo<PoolTrafficCrowdLocomotion>
-{
-    static constexpr auto Name = "PoolTrafficCrowdLocomotion";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficSlots : TPoolInfo<PoolTrafficSlots>
-{
-    static constexpr auto Name = "PoolTrafficSlots";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficSpots : TPoolInfo<PoolTrafficSpots>
-{
-    static constexpr auto Name = "PoolTrafficSpots";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficGrid : TPoolInfo<PoolTrafficGrid>
-{
-    static constexpr auto Name = "PoolTrafficGrid";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficNullAreas : TPoolInfo<PoolTrafficNullAreas>
-{
-    static constexpr auto Name = "PoolTrafficNullAreas";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficPersistentLanes : TPoolInfo<PoolTrafficPersistentLanes>
-{
-    static constexpr auto Name = "PoolTrafficPersistentLanes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficCollisionMap : TPoolInfo<PoolTrafficCollisionMap>
-{
-    static constexpr auto Name = "PoolTrafficCollisionMap";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficLookup : TPoolInfo<PoolTrafficLookup>
-{
-    static constexpr auto Name = "PoolTrafficLookup";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficDynamicMovement : TPoolInfo<PoolTrafficDynamicMovement>
-{
-    static constexpr auto Name = "PoolTrafficDynamicMovement";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficDynamicMovement_Pede : TPoolInfo<PoolTrafficDynamicMovement_Pede>
-{
-    static constexpr auto Name = "PoolTrafficDynamicMovement_Pede";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficDynamicMovement_Vehi : TPoolInfo<PoolTrafficDynamicMovement_Vehi>
-{
-    static constexpr auto Name = "PoolTrafficDynamicMovement_Vehi";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct TDM_V_Representation : TPoolInfo<TDM_V_Representation>
-{
-    static constexpr auto Name = "TDM_V_Representation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct TDM_V_Segments : TPoolInfo<TDM_V_Segments>
-{
-    static constexpr auto Name = "TDM_V_Segments";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct TDM_V_Lookups : TPoolInfo<TDM_V_Lookups>
-{
-    static constexpr auto Name = "TDM_V_Lookups";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct TDM_P_Representation : TPoolInfo<TDM_P_Representation>
-{
-    static constexpr auto Name = "TDM_P_Representation";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolNavigationDebug : TPoolInfo<PoolNavigationDebug>
-{
-    static constexpr auto Name = "PoolNavigationDebug";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolTrafficDebug : TPoolInfo<PoolTrafficDebug>
-{
-    static constexpr auto Name = "PoolTrafficDebug";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText : TPoolInfo<PoolText>
-{
-    static constexpr auto Name = "PoolText";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_RichDecorator : TPoolInfo<PoolText_RichDecorator>
-{
-    static constexpr auto Name = "PoolText_RichDecorator";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Markup : TPoolInfo<PoolText_Markup>
-{
-    static constexpr auto Name = "PoolText_Markup";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Layout : TPoolInfo<PoolText_Layout>
-{
-    static constexpr auto Name = "PoolText_Layout";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Layout_Break : TPoolInfo<PoolText_Layout_Break>
-{
-    static constexpr auto Name = "PoolText_Layout_Break";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Layout_Block : TPoolInfo<PoolText_Layout_Block>
-{
-    static constexpr auto Name = "PoolText_Layout_Block";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Layout_Model : TPoolInfo<PoolText_Layout_Model>
-{
-    static constexpr auto Name = "PoolText_Layout_Model";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Layout_View : TPoolInfo<PoolText_Layout_View>
-{
-    static constexpr auto Name = "PoolText_Layout_View";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Layout_Direction : TPoolInfo<PoolText_Layout_Direction>
-{
-    static constexpr auto Name = "PoolText_Layout_Direction";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Shaper : TPoolInfo<PoolText_Shaper>
-{
-    static constexpr auto Name = "PoolText_Shaper";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Typography : TPoolInfo<PoolText_Typography>
-{
-    static constexpr auto Name = "PoolText_Typography";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Font : TPoolInfo<PoolText_Font>
-{
-    static constexpr auto Name = "PoolText_Font";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Formatter : TPoolInfo<PoolText_Formatter>
-{
-    static constexpr auto Name = "PoolText_Formatter";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Params : TPoolInfo<PoolText_Params>
-{
-    static constexpr auto Name = "PoolText_Params";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_HB : TPoolInfo<PoolText_HB>
-{
-    static constexpr auto Name = "PoolText_HB";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_HB_Internal : TPoolInfo<PoolText_HB_Internal>
-{
-    static constexpr auto Name = "PoolText_HB_Internal";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_ICU : TPoolInfo<PoolText_ICU>
-{
-    static constexpr auto Name = "PoolText_ICU";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_ICU_Internal : TPoolInfo<PoolText_ICU_Internal>
-{
-    static constexpr auto Name = "PoolText_ICU_Internal";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_ICU_Data_Packagae : TPoolInfo<PoolText_ICU_Data_Packagae>
-{
-    static constexpr auto Name = "PoolText_ICU_Data_Packagae";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_Run : TPoolInfo<PoolText_Run>
-{
-    static constexpr auto Name = "PoolText_Run";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_GlyphCache : TPoolInfo<PoolText_GlyphCache>
-{
-    static constexpr auto Name = "PoolText_GlyphCache";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolText_UTF16 : TPoolInfo<PoolText_UTF16>
-{
-    static constexpr auto Name = "PoolText_UTF16";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
 struct PoolGMPL_Objects : TPoolInfo<PoolGMPL_Objects>
 {
     static constexpr auto Name = "PoolGMPL_Objects";
@@ -3101,6 +521,16 @@ struct PoolGMPL_Population_Community_S : TPoolInfo<PoolGMPL_Population_Community
 struct PoolGMPL_Population_Crowd : TPoolInfo<PoolGMPL_Population_Crowd>
 {
     static constexpr auto Name = "PoolGMPL_Population_Crowd";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGMPL_PreventionSystem_Radio : TPoolInfo<PoolGMPL_PreventionSystem_Radio>
+{
+    static constexpr auto Name = "PoolGMPL_PreventionSystem_Radio";
 
     inline static auto Get()
     {
@@ -4268,9 +1698,929 @@ struct PoolGMPL_ObjectCarrySystem : TPoolInfo<PoolGMPL_ObjectCarrySystem>
     }
 };
 
-struct PoolGOGRewards : TPoolInfo<PoolGOGRewards>
+struct PoolGMPL_Razer : TPoolInfo<PoolGMPL_Razer>
 {
-    static constexpr auto Name = "PoolGOGRewards";
+    static constexpr auto Name = "PoolGMPL_Razer";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGMPL_EffectSpawnerSave : TPoolInfo<PoolGMPL_EffectSpawnerSave>
+{
+    static constexpr auto Name = "PoolGMPL_EffectSpawnerSave";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct Pool_OnlineFeatures : TPoolInfo<Pool_OnlineFeatures>
+{
+    static constexpr auto Name = "Pool_OnlineFeatures";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityResource : TPoolInfo<PoolEntityResource>
+{
+    static constexpr auto Name = "PoolEntityResource";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSerializable : TPoolInfo<PoolSerializable>
+{
+    static constexpr auto Name = "PoolSerializable";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityAssembler : TPoolInfo<PoolEntityAssembler>
+{
+    static constexpr auto Name = "PoolEntityAssembler";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityAppearance : TPoolInfo<PoolEntityAppearance>
+{
+    static constexpr auto Name = "PoolEntityAppearance";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityParameters : TPoolInfo<PoolEntityParameters>
+{
+    static constexpr auto Name = "PoolEntityParameters";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityParameterGarment : TPoolInfo<PoolEntityParameterGarment>
+{
+    static constexpr auto Name = "PoolEntityParameterGarment";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityParameterCorpse : TPoolInfo<PoolEntityParameterCorpse>
+{
+    static constexpr auto Name = "PoolEntityParameterCorpse";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntityParameterHitRepresent : TPoolInfo<PoolEntityParameterHitRepresent>
+{
+    static constexpr auto Name = "PoolEntityParameterHitRepresent";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEntity : TPoolInfo<PoolEntity>
+{
+    static constexpr auto Name = "PoolEntity";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolComponent : TPoolInfo<PoolComponent>
+{
+    static constexpr auto Name = "PoolComponent";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDismemberment : TPoolInfo<PoolDismemberment>
+{
+    static constexpr auto Name = "PoolDismemberment";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDismemberment_DataBase : TPoolInfo<PoolDismemberment_DataBase>
+{
+    static constexpr auto Name = "PoolDismemberment_DataBase";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDismemberment_Lookup : TPoolInfo<PoolDismemberment_Lookup>
+{
+    static constexpr auto Name = "PoolDismemberment_Lookup";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDismemberment_RenderData : TPoolInfo<PoolDismemberment_RenderData>
+{
+    static constexpr auto Name = "PoolDismemberment_RenderData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGalaxy : TPoolInfo<PoolGalaxy>
+{
+    static constexpr auto Name = "PoolGalaxy";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGameServices : TPoolInfo<PoolGameServices>
+{
+    static constexpr auto Name = "PoolGameServices";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering : TPoolInfo<PoolInkRendering>
+{
+    static constexpr auto Name = "PoolInkRendering";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolUI : TPoolInfo<PoolUI>
+{
+    static constexpr auto Name = "PoolUI";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_Uncategorized : TPoolInfo<PoolInkRendering_Uncategorized>
+{
+    static constexpr auto Name = "PoolInkRendering_Uncategorized";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_OneFrameRender : TPoolInfo<PoolInkRendering_OneFrameRender>
+{
+    static constexpr auto Name = "PoolInkRendering_OneFrameRender";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_Effects : TPoolInfo<PoolInkRendering_Effects>
+{
+    static constexpr auto Name = "PoolInkRendering_Effects";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_Math : TPoolInfo<PoolInkRendering_Math>
+{
+    static constexpr auto Name = "PoolInkRendering_Math";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_Text : TPoolInfo<PoolInkRendering_Text>
+{
+    static constexpr auto Name = "PoolInkRendering_Text";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_World : TPoolInfo<PoolInkRendering_World>
+{
+    static constexpr auto Name = "PoolInkRendering_World";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_Textures : TPoolInfo<PoolInkRendering_Textures>
+{
+    static constexpr auto Name = "PoolInkRendering_Textures";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_FSCComposition : TPoolInfo<PoolInkRendering_FSCComposition>
+{
+    static constexpr auto Name = "PoolInkRendering_FSCComposition";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_Composition : TPoolInfo<PoolInkRendering_Composition>
+{
+    static constexpr auto Name = "PoolInkRendering_Composition";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInkRendering_DrawStack : TPoolInfo<PoolInkRendering_DrawStack>
+{
+    static constexpr auto Name = "PoolInkRendering_DrawStack";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolJSON : TPoolInfo<PoolJSON>
+{
+    static constexpr auto Name = "PoolJSON";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolResource : TPoolInfo<PoolResource>
+{
+    static constexpr auto Name = "PoolResource";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudio : TPoolInfo<PoolAudio>
+{
+    static constexpr auto Name = "PoolAudio";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioMetadata : TPoolInfo<PoolAudioMetadata>
+{
+    static constexpr auto Name = "PoolAudioMetadata";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioGeometry : TPoolInfo<PoolAudioGeometry>
+{
+    static constexpr auto Name = "PoolAudioGeometry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioSystems : TPoolInfo<PoolAudioSystems>
+{
+    static constexpr auto Name = "PoolAudioSystems";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioSystemsGroupItems : TPoolInfo<PoolAudioSystemsGroupItems>
+{
+    static constexpr auto Name = "PoolAudioSystemsGroupItems";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioEmitters : TPoolInfo<PoolAudioEmitters>
+{
+    static constexpr auto Name = "PoolAudioEmitters";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioDecorators : TPoolInfo<PoolAudioDecorators>
+{
+    static constexpr auto Name = "PoolAudioDecorators";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioPropertyStream : TPoolInfo<PoolAudioPropertyStream>
+{
+    static constexpr auto Name = "PoolAudioPropertyStream";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioPositionStream : TPoolInfo<PoolAudioPositionStream>
+{
+    static constexpr auto Name = "PoolAudioPositionStream";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolLocalizationAndVo : TPoolInfo<PoolLocalizationAndVo>
+{
+    static constexpr auto Name = "PoolLocalizationAndVo";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAmbients : TPoolInfo<PoolAudioAmbients>
+{
+    static constexpr auto Name = "PoolAudioAmbients";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioGrouping : TPoolInfo<PoolAudioGrouping>
+{
+    static constexpr auto Name = "PoolAudioGrouping";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioSystemInterfaces : TPoolInfo<PoolAudioSystemInterfaces>
+{
+    static constexpr auto Name = "PoolAudioSystemInterfaces";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioWeapons : TPoolInfo<PoolAudioWeapons>
+{
+    static constexpr auto Name = "PoolAudioWeapons";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioMusicAndRadio : TPoolInfo<PoolAudioMusicAndRadio>
+{
+    static constexpr auto Name = "PoolAudioMusicAndRadio";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSoundComponent : TPoolInfo<PoolSoundComponent>
+{
+    static constexpr auto Name = "PoolSoundComponent";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioMixingAndScene : TPoolInfo<PoolAudioMixingAndScene>
+{
+    static constexpr auto Name = "PoolAudioMixingAndScene";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioReverb : TPoolInfo<PoolAudioReverb>
+{
+    static constexpr auto Name = "PoolAudioReverb";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAcousticNodes : TPoolInfo<PoolAudioAcousticNodes>
+{
+    static constexpr auto Name = "PoolAudioAcousticNodes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAcousticNodeConnection : TPoolInfo<PoolAudioAcousticNodeConnection>
+{
+    static constexpr auto Name = "PoolAudioAcousticNodeConnection";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAcousticNodeOctrees : TPoolInfo<PoolAudioAcousticNodeOctrees>
+{
+    static constexpr auto Name = "PoolAudioAcousticNodeOctrees";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAcousticsPathfinding : TPoolInfo<PoolAudioAcousticsPathfinding>
+{
+    static constexpr auto Name = "PoolAudioAcousticsPathfinding";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAcousticZones : TPoolInfo<PoolAudioAcousticZones>
+{
+    static constexpr auto Name = "PoolAudioAcousticZones";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAudioAcousticStreaming : TPoolInfo<PoolAudioAcousticStreaming>
+{
+    static constexpr auto Name = "PoolAudioAcousticStreaming";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNetwork : TPoolInfo<PoolNetwork>
+{
+    static constexpr auto Name = "PoolNetwork";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMultiplayer : TPoolInfo<PoolMultiplayer>
+{
+    static constexpr auto Name = "PoolMultiplayer";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolScenes : TPoolInfo<PoolScenes>
+{
+    static constexpr auto Name = "PoolScenes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSceneSystem : TPoolInfo<PoolSceneSystem>
+{
+    static constexpr auto Name = "PoolSceneSystem";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSceneResources : TPoolInfo<PoolSceneResources>
+{
+    static constexpr auto Name = "PoolSceneResources";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNetworkSessionRecordingTool : TPoolInfo<PoolNetworkSessionRecordingTool>
+{
+    static constexpr auto Name = "PoolNetworkSessionRecordingTool";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNavigation : TPoolInfo<PoolNavigation>
+{
+    static constexpr auto Name = "PoolNavigation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI : TPoolInfo<PoolAI>
+{
+    static constexpr auto Name = "PoolAI";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNavmeshNavigation : TPoolInfo<PoolNavmeshNavigation>
+{
+    static constexpr auto Name = "PoolNavmeshNavigation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolPathfindingNavigation : TPoolInfo<PoolPathfindingNavigation>
+{
+    static constexpr auto Name = "PoolPathfindingNavigation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficNavigation : TPoolInfo<PoolTrafficNavigation>
+{
+    static constexpr auto Name = "PoolTrafficNavigation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInfluenceMapNavigation : TPoolInfo<PoolInfluenceMapNavigation>
+{
+    static constexpr auto Name = "PoolInfluenceMapNavigation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolOffmeshlinkNavigation : TPoolInfo<PoolOffmeshlinkNavigation>
+{
+    static constexpr auto Name = "PoolOffmeshlinkNavigation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNavigationComponents : TPoolInfo<PoolNavigationComponents>
+{
+    static constexpr auto Name = "PoolNavigationComponents";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNavigationScripts : TPoolInfo<PoolNavigationScripts>
+{
+    static constexpr auto Name = "PoolNavigationScripts";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficLanes : TPoolInfo<PoolTrafficLanes>
+{
+    static constexpr auto Name = "PoolTrafficLanes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficStaticCollisions : TPoolInfo<PoolTrafficStaticCollisions>
+{
+    static constexpr auto Name = "PoolTrafficStaticCollisions";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficDynamicCollisions : TPoolInfo<PoolTrafficDynamicCollisions>
+{
+    static constexpr auto Name = "PoolTrafficDynamicCollisions";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficCrowdAvoidance : TPoolInfo<PoolTrafficCrowdAvoidance>
+{
+    static constexpr auto Name = "PoolTrafficCrowdAvoidance";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficCrowdPaths : TPoolInfo<PoolTrafficCrowdPaths>
+{
+    static constexpr auto Name = "PoolTrafficCrowdPaths";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficCrowdMarbles : TPoolInfo<PoolTrafficCrowdMarbles>
+{
+    static constexpr auto Name = "PoolTrafficCrowdMarbles";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficCrowdLocomotion : TPoolInfo<PoolTrafficCrowdLocomotion>
+{
+    static constexpr auto Name = "PoolTrafficCrowdLocomotion";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficSlots : TPoolInfo<PoolTrafficSlots>
+{
+    static constexpr auto Name = "PoolTrafficSlots";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficSpots : TPoolInfo<PoolTrafficSpots>
+{
+    static constexpr auto Name = "PoolTrafficSpots";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficGrid : TPoolInfo<PoolTrafficGrid>
+{
+    static constexpr auto Name = "PoolTrafficGrid";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficNullAreas : TPoolInfo<PoolTrafficNullAreas>
+{
+    static constexpr auto Name = "PoolTrafficNullAreas";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficPersistentLanes : TPoolInfo<PoolTrafficPersistentLanes>
+{
+    static constexpr auto Name = "PoolTrafficPersistentLanes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficCollisionMap : TPoolInfo<PoolTrafficCollisionMap>
+{
+    static constexpr auto Name = "PoolTrafficCollisionMap";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficLookup : TPoolInfo<PoolTrafficLookup>
+{
+    static constexpr auto Name = "PoolTrafficLookup";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficDynamicMovement : TPoolInfo<PoolTrafficDynamicMovement>
+{
+    static constexpr auto Name = "PoolTrafficDynamicMovement";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficDynamicMovement_Pede : TPoolInfo<PoolTrafficDynamicMovement_Pede>
+{
+    static constexpr auto Name = "PoolTrafficDynamicMovement_Pede";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficDynamicMovement_Vehi : TPoolInfo<PoolTrafficDynamicMovement_Vehi>
+{
+    static constexpr auto Name = "PoolTrafficDynamicMovement_Vehi";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct TDM_V_Representation : TPoolInfo<TDM_V_Representation>
+{
+    static constexpr auto Name = "TDM_V_Representation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct TDM_P_Representation : TPoolInfo<TDM_P_Representation>
+{
+    static constexpr auto Name = "TDM_P_Representation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNavigationDebug : TPoolInfo<PoolNavigationDebug>
+{
+    static constexpr auto Name = "PoolNavigationDebug";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTrafficDebug : TPoolInfo<PoolTrafficDebug>
+{
+    static constexpr auto Name = "PoolTrafficDebug";
 
     inline static auto Get()
     {
@@ -4708,9 +3058,1689 @@ struct PoolAnimDebug : TPoolInfo<PoolAnimDebug>
     }
 };
 
-struct PoolGalaxy : TPoolInfo<PoolGalaxy>
+struct PoolRTTI : TPoolInfo<PoolRTTI>
 {
-    static constexpr auto Name = "PoolGalaxy";
+    static constexpr auto Name = "PoolRTTI";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRTTIFunction : TPoolInfo<PoolRTTIFunction>
+{
+    static constexpr auto Name = "PoolRTTIFunction";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRTTIProperty : TPoolInfo<PoolRTTIProperty>
+{
+    static constexpr auto Name = "PoolRTTIProperty";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTriggers : TPoolInfo<PoolTriggers>
+{
+    static constexpr auto Name = "PoolTriggers";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSpline : TPoolInfo<PoolSpline>
+{
+    static constexpr auto Name = "PoolSpline";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolCurves : TPoolInfo<PoolCurves>
+{
+    static constexpr auto Name = "PoolCurves";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAreas : TPoolInfo<PoolAreas>
+{
+    static constexpr auto Name = "PoolAreas";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEffect : TPoolInfo<PoolEffect>
+{
+    static constexpr auto Name = "PoolEffect";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolIDRegistry : TPoolInfo<PoolIDRegistry>
+{
+    static constexpr auto Name = "PoolIDRegistry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEvents : TPoolInfo<PoolEvents>
+{
+    static constexpr auto Name = "PoolEvents";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEvent : TPoolInfo<PoolEvent>
+{
+    static constexpr auto Name = "PoolEvent";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEventBroker : TPoolInfo<PoolEventBroker>
+{
+    static constexpr auto Name = "PoolEventBroker";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolResourceLoadingJobs : TPoolInfo<PoolResourceLoadingJobs>
+{
+    static constexpr auto Name = "PoolResourceLoadingJobs";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInterop : TPoolInfo<PoolInterop>
+{
+    static constexpr auto Name = "PoolInterop";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolString : TPoolInfo<PoolString>
+{
+    static constexpr auto Name = "PoolString";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolArchive : TPoolInfo<PoolArchive>
+{
+    static constexpr auto Name = "PoolArchive";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNode : TPoolInfo<PoolNode>
+{
+    static constexpr auto Name = "PoolNode";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTicket : TPoolInfo<PoolTicket>
+{
+    static constexpr auto Name = "PoolTicket";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFoliageNode : TPoolInfo<PoolFoliageNode>
+{
+    static constexpr auto Name = "PoolFoliageNode";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInteriorMap : TPoolInfo<PoolInteriorMap>
+{
+    static constexpr auto Name = "PoolInteriorMap";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMinimap : TPoolInfo<PoolMinimap>
+{
+    static constexpr auto Name = "PoolMinimap";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolWeather : TPoolInfo<PoolWeather>
+{
+    static constexpr auto Name = "PoolWeather";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMarker : TPoolInfo<PoolMarker>
+{
+    static constexpr auto Name = "PoolMarker";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNodeSource : TPoolInfo<PoolNodeSource>
+{
+    static constexpr auto Name = "PoolNodeSource";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolNodeInstance : TPoolInfo<PoolNodeInstance>
+{
+    static constexpr auto Name = "PoolNodeInstance";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolIDPathRegistry : TPoolInfo<PoolIDPathRegistry>
+{
+    static constexpr auto Name = "PoolIDPathRegistry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolIDStringRegistry : TPoolInfo<PoolIDStringRegistry>
+{
+    static constexpr auto Name = "PoolIDStringRegistry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolIDStringBuffer : TPoolInfo<PoolIDStringBuffer>
+{
+    static constexpr auto Name = "PoolIDStringBuffer";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolCompiledSetupInfo : TPoolInfo<PoolCompiledSetupInfo>
+{
+    static constexpr auto Name = "PoolCompiledSetupInfo";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMeshLocalBoundsCache : TPoolInfo<PoolMeshLocalBoundsCache>
+{
+    static constexpr auto Name = "PoolMeshLocalBoundsCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolStreamingQuery : TPoolInfo<PoolStreamingQuery>
+{
+    static constexpr auto Name = "PoolStreamingQuery";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolHTTP : TPoolInfo<PoolHTTP>
+{
+    static constexpr auto Name = "PoolHTTP";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolHTTP_Curl : TPoolInfo<PoolHTTP_Curl>
+{
+    static constexpr auto Name = "PoolHTTP_Curl";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolHTTP_UWP : TPoolInfo<PoolHTTP_UWP>
+{
+    static constexpr auto Name = "PoolHTTP_UWP";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolHTTP_PS4 : TPoolInfo<PoolHTTP_PS4>
+{
+    static constexpr auto Name = "PoolHTTP_PS4";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolReplication : TPoolInfo<PoolReplication>
+{
+    static constexpr auto Name = "PoolReplication";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolReplicationProfiler : TPoolInfo<PoolReplicationProfiler>
+{
+    static constexpr auto Name = "PoolReplicationProfiler";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolReplicationRTTI : TPoolInfo<PoolReplicationRTTI>
+{
+    static constexpr auto Name = "PoolReplicationRTTI";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSaveData : TPoolInfo<PoolSaveData>
+{
+    static constexpr auto Name = "PoolSaveData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Behaviour : TPoolInfo<PoolAI_Behaviour>
+{
+    static constexpr auto Name = "PoolAI_Behaviour";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Instances : TPoolInfo<PoolAI_Instances>
+{
+    static constexpr auto Name = "PoolAI_Instances";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Script : TPoolInfo<PoolAI_Script>
+{
+    static constexpr auto Name = "PoolAI_Script";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Systems : TPoolInfo<PoolAI_Systems>
+{
+    static constexpr auto Name = "PoolAI_Systems";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Attitudes : TPoolInfo<PoolAI_Attitudes>
+{
+    static constexpr auto Name = "PoolAI_Attitudes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_InfluenceMap : TPoolInfo<PoolAI_InfluenceMap>
+{
+    static constexpr auto Name = "PoolAI_InfluenceMap";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SmartObjects : TPoolInfo<PoolAI_SmartObjects>
+{
+    static constexpr auto Name = "PoolAI_SmartObjects";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Senses : TPoolInfo<PoolAI_Senses>
+{
+    static constexpr auto Name = "PoolAI_Senses";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Components : TPoolInfo<PoolAI_Components>
+{
+    static constexpr auto Name = "PoolAI_Components";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Movement : TPoolInfo<PoolAI_Movement>
+{
+    static constexpr auto Name = "PoolAI_Movement";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_MovementPolicies : TPoolInfo<PoolAI_MovementPolicies>
+{
+    static constexpr auto Name = "PoolAI_MovementPolicies";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Workspots : TPoolInfo<PoolAI_Workspots>
+{
+    static constexpr auto Name = "PoolAI_Workspots";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_GuardAreas : TPoolInfo<PoolAI_GuardAreas>
+{
+    static constexpr auto Name = "PoolAI_GuardAreas";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_TargetTracking : TPoolInfo<PoolAI_TargetTracking>
+{
+    static constexpr auto Name = "PoolAI_TargetTracking";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_TweakActions : TPoolInfo<PoolAI_TweakActions>
+{
+    static constexpr auto Name = "PoolAI_TweakActions";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Vehicles : TPoolInfo<PoolAI_Vehicles>
+{
+    static constexpr auto Name = "PoolAI_Vehicles";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_Legacy : TPoolInfo<PoolAI_Legacy>
+{
+    static constexpr auto Name = "PoolAI_Legacy";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SORuntimeData : TPoolInfo<PoolAI_SORuntimeData>
+{
+    static constexpr auto Name = "PoolAI_SORuntimeData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SOCompiledResources : TPoolInfo<PoolAI_SOCompiledResources>
+{
+    static constexpr auto Name = "PoolAI_SOCompiledResources";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SOCovers : TPoolInfo<PoolAI_SOCovers>
+{
+    static constexpr auto Name = "PoolAI_SOCovers";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SOAnimDB : TPoolInfo<PoolAI_SOAnimDB>
+{
+    static constexpr auto Name = "PoolAI_SOAnimDB";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SONodes : TPoolInfo<PoolAI_SONodes>
+{
+    static constexpr auto Name = "PoolAI_SONodes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolAI_SORawResources : TPoolInfo<PoolAI_SORawResources>
+{
+    static constexpr auto Name = "PoolAI_SORawResources";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct Pool_DebugContexts : TPoolInfo<Pool_DebugContexts>
+{
+    static constexpr auto Name = "Pool_DebugContexts";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolReplicatedEntitySystem : TPoolInfo<PoolReplicatedEntitySystem>
+{
+    static constexpr auto Name = "PoolReplicatedEntitySystem";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolLocLocalizedText : TPoolInfo<PoolLocLocalizedText>
+{
+    static constexpr auto Name = "PoolLocLocalizedText";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTelemetry : TPoolInfo<PoolTelemetry>
+{
+    static constexpr auto Name = "PoolTelemetry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInput : TPoolInfo<PoolInput>
+{
+    static constexpr auto Name = "PoolInput";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInputInternal : TPoolInfo<PoolInputInternal>
+{
+    static constexpr auto Name = "PoolInputInternal";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk : TPoolInfo<PoolInk>
+{
+    static constexpr auto Name = "PoolInk";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Uncategorized : TPoolInfo<PoolInk_Uncategorized>
+{
+    static constexpr auto Name = "PoolInk_Uncategorized";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Widgets : TPoolInfo<PoolInk_Widgets>
+{
+    static constexpr auto Name = "PoolInk_Widgets";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Library : TPoolInfo<PoolInk_Library>
+{
+    static constexpr auto Name = "PoolInk_Library";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Events : TPoolInfo<PoolInk_Events>
+{
+    static constexpr auto Name = "PoolInk_Events";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Binding : TPoolInfo<PoolInk_Binding>
+{
+    static constexpr auto Name = "PoolInk_Binding";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Animations : TPoolInfo<PoolInk_Animations>
+{
+    static constexpr auto Name = "PoolInk_Animations";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Rendering : TPoolInfo<PoolInk_Rendering>
+{
+    static constexpr auto Name = "PoolInk_Rendering";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Effects : TPoolInfo<PoolInk_Effects>
+{
+    static constexpr auto Name = "PoolInk_Effects";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Brushes : TPoolInfo<PoolInk_Brushes>
+{
+    static constexpr auto Name = "PoolInk_Brushes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Styles : TPoolInfo<PoolInk_Styles>
+{
+    static constexpr auto Name = "PoolInk_Styles";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Controllers : TPoolInfo<PoolInk_Controllers>
+{
+    static constexpr auto Name = "PoolInk_Controllers";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers : TPoolInfo<PoolInk_Layers>
+{
+    static constexpr auto Name = "PoolInk_Layers";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_StateMachine : TPoolInfo<PoolInk_Layers_StateMachine>
+{
+    static constexpr auto Name = "PoolInk_Layers_StateMachine";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_WorldLayer : TPoolInfo<PoolInk_Layers_WorldLayer>
+{
+    static constexpr auto Name = "PoolInk_Layers_WorldLayer";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_MenuLayer : TPoolInfo<PoolInk_Layers_MenuLayer>
+{
+    static constexpr auto Name = "PoolInk_Layers_MenuLayer";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_LoadingScreen : TPoolInfo<PoolInk_Layers_LoadingScreen>
+{
+    static constexpr auto Name = "PoolInk_Layers_LoadingScreen";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_SystemNotificati : TPoolInfo<PoolInk_Layers_SystemNotificati>
+{
+    static constexpr auto Name = "PoolInk_Layers_SystemNotificati";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_GameNotification : TPoolInfo<PoolInk_Layers_GameNotification>
+{
+    static constexpr auto Name = "PoolInk_Layers_GameNotification";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_ViewportWrapper : TPoolInfo<PoolInk_Layers_ViewportWrapper>
+{
+    static constexpr auto Name = "PoolInk_Layers_ViewportWrapper";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Layers_EventBroker : TPoolInfo<PoolInk_Layers_EventBroker>
+{
+    static constexpr auto Name = "PoolInk_Layers_EventBroker";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Jobs : TPoolInfo<PoolInk_Jobs>
+{
+    static constexpr auto Name = "PoolInk_Jobs";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Text : TPoolInfo<PoolInk_Text>
+{
+    static constexpr auto Name = "PoolInk_Text";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_HitTest : TPoolInfo<PoolInk_HitTest>
+{
+    static constexpr auto Name = "PoolInk_HitTest";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_System : TPoolInfo<PoolInk_System>
+{
+    static constexpr auto Name = "PoolInk_System";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Scripts : TPoolInfo<PoolInk_Scripts>
+{
+    static constexpr auto Name = "PoolInk_Scripts";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Mappins : TPoolInfo<PoolInk_Mappins>
+{
+    static constexpr auto Name = "PoolInk_Mappins";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_MinimapGeometry : TPoolInfo<PoolInk_MinimapGeometry>
+{
+    static constexpr auto Name = "PoolInk_MinimapGeometry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Offscreen : TPoolInfo<PoolInk_Offscreen>
+{
+    static constexpr auto Name = "PoolInk_Offscreen";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Spawning : TPoolInfo<PoolInk_Spawning>
+{
+    static constexpr auto Name = "PoolInk_Spawning";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Resources : TPoolInfo<PoolInk_Resources>
+{
+    static constexpr auto Name = "PoolInk_Resources";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolInk_Videos : TPoolInfo<PoolInk_Videos>
+{
+    static constexpr auto Name = "PoolInk_Videos";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTexture : TPoolInfo<PoolTexture>
+{
+    static constexpr auto Name = "PoolTexture";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMesh : TPoolInfo<PoolMesh>
+{
+    static constexpr auto Name = "PoolMesh";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolBink : TPoolInfo<PoolBink>
+{
+    static constexpr auto Name = "PoolBink";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFont : TPoolInfo<PoolFont>
+{
+    static constexpr auto Name = "PoolFont";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFreeType : TPoolInfo<PoolFreeType>
+{
+    static constexpr auto Name = "PoolFreeType";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFontCache : TPoolInfo<PoolFontCache>
+{
+    static constexpr auto Name = "PoolFontCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGlyphCache : TPoolInfo<PoolGlyphCache>
+{
+    static constexpr auto Name = "PoolGlyphCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderDebug : TPoolInfo<PoolRenderDebug>
+{
+    static constexpr auto Name = "PoolRenderDebug";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGIDebug : TPoolInfo<PoolGIDebug>
+{
+    static constexpr auto Name = "PoolGIDebug";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGPUProfiling : TPoolInfo<PoolGPUProfiling>
+{
+    static constexpr auto Name = "PoolGPUProfiling";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRendering_ : TPoolInfo<PoolRendering_>
+{
+    static constexpr auto Name = "PoolRendering_";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFrameRendering : TPoolInfo<PoolFrameRendering>
+{
+    static constexpr auto Name = "PoolFrameRendering";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDoubleBufferedFrameRenderin : TPoolInfo<PoolDoubleBufferedFrameRenderin>
+{
+    static constexpr auto Name = "PoolDoubleBufferedFrameRenderin";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderingCore : TPoolInfo<PoolRenderingCore>
+{
+    static constexpr auto Name = "PoolRenderingCore";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSurfaceCache : TPoolInfo<PoolSurfaceCache>
+{
+    static constexpr auto Name = "PoolSurfaceCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolShaderCache : TPoolInfo<PoolShaderCache>
+{
+    static constexpr auto Name = "PoolShaderCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolShaderCacheShaders : TPoolInfo<PoolShaderCacheShaders>
+{
+    static constexpr auto Name = "PoolShaderCacheShaders";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolShaderCacheData : TPoolInfo<PoolShaderCacheData>
+{
+    static constexpr auto Name = "PoolShaderCacheData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolShaderCompilation : TPoolInfo<PoolShaderCompilation>
+{
+    static constexpr auto Name = "PoolShaderCompilation";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolPSO : TPoolInfo<PoolPSO>
+{
+    static constexpr auto Name = "PoolPSO";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolShaderCacheData_ShaderBinar : TPoolInfo<PoolShaderCacheData_ShaderBinar>
+{
+    static constexpr auto Name = "PoolShaderCacheData_ShaderBinar";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderProxy : TPoolInfo<PoolRenderProxy>
+{
+    static constexpr auto Name = "PoolRenderProxy";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderProxyInternals_Mesh : TPoolInfo<PoolRenderProxyInternals_Mesh>
+{
+    static constexpr auto Name = "PoolRenderProxyInternals_Mesh";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderProxy_CustomData : TPoolInfo<PoolRenderProxy_CustomData>
+{
+    static constexpr auto Name = "PoolRenderProxy_CustomData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderProxy_InstanceData : TPoolInfo<PoolRenderProxy_InstanceData>
+{
+    static constexpr auto Name = "PoolRenderProxy_InstanceData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderProxy_Handles : TPoolInfo<PoolRenderProxy_Handles>
+{
+    static constexpr auto Name = "PoolRenderProxy_Handles";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderResources : TPoolInfo<PoolRenderResources>
+{
+    static constexpr auto Name = "PoolRenderResources";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderMesh : TPoolInfo<PoolRenderMesh>
+{
+    static constexpr auto Name = "PoolRenderMesh";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderDynamicTexture : TPoolInfo<PoolRenderDynamicTexture>
+{
+    static constexpr auto Name = "PoolRenderDynamicTexture";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMaterials : TPoolInfo<PoolMaterials>
+{
+    static constexpr auto Name = "PoolMaterials";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderMaterial : TPoolInfo<PoolRenderMaterial>
+{
+    static constexpr auto Name = "PoolRenderMaterial";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMaterialTechniques : TPoolInfo<PoolMaterialTechniques>
+{
+    static constexpr auto Name = "PoolMaterialTechniques";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMaterialStagePassData : TPoolInfo<PoolMaterialStagePassData>
+{
+    static constexpr auto Name = "PoolMaterialStagePassData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMaterialStagePassCache : TPoolInfo<PoolMaterialStagePassCache>
+{
+    static constexpr auto Name = "PoolMaterialStagePassCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderMaterialParams : TPoolInfo<PoolRenderMaterialParams>
+{
+    static constexpr auto Name = "PoolRenderMaterialParams";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMaterialExtractedData : TPoolInfo<PoolMaterialExtractedData>
+{
+    static constexpr auto Name = "PoolMaterialExtractedData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolMaterialModifier : TPoolInfo<PoolMaterialModifier>
+{
+    static constexpr auto Name = "PoolMaterialModifier";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDecals : TPoolInfo<PoolDecals>
+{
+    static constexpr auto Name = "PoolDecals";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolParticleData : TPoolInfo<PoolParticleData>
+{
+    static constexpr auto Name = "PoolParticleData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderGraph : TPoolInfo<PoolRenderGraph>
+{
+    static constexpr auto Name = "PoolRenderGraph";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFlowAllocator : TPoolInfo<PoolFlowAllocator>
+{
+    static constexpr auto Name = "PoolFlowAllocator";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolVideoPlayer : TPoolInfo<PoolVideoPlayer>
+{
+    static constexpr auto Name = "PoolVideoPlayer";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderData : TPoolInfo<PoolRenderData>
+{
+    static constexpr auto Name = "PoolRenderData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolGI : TPoolInfo<PoolGI>
+{
+    static constexpr auto Name = "PoolGI";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderBlobs : TPoolInfo<PoolRenderBlobs>
+{
+    static constexpr auto Name = "PoolRenderBlobs";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderBlobsBuffers : TPoolInfo<PoolRenderBlobsBuffers>
+{
+    static constexpr auto Name = "PoolRenderBlobsBuffers";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderScene : TPoolInfo<PoolRenderScene>
+{
+    static constexpr auto Name = "PoolRenderScene";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderScene_Proxies : TPoolInfo<PoolRenderScene_Proxies>
+{
+    static constexpr auto Name = "PoolRenderScene_Proxies";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderScene_ProxyData : TPoolInfo<PoolRenderScene_ProxyData>
+{
+    static constexpr auto Name = "PoolRenderScene_ProxyData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderScene_PendingOps : TPoolInfo<PoolRenderScene_PendingOps>
+{
+    static constexpr auto Name = "PoolRenderScene_PendingOps";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderScene_RuntimeSystem : TPoolInfo<PoolRenderScene_RuntimeSystem>
+{
+    static constexpr auto Name = "PoolRenderScene_RuntimeSystem";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolVisBVH : TPoolInfo<PoolVisBVH>
+{
+    static constexpr auto Name = "PoolVisBVH";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolSkinningData : TPoolInfo<PoolSkinningData>
+{
+    static constexpr auto Name = "PoolSkinningData";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFrameInfo : TPoolInfo<PoolFrameInfo>
+{
+    static constexpr auto Name = "PoolFrameInfo";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolFoliage : TPoolInfo<PoolFoliage>
+{
+    static constexpr auto Name = "PoolFoliage";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolBatchers : TPoolInfo<PoolBatchers>
+{
+    static constexpr auto Name = "PoolBatchers";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderCommandHandler : TPoolInfo<PoolRenderCommandHandler>
+{
+    static constexpr auto Name = "PoolRenderCommandHandler";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolPostProcessAndEffects : TPoolInfo<PoolPostProcessAndEffects>
+{
+    static constexpr auto Name = "PoolPostProcessAndEffects";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolEnvironment : TPoolInfo<PoolEnvironment>
+{
+    static constexpr auto Name = "PoolEnvironment";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolImageProcessing : TPoolInfo<PoolImageProcessing>
+{
+    static constexpr auto Name = "PoolImageProcessing";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRenderingUI : TPoolInfo<PoolRenderingUI>
+{
+    static constexpr auto Name = "PoolRenderingUI";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolReflectionProbes : TPoolInfo<PoolReflectionProbes>
+{
+    static constexpr auto Name = "PoolReflectionProbes";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolLighting : TPoolInfo<PoolLighting>
+{
+    static constexpr auto Name = "PoolLighting";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolDataRegistry : TPoolInfo<PoolDataRegistry>
+{
+    static constexpr auto Name = "PoolDataRegistry";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolCameras : TPoolInfo<PoolCameras>
+{
+    static constexpr auto Name = "PoolCameras";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRaytrace : TPoolInfo<PoolRaytrace>
+{
+    static constexpr auto Name = "PoolRaytrace";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolVisibilitySystem : TPoolInfo<PoolVisibilitySystem>
+{
+    static constexpr auto Name = "PoolVisibilitySystem";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolVisibilityScene : TPoolInfo<PoolVisibilityScene>
+{
+    static constexpr auto Name = "PoolVisibilityScene";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolOccluderShapes : TPoolInfo<PoolOccluderShapes>
+{
+    static constexpr auto Name = "PoolOccluderShapes";
 
     inline static auto Get()
     {
@@ -4728,9 +4758,229 @@ struct PoolFunctionalTests : TPoolInfo<PoolFunctionalTests>
     }
 };
 
-struct PoolMultiplayerGameplay : TPoolInfo<PoolMultiplayerGameplay>
+struct PoolText : TPoolInfo<PoolText>
 {
-    static constexpr auto Name = "PoolMultiplayerGameplay";
+    static constexpr auto Name = "PoolText";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_RichDecorator : TPoolInfo<PoolText_RichDecorator>
+{
+    static constexpr auto Name = "PoolText_RichDecorator";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Markup : TPoolInfo<PoolText_Markup>
+{
+    static constexpr auto Name = "PoolText_Markup";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Layout : TPoolInfo<PoolText_Layout>
+{
+    static constexpr auto Name = "PoolText_Layout";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Layout_Break : TPoolInfo<PoolText_Layout_Break>
+{
+    static constexpr auto Name = "PoolText_Layout_Break";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Layout_Block : TPoolInfo<PoolText_Layout_Block>
+{
+    static constexpr auto Name = "PoolText_Layout_Block";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Layout_Model : TPoolInfo<PoolText_Layout_Model>
+{
+    static constexpr auto Name = "PoolText_Layout_Model";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Layout_View : TPoolInfo<PoolText_Layout_View>
+{
+    static constexpr auto Name = "PoolText_Layout_View";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Layout_Direction : TPoolInfo<PoolText_Layout_Direction>
+{
+    static constexpr auto Name = "PoolText_Layout_Direction";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Shaper : TPoolInfo<PoolText_Shaper>
+{
+    static constexpr auto Name = "PoolText_Shaper";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Typography : TPoolInfo<PoolText_Typography>
+{
+    static constexpr auto Name = "PoolText_Typography";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Font : TPoolInfo<PoolText_Font>
+{
+    static constexpr auto Name = "PoolText_Font";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Formatter : TPoolInfo<PoolText_Formatter>
+{
+    static constexpr auto Name = "PoolText_Formatter";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Params : TPoolInfo<PoolText_Params>
+{
+    static constexpr auto Name = "PoolText_Params";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_HB : TPoolInfo<PoolText_HB>
+{
+    static constexpr auto Name = "PoolText_HB";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_HB_Internal : TPoolInfo<PoolText_HB_Internal>
+{
+    static constexpr auto Name = "PoolText_HB_Internal";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_ICU : TPoolInfo<PoolText_ICU>
+{
+    static constexpr auto Name = "PoolText_ICU";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_ICU_Internal : TPoolInfo<PoolText_ICU_Internal>
+{
+    static constexpr auto Name = "PoolText_ICU_Internal";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_ICU_Data_Packagae : TPoolInfo<PoolText_ICU_Data_Packagae>
+{
+    static constexpr auto Name = "PoolText_ICU_Data_Packagae";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_Run : TPoolInfo<PoolText_Run>
+{
+    static constexpr auto Name = "PoolText_Run";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_GlyphCache : TPoolInfo<PoolText_GlyphCache>
+{
+    static constexpr auto Name = "PoolText_GlyphCache";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolText_UTF16 : TPoolInfo<PoolText_UTF16>
+{
+    static constexpr auto Name = "PoolText_UTF16";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolRazerChroma : TPoolInfo<PoolRazerChroma>
+{
+    static constexpr auto Name = "PoolRazerChroma";
 
     inline static auto Get()
     {
@@ -4858,9 +5108,9 @@ struct PoolWorkspotResGraph : TPoolInfo<PoolWorkspotResGraph>
     }
 };
 
-struct PoolLocLocalizedText : TPoolInfo<PoolLocLocalizedText>
+struct PoolMultiplayerServer : TPoolInfo<PoolMultiplayerServer>
 {
-    static constexpr auto Name = "PoolLocLocalizedText";
+    static constexpr auto Name = "PoolMultiplayerServer";
 
     inline static auto Get()
     {
@@ -4868,9 +5118,9 @@ struct PoolLocLocalizedText : TPoolInfo<PoolLocLocalizedText>
     }
 };
 
-struct PoolAudio : TPoolInfo<PoolAudio>
+struct PoolMultiplayerGameplay : TPoolInfo<PoolMultiplayerGameplay>
 {
-    static constexpr auto Name = "PoolAudio";
+    static constexpr auto Name = "PoolMultiplayerGameplay";
 
     inline static auto Get()
     {
@@ -4878,9 +5128,9 @@ struct PoolAudio : TPoolInfo<PoolAudio>
     }
 };
 
-struct PoolReplicatedEntitySystem : TPoolInfo<PoolReplicatedEntitySystem>
+struct PoolNetworkServices : TPoolInfo<PoolNetworkServices>
 {
-    static constexpr auto Name = "PoolReplicatedEntitySystem";
+    static constexpr auto Name = "PoolNetworkServices";
 
     inline static auto Get()
     {
@@ -4888,9 +5138,9 @@ struct PoolReplicatedEntitySystem : TPoolInfo<PoolReplicatedEntitySystem>
     }
 };
 
-struct PoolWwise : TPoolInfo<PoolWwise>
+struct PoolInk_Backend : TPoolInfo<PoolInk_Backend>
 {
-    static constexpr auto Name = "PoolWwise";
+    static constexpr auto Name = "PoolInk_Backend";
 
     inline static auto Get()
     {
@@ -4898,9 +5148,9 @@ struct PoolWwise : TPoolInfo<PoolWwise>
     }
 };
 
-struct PoolAudioMetadata : TPoolInfo<PoolAudioMetadata>
+struct PoolInk_Debug : TPoolInfo<PoolInk_Debug>
 {
-    static constexpr auto Name = "PoolAudioMetadata";
+    static constexpr auto Name = "PoolInk_Debug";
 
     inline static auto Get()
     {
@@ -4908,259 +5158,9 @@ struct PoolAudioMetadata : TPoolInfo<PoolAudioMetadata>
     }
 };
 
-struct PoolAudioGeometry : TPoolInfo<PoolAudioGeometry>
+struct PoolLibTree : TPoolInfo<PoolLibTree>
 {
-    static constexpr auto Name = "PoolAudioGeometry";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioSystems : TPoolInfo<PoolAudioSystems>
-{
-    static constexpr auto Name = "PoolAudioSystems";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioSystemsGroupItems : TPoolInfo<PoolAudioSystemsGroupItems>
-{
-    static constexpr auto Name = "PoolAudioSystemsGroupItems";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioEmitters : TPoolInfo<PoolAudioEmitters>
-{
-    static constexpr auto Name = "PoolAudioEmitters";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioDecorators : TPoolInfo<PoolAudioDecorators>
-{
-    static constexpr auto Name = "PoolAudioDecorators";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioPropertyStream : TPoolInfo<PoolAudioPropertyStream>
-{
-    static constexpr auto Name = "PoolAudioPropertyStream";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioPositionStream : TPoolInfo<PoolAudioPositionStream>
-{
-    static constexpr auto Name = "PoolAudioPositionStream";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolLocalizationAndVo : TPoolInfo<PoolLocalizationAndVo>
-{
-    static constexpr auto Name = "PoolLocalizationAndVo";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAmbients : TPoolInfo<PoolAudioAmbients>
-{
-    static constexpr auto Name = "PoolAudioAmbients";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioGrouping : TPoolInfo<PoolAudioGrouping>
-{
-    static constexpr auto Name = "PoolAudioGrouping";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioSystemInterfaces : TPoolInfo<PoolAudioSystemInterfaces>
-{
-    static constexpr auto Name = "PoolAudioSystemInterfaces";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioWeapons : TPoolInfo<PoolAudioWeapons>
-{
-    static constexpr auto Name = "PoolAudioWeapons";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioMusicAndRadio : TPoolInfo<PoolAudioMusicAndRadio>
-{
-    static constexpr auto Name = "PoolAudioMusicAndRadio";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolSoundComponent : TPoolInfo<PoolSoundComponent>
-{
-    static constexpr auto Name = "PoolSoundComponent";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioMixingAndScene : TPoolInfo<PoolAudioMixingAndScene>
-{
-    static constexpr auto Name = "PoolAudioMixingAndScene";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioReverb : TPoolInfo<PoolAudioReverb>
-{
-    static constexpr auto Name = "PoolAudioReverb";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAcousticNodes : TPoolInfo<PoolAudioAcousticNodes>
-{
-    static constexpr auto Name = "PoolAudioAcousticNodes";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAcousticNodeConnection : TPoolInfo<PoolAudioAcousticNodeConnection>
-{
-    static constexpr auto Name = "PoolAudioAcousticNodeConnection";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAcousticNodeOctrees : TPoolInfo<PoolAudioAcousticNodeOctrees>
-{
-    static constexpr auto Name = "PoolAudioAcousticNodeOctrees";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAcousticsPathfinding : TPoolInfo<PoolAudioAcousticsPathfinding>
-{
-    static constexpr auto Name = "PoolAudioAcousticsPathfinding";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAcousticZones : TPoolInfo<PoolAudioAcousticZones>
-{
-    static constexpr auto Name = "PoolAudioAcousticZones";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolAudioAcousticStreaming : TPoolInfo<PoolAudioAcousticStreaming>
-{
-    static constexpr auto Name = "PoolAudioAcousticStreaming";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolReplication : TPoolInfo<PoolReplication>
-{
-    static constexpr auto Name = "PoolReplication";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolReplicationProfiler : TPoolInfo<PoolReplicationProfiler>
-{
-    static constexpr auto Name = "PoolReplicationProfiler";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolReplicationRTTI : TPoolInfo<PoolReplicationRTTI>
-{
-    static constexpr auto Name = "PoolReplicationRTTI";
-
-    inline static auto Get()
-    {
-        return TPoolInfo::Get(Name);
-    }
-};
-
-struct PoolInput : TPoolInfo<PoolInput>
-{
-    static constexpr auto Name = "PoolInput";
+    static constexpr auto Name = "PoolLibTree";
 
     inline static auto Get()
     {
@@ -5488,9 +5488,19 @@ struct PoolPSOCache : TPoolInfo<PoolPSOCache>
     }
 };
 
-struct PoolD3D12Allocator : TPoolInfo<PoolD3D12Allocator>
+struct PoolMetalAllocator : TPoolInfo<PoolMetalAllocator>
 {
-    static constexpr auto Name = "PoolD3D12Allocator";
+    static constexpr auto Name = "PoolMetalAllocator";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolTextureSizeCache : TPoolInfo<PoolTextureSizeCache>
+{
+    static constexpr auto Name = "PoolTextureSizeCache";
 
     inline static auto Get()
     {
@@ -5938,6 +5948,16 @@ struct GPUM_TG_System_MorphTargets : TPoolInfo<GPUM_TG_System_MorphTargets>
     }
 };
 
+struct GPUM_TG_System_DynamicTexture : TPoolInfo<GPUM_TG_System_DynamicTexture>
+{
+    static constexpr auto Name = "GPUM_TG_System_DynamicTexture";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
 struct PoolMirrorBuffers : TPoolInfo<PoolMirrorBuffers>
 {
     static constexpr auto Name = "PoolMirrorBuffers";
@@ -6248,6 +6268,16 @@ struct GPUM_Buffer_RaytracingAS : TPoolInfo<GPUM_Buffer_RaytracingAS>
     }
 };
 
+struct GPUM_Buffer_RaytracingOMM : TPoolInfo<GPUM_Buffer_RaytracingOMM>
+{
+    static constexpr auto Name = "GPUM_Buffer_RaytracingOMM";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
 struct GPUM_Buffer_Decals : TPoolInfo<GPUM_Buffer_Decals>
 {
     static constexpr auto Name = "GPUM_Buffer_Decals";
@@ -6311,6 +6341,16 @@ struct GPUM_Buffer_Misc : TPoolInfo<GPUM_Buffer_Misc>
 struct GPUM_Buffer_MorphTargets : TPoolInfo<GPUM_Buffer_MorphTargets>
 {
     static constexpr auto Name = "GPUM_Buffer_MorphTargets";
+
+    inline static auto Get()
+    {
+        return TPoolInfo::Get(Name);
+    }
+};
+
+struct PoolWwise : TPoolInfo<PoolWwise>
+{
+    static constexpr auto Name = "PoolWwise";
 
     inline static auto Get()
     {
