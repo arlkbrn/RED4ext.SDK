@@ -81,14 +81,13 @@ struct Allocator : IAllocator
 
     virtual AllocationResult Alloc(uint64_t aSize) const override
     {
-        using alloc_t = void(RED4EXT_CALL*)(Vault*, AllocationResult*, uint64_t);
+        using alloc_t = AllocationResult(RED4EXT_CALL*)(Vault*, uint64_t);
         static UniversalRelocFunc<alloc_t> alloc(Detail::AddressHashes::Memory_Vault_Alloc);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
 
-        AllocationResult result = {};
-        alloc(storage, &result, aSize);
+        AllocationResult result = alloc(storage, aSize);
         if (!result.memory)
         {
             OOM(aSize, 8);
@@ -99,14 +98,13 @@ struct Allocator : IAllocator
 
     virtual AllocationResult AllocAligned(uint64_t aSize, uint32_t aAlignment) const override
     {
-        using alloc_t = void (*)(Vault*, AllocationResult*, uint64_t, uint32_t);
+        using alloc_t = AllocationResult (*)(Vault*, uint64_t, uint32_t);
         static UniversalRelocFunc<alloc_t> alloc(Detail::AddressHashes::Memory_Vault_AllocAligned);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
 
-        AllocationResult result = {};
-        alloc(storage, &result, aSize, aAlignment);
+        AllocationResult result = alloc(storage, aSize, aAlignment);
         if (!result.memory)
         {
             OOM(aSize, aAlignment);
@@ -117,14 +115,13 @@ struct Allocator : IAllocator
 
     virtual AllocationResult Realloc(AllocationResult& aAllocation, uint64_t aSize) const override
     {
-        using realloc_t = void (*)(Vault*, AllocationResult*, AllocationResult&, uint64_t);
+        using realloc_t = AllocationResult (*)(Vault*, AllocationResult&, uint64_t);
         static UniversalRelocFunc<realloc_t> realloc(Detail::AddressHashes::Memory_Vault_Realloc);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
 
-        AllocationResult result = {};
-        realloc(storage, &result, aAllocation, aSize);
+        AllocationResult result = realloc(storage, aAllocation, aSize);
         if (!result.memory && aSize)
         {
             OOM(aSize, 8);
@@ -136,14 +133,13 @@ struct Allocator : IAllocator
     virtual AllocationResult ReallocAligned(AllocationResult& aAllocation, uint64_t aSize,
                                             uint32_t aAlignment) const override
     {
-        using realloc_t = void (*)(Vault*, AllocationResult*, AllocationResult&, uint64_t, uint32_t);
+        using realloc_t = AllocationResult (*)(Vault*, AllocationResult&, uint64_t, uint32_t);
         static UniversalRelocFunc<realloc_t> realloc(Detail::AddressHashes::Memory_Vault_ReallocAligned);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
 
-        AllocationResult result = {};
-        realloc(storage, &result, aAllocation, aSize, aAlignment);
+        AllocationResult result = realloc(storage, aAllocation, aSize, aAlignment);
         if (!result.memory && aSize)
         {
             OOM(aSize, aAlignment);
@@ -162,6 +158,7 @@ struct Allocator : IAllocator
         func(storage, aAllocation);
     }
 
+    // TODO: Replace with: uint64 GetBlockSize()
     virtual void sub_28(void* a2) const override
     {
         using func_t = void (*)(Vault*, void*);
@@ -194,14 +191,6 @@ private:
         auto pool = T::Get();
         oom(pool->storage, aSize, aAlignment);
     }
-};
-
-struct GamepadObserverPoolAllocator : Allocator<GamepadObserverPool>
-{
-};
-
-struct InputInternalAllocator : Allocator<PoolInputInternal>
-{
 };
 
 struct RootAllocator : Allocator<PoolRoot>
@@ -280,18 +269,6 @@ struct ScriptDebuggerAllocator : Allocator<PoolScriptDebugger>
 {
 };
 
-struct LibTreeAllocator : Allocator<PoolLibTree>
-{
-};
-
-struct AIAllocator : Allocator<PoolAI>
-{
-};
-
-struct TelemetryAllocator : Allocator<PoolTelemetry>
-{
-};
-
 struct PhysicsAllocator : Allocator<PoolPhysics>
 {
 };
@@ -364,1018 +341,6 @@ struct PhysicsClothAllocator : Allocator<PoolPhysicsCloth>
 {
 };
 
-struct RTTIAllocator : Allocator<PoolRTTI>
-{
-};
-
-struct RTTIFunctionAllocator : Allocator<PoolRTTIFunction>
-{
-};
-
-struct RTTIPropertyAllocator : Allocator<PoolRTTIProperty>
-{
-};
-
-struct TriggersAllocator : Allocator<PoolTriggers>
-{
-};
-
-struct SplineAllocator : Allocator<PoolSpline>
-{
-};
-
-struct CurvesAllocator : Allocator<PoolCurves>
-{
-};
-
-struct AreasAllocator : Allocator<PoolAreas>
-{
-};
-
-struct EffectAllocator : Allocator<PoolEffect>
-{
-};
-
-struct IDRegistryAllocator : Allocator<PoolIDRegistry>
-{
-};
-
-struct EventsAllocator : Allocator<PoolEvents>
-{
-};
-
-struct EventAllocator : Allocator<PoolEvent>
-{
-};
-
-struct EventBrokerAllocator : Allocator<PoolEventBroker>
-{
-};
-
-struct SerializableAllocator : Allocator<PoolSerializable>
-{
-};
-
-struct ResourceAllocator : Allocator<PoolResource>
-{
-};
-
-struct ResourceLoadingJobsAllocator : Allocator<PoolResourceLoadingJobs>
-{
-};
-
-struct InteropAllocator : Allocator<PoolInterop>
-{
-};
-
-struct StringAllocator : Allocator<PoolString>
-{
-};
-
-struct NetworkServicesAllocator : Allocator<PoolNetworkServices>
-{
-};
-
-struct UIAllocator : Allocator<PoolUI>
-{
-};
-
-struct InkAllocator : Allocator<PoolInk>
-{
-};
-
-struct Ink_UncategorizedAllocator : Allocator<PoolInk_Uncategorized>
-{
-};
-
-struct Ink_WidgetsAllocator : Allocator<PoolInk_Widgets>
-{
-};
-
-struct Ink_LibraryAllocator : Allocator<PoolInk_Library>
-{
-};
-
-struct Ink_EventsAllocator : Allocator<PoolInk_Events>
-{
-};
-
-struct Ink_BindingAllocator : Allocator<PoolInk_Binding>
-{
-};
-
-struct Ink_AnimationsAllocator : Allocator<PoolInk_Animations>
-{
-};
-
-struct Ink_RenderingAllocator : Allocator<PoolInk_Rendering>
-{
-};
-
-struct Ink_EffectsAllocator : Allocator<PoolInk_Effects>
-{
-};
-
-struct Ink_BrushesAllocator : Allocator<PoolInk_Brushes>
-{
-};
-
-struct Ink_StylesAllocator : Allocator<PoolInk_Styles>
-{
-};
-
-struct Ink_ControllersAllocator : Allocator<PoolInk_Controllers>
-{
-};
-
-struct Ink_LayersAllocator : Allocator<PoolInk_Layers>
-{
-};
-
-struct Ink_Layers_StateMachineAllocator : Allocator<PoolInk_Layers_StateMachine>
-{
-};
-
-struct Ink_Layers_WorldLayerAllocator : Allocator<PoolInk_Layers_WorldLayer>
-{
-};
-
-struct Ink_Layers_MenuLayerAllocator : Allocator<PoolInk_Layers_MenuLayer>
-{
-};
-
-struct Ink_Layers_LoadingScreenAllocator : Allocator<PoolInk_Layers_LoadingScreen>
-{
-};
-
-struct Ink_Layers_SystemNotificatiAllocator : Allocator<PoolInk_Layers_SystemNotificati>
-{
-};
-
-struct Ink_Layers_GameNotificationAllocator : Allocator<PoolInk_Layers_GameNotification>
-{
-};
-
-struct Ink_Layers_ViewportWrapperAllocator : Allocator<PoolInk_Layers_ViewportWrapper>
-{
-};
-
-struct Ink_Layers_EventBrokerAllocator : Allocator<PoolInk_Layers_EventBroker>
-{
-};
-
-struct Ink_JobsAllocator : Allocator<PoolInk_Jobs>
-{
-};
-
-struct Ink_TextAllocator : Allocator<PoolInk_Text>
-{
-};
-
-struct Ink_HitTestAllocator : Allocator<PoolInk_HitTest>
-{
-};
-
-struct Ink_SystemAllocator : Allocator<PoolInk_System>
-{
-};
-
-struct Ink_ScriptsAllocator : Allocator<PoolInk_Scripts>
-{
-};
-
-struct Ink_MappinsAllocator : Allocator<PoolInk_Mappins>
-{
-};
-
-struct Ink_MinimapGeometryAllocator : Allocator<PoolInk_MinimapGeometry>
-{
-};
-
-struct Ink_OffscreenAllocator : Allocator<PoolInk_Offscreen>
-{
-};
-
-struct Ink_SpawningAllocator : Allocator<PoolInk_Spawning>
-{
-};
-
-struct Ink_ResourcesAllocator : Allocator<PoolInk_Resources>
-{
-};
-
-struct Ink_VideosAllocator : Allocator<PoolInk_Videos>
-{
-};
-
-struct Ink_BackendAllocator : Allocator<PoolInk_Backend>
-{
-};
-
-struct Ink_DebugAllocator : Allocator<PoolInk_Debug>
-{
-};
-
-struct NetworkSessionRecordingToolAllocator : Allocator<PoolNetworkSessionRecordingTool>
-{
-};
-
-struct NetworkAllocator : Allocator<PoolNetwork>
-{
-};
-
-struct MultiplayerAllocator : Allocator<PoolMultiplayer>
-{
-};
-
-struct TextureAllocator : Allocator<PoolTexture>
-{
-};
-
-struct MeshAllocator : Allocator<PoolMesh>
-{
-};
-
-struct BinkAllocator : Allocator<PoolBink>
-{
-};
-
-struct FontAllocator : Allocator<PoolFont>
-{
-};
-
-struct FreeTypeAllocator : Allocator<PoolFreeType>
-{
-};
-
-struct FontCacheAllocator : Allocator<PoolFontCache>
-{
-};
-
-struct GlyphCacheAllocator : Allocator<PoolGlyphCache>
-{
-};
-
-struct RenderDebugAllocator : Allocator<PoolRenderDebug>
-{
-};
-
-struct GIDebugAllocator : Allocator<PoolGIDebug>
-{
-};
-
-struct GPUProfilingAllocator : Allocator<PoolGPUProfiling>
-{
-};
-
-struct Rendering_Allocator : Allocator<PoolRendering_>
-{
-};
-
-struct FrameRenderingAllocator : Allocator<PoolFrameRendering>
-{
-};
-
-struct DoubleBufferedFrameRenderinAllocator : Allocator<PoolDoubleBufferedFrameRenderin>
-{
-};
-
-struct RenderingCoreAllocator : Allocator<PoolRenderingCore>
-{
-};
-
-struct SurfaceCacheAllocator : Allocator<PoolSurfaceCache>
-{
-};
-
-struct ShaderCacheAllocator : Allocator<PoolShaderCache>
-{
-};
-
-struct ShaderCacheShadersAllocator : Allocator<PoolShaderCacheShaders>
-{
-};
-
-struct ShaderCacheDataAllocator : Allocator<PoolShaderCacheData>
-{
-};
-
-struct ShaderCompilationAllocator : Allocator<PoolShaderCompilation>
-{
-};
-
-struct PSOAllocator : Allocator<PoolPSO>
-{
-};
-
-struct ShaderCacheData_ShaderBinarAllocator : Allocator<PoolShaderCacheData_ShaderBinar>
-{
-};
-
-struct RenderProxyAllocator : Allocator<PoolRenderProxy>
-{
-};
-
-struct RenderProxyInternals_MeshAllocator : Allocator<PoolRenderProxyInternals_Mesh>
-{
-};
-
-struct RenderProxy_CustomDataAllocator : Allocator<PoolRenderProxy_CustomData>
-{
-};
-
-struct RenderProxy_InstanceDataAllocator : Allocator<PoolRenderProxy_InstanceData>
-{
-};
-
-struct RenderProxy_HandlesAllocator : Allocator<PoolRenderProxy_Handles>
-{
-};
-
-struct RenderResourcesAllocator : Allocator<PoolRenderResources>
-{
-};
-
-struct RenderMeshAllocator : Allocator<PoolRenderMesh>
-{
-};
-
-struct RenderDynamicTextureAllocator : Allocator<PoolRenderDynamicTexture>
-{
-};
-
-struct MaterialsAllocator : Allocator<PoolMaterials>
-{
-};
-
-struct RenderMaterialAllocator : Allocator<PoolRenderMaterial>
-{
-};
-
-struct MaterialTechniquesAllocator : Allocator<PoolMaterialTechniques>
-{
-};
-
-struct MaterialStagePassDataAllocator : Allocator<PoolMaterialStagePassData>
-{
-};
-
-struct MaterialStagePassCacheAllocator : Allocator<PoolMaterialStagePassCache>
-{
-};
-
-struct RenderMaterialParamsAllocator : Allocator<PoolRenderMaterialParams>
-{
-};
-
-struct MaterialExtractedDataAllocator : Allocator<PoolMaterialExtractedData>
-{
-};
-
-struct MaterialModifierAllocator : Allocator<PoolMaterialModifier>
-{
-};
-
-struct DecalsAllocator : Allocator<PoolDecals>
-{
-};
-
-struct ParticleDataAllocator : Allocator<PoolParticleData>
-{
-};
-
-struct RenderGraphAllocator : Allocator<PoolRenderGraph>
-{
-};
-
-struct FlowAllocator : Allocator<PoolFlowAllocator>
-{
-};
-
-struct VideoPlayerAllocator : Allocator<PoolVideoPlayer>
-{
-};
-
-struct RenderDataAllocator : Allocator<PoolRenderData>
-{
-};
-
-struct GIAllocator : Allocator<PoolGI>
-{
-};
-
-struct RenderBlobsAllocator : Allocator<PoolRenderBlobs>
-{
-};
-
-struct RenderBlobsBuffersAllocator : Allocator<PoolRenderBlobsBuffers>
-{
-};
-
-struct RenderSceneAllocator : Allocator<PoolRenderScene>
-{
-};
-
-struct RenderScene_ProxiesAllocator : Allocator<PoolRenderScene_Proxies>
-{
-};
-
-struct RenderScene_ProxyDataAllocator : Allocator<PoolRenderScene_ProxyData>
-{
-};
-
-struct RenderScene_PendingOpsAllocator : Allocator<PoolRenderScene_PendingOps>
-{
-};
-
-struct RenderScene_RuntimeSystemAllocator : Allocator<PoolRenderScene_RuntimeSystem>
-{
-};
-
-struct VisBVHAllocator : Allocator<PoolVisBVH>
-{
-};
-
-struct SkinningDataAllocator : Allocator<PoolSkinningData>
-{
-};
-
-struct FrameInfoAllocator : Allocator<PoolFrameInfo>
-{
-};
-
-struct FoliageAllocator : Allocator<PoolFoliage>
-{
-};
-
-struct BatchersAllocator : Allocator<PoolBatchers>
-{
-};
-
-struct RenderCommandHandlerAllocator : Allocator<PoolRenderCommandHandler>
-{
-};
-
-struct PostProcessAndEffectsAllocator : Allocator<PoolPostProcessAndEffects>
-{
-};
-
-struct EnvironmentAllocator : Allocator<PoolEnvironment>
-{
-};
-
-struct ImageProcessingAllocator : Allocator<PoolImageProcessing>
-{
-};
-
-struct RenderingUIAllocator : Allocator<PoolRenderingUI>
-{
-};
-
-struct ReflectionProbesAllocator : Allocator<PoolReflectionProbes>
-{
-};
-
-struct LightingAllocator : Allocator<PoolLighting>
-{
-};
-
-struct DataRegistryAllocator : Allocator<PoolDataRegistry>
-{
-};
-
-struct CamerasAllocator : Allocator<PoolCameras>
-{
-};
-
-struct RaytraceAllocator : Allocator<PoolRaytrace>
-{
-};
-
-struct VisibilitySystemAllocator : Allocator<PoolVisibilitySystem>
-{
-};
-
-struct VisibilitySceneAllocator : Allocator<PoolVisibilityScene>
-{
-};
-
-struct OccluderShapesAllocator : Allocator<PoolOccluderShapes>
-{
-};
-
-struct InkRenderingAllocator : Allocator<PoolInkRendering>
-{
-};
-
-struct InkRendering_UncategorizedAllocator : Allocator<PoolInkRendering_Uncategorized>
-{
-};
-
-struct InkRendering_OneFrameRenderAllocator : Allocator<PoolInkRendering_OneFrameRender>
-{
-};
-
-struct InkRendering_EffectsAllocator : Allocator<PoolInkRendering_Effects>
-{
-};
-
-struct InkRendering_MathAllocator : Allocator<PoolInkRendering_Math>
-{
-};
-
-struct InkRendering_TextAllocator : Allocator<PoolInkRendering_Text>
-{
-};
-
-struct InkRendering_WorldAllocator : Allocator<PoolInkRendering_World>
-{
-};
-
-struct InkRendering_TexturesAllocator : Allocator<PoolInkRendering_Textures>
-{
-};
-
-struct InkRendering_FSCCompositionAllocator : Allocator<PoolInkRendering_FSCComposition>
-{
-};
-
-struct InkRendering_CompositionAllocator : Allocator<PoolInkRendering_Composition>
-{
-};
-
-struct InkRendering_DrawStackAllocator : Allocator<PoolInkRendering_DrawStack>
-{
-};
-
-struct AI_BehaviourAllocator : Allocator<PoolAI_Behaviour>
-{
-};
-
-struct AI_InstancesAllocator : Allocator<PoolAI_Instances>
-{
-};
-
-struct AI_ScriptAllocator : Allocator<PoolAI_Script>
-{
-};
-
-struct AI_SystemsAllocator : Allocator<PoolAI_Systems>
-{
-};
-
-struct AI_AttitudesAllocator : Allocator<PoolAI_Attitudes>
-{
-};
-
-struct AI_InfluenceMapAllocator : Allocator<PoolAI_InfluenceMap>
-{
-};
-
-struct AI_SmartObjectsAllocator : Allocator<PoolAI_SmartObjects>
-{
-};
-
-struct AI_SensesAllocator : Allocator<PoolAI_Senses>
-{
-};
-
-struct AI_ComponentsAllocator : Allocator<PoolAI_Components>
-{
-};
-
-struct ComponentAllocator : Allocator<PoolComponent>
-{
-};
-
-struct AI_MovementAllocator : Allocator<PoolAI_Movement>
-{
-};
-
-struct AI_MovementPoliciesAllocator : Allocator<PoolAI_MovementPolicies>
-{
-};
-
-struct AI_WorkspotsAllocator : Allocator<PoolAI_Workspots>
-{
-};
-
-struct AI_GuardAreasAllocator : Allocator<PoolAI_GuardAreas>
-{
-};
-
-struct AI_TargetTrackingAllocator : Allocator<PoolAI_TargetTracking>
-{
-};
-
-struct AI_TweakActionsAllocator : Allocator<PoolAI_TweakActions>
-{
-};
-
-struct AI_VehiclesAllocator : Allocator<PoolAI_Vehicles>
-{
-};
-
-struct AI_LegacyAllocator : Allocator<PoolAI_Legacy>
-{
-};
-
-struct AI_SORuntimeDataAllocator : Allocator<PoolAI_SORuntimeData>
-{
-};
-
-struct AI_SOCompiledResourcesAllocator : Allocator<PoolAI_SOCompiledResources>
-{
-};
-
-struct AI_SOCoversAllocator : Allocator<PoolAI_SOCovers>
-{
-};
-
-struct AI_SOAnimDBAllocator : Allocator<PoolAI_SOAnimDB>
-{
-};
-
-struct AI_SONodesAllocator : Allocator<PoolAI_SONodes>
-{
-};
-
-struct AI_SORawResourcesAllocator : Allocator<PoolAI_SORawResources>
-{
-};
-
-struct _DebugContextsAllocator : Allocator<Pool_DebugContexts>
-{
-};
-
-struct JSONAllocator : Allocator<PoolJSON>
-{
-};
-
-struct ScenesAllocator : Allocator<PoolScenes>
-{
-};
-
-struct SceneSystemAllocator : Allocator<PoolSceneSystem>
-{
-};
-
-struct SceneResourcesAllocator : Allocator<PoolSceneResources>
-{
-};
-
-struct HTTPAllocator : Allocator<PoolHTTP>
-{
-};
-
-struct HTTP_CurlAllocator : Allocator<PoolHTTP_Curl>
-{
-};
-
-struct HTTP_UWPAllocator : Allocator<PoolHTTP_UWP>
-{
-};
-
-struct HTTP_PS4Allocator : Allocator<PoolHTTP_PS4>
-{
-};
-
-struct NodeAllocator : Allocator<PoolNode>
-{
-};
-
-struct TicketAllocator : Allocator<PoolTicket>
-{
-};
-
-struct FoliageNodeAllocator : Allocator<PoolFoliageNode>
-{
-};
-
-struct InteriorMapAllocator : Allocator<PoolInteriorMap>
-{
-};
-
-struct MinimapAllocator : Allocator<PoolMinimap>
-{
-};
-
-struct WeatherAllocator : Allocator<PoolWeather>
-{
-};
-
-struct MarkerAllocator : Allocator<PoolMarker>
-{
-};
-
-struct NodeSourceAllocator : Allocator<PoolNodeSource>
-{
-};
-
-struct NodeInstanceAllocator : Allocator<PoolNodeInstance>
-{
-};
-
-struct IDPathRegistryAllocator : Allocator<PoolIDPathRegistry>
-{
-};
-
-struct IDStringRegistryAllocator : Allocator<PoolIDStringRegistry>
-{
-};
-
-struct IDStringBufferAllocator : Allocator<PoolIDStringBuffer>
-{
-};
-
-struct CompiledSetupInfoAllocator : Allocator<PoolCompiledSetupInfo>
-{
-};
-
-struct MeshLocalBoundsCacheAllocator : Allocator<PoolMeshLocalBoundsCache>
-{
-};
-
-struct StreamingQueryAllocator : Allocator<PoolStreamingQuery>
-{
-};
-
-struct SaveDataAllocator : Allocator<PoolSaveData>
-{
-};
-
-struct GameServicesAllocator : Allocator<PoolGameServices>
-{
-};
-
-struct MultiplayerServerAllocator : Allocator<PoolMultiplayerServer>
-{
-};
-
-struct ArchiveAllocator : Allocator<PoolArchive>
-{
-};
-
-struct EntityResourceAllocator : Allocator<PoolEntityResource>
-{
-};
-
-struct EntityAssemblerAllocator : Allocator<PoolEntityAssembler>
-{
-};
-
-struct EntityAppearanceAllocator : Allocator<PoolEntityAppearance>
-{
-};
-
-struct EntityParametersAllocator : Allocator<PoolEntityParameters>
-{
-};
-
-struct EntityParameterGarmentAllocator : Allocator<PoolEntityParameterGarment>
-{
-};
-
-struct EntityParameterCorpseAllocator : Allocator<PoolEntityParameterCorpse>
-{
-};
-
-struct EntityParameterHitRepresentAllocator : Allocator<PoolEntityParameterHitRepresent>
-{
-};
-
-struct EntityAllocator : Allocator<PoolEntity>
-{
-};
-
-struct DismembermentAllocator : Allocator<PoolDismemberment>
-{
-};
-
-struct Dismemberment_DataBaseAllocator : Allocator<PoolDismemberment_DataBase>
-{
-};
-
-struct Dismemberment_LookupAllocator : Allocator<PoolDismemberment_Lookup>
-{
-};
-
-struct Dismemberment_RenderDataAllocator : Allocator<PoolDismemberment_RenderData>
-{
-};
-
-struct NavigationAllocator : Allocator<PoolNavigation>
-{
-};
-
-struct NavmeshNavigationAllocator : Allocator<PoolNavmeshNavigation>
-{
-};
-
-struct PathfindingNavigationAllocator : Allocator<PoolPathfindingNavigation>
-{
-};
-
-struct TrafficNavigationAllocator : Allocator<PoolTrafficNavigation>
-{
-};
-
-struct InfluenceMapNavigationAllocator : Allocator<PoolInfluenceMapNavigation>
-{
-};
-
-struct OffmeshlinkNavigationAllocator : Allocator<PoolOffmeshlinkNavigation>
-{
-};
-
-struct NavigationComponentsAllocator : Allocator<PoolNavigationComponents>
-{
-};
-
-struct NavigationScriptsAllocator : Allocator<PoolNavigationScripts>
-{
-};
-
-struct TrafficLanesAllocator : Allocator<PoolTrafficLanes>
-{
-};
-
-struct TrafficStaticCollisionsAllocator : Allocator<PoolTrafficStaticCollisions>
-{
-};
-
-struct TrafficDynamicCollisionsAllocator : Allocator<PoolTrafficDynamicCollisions>
-{
-};
-
-struct TrafficCrowdAvoidanceAllocator : Allocator<PoolTrafficCrowdAvoidance>
-{
-};
-
-struct TrafficCrowdPathsAllocator : Allocator<PoolTrafficCrowdPaths>
-{
-};
-
-struct TrafficCrowdMarblesAllocator : Allocator<PoolTrafficCrowdMarbles>
-{
-};
-
-struct TrafficCrowdLocomotionAllocator : Allocator<PoolTrafficCrowdLocomotion>
-{
-};
-
-struct TrafficSlotsAllocator : Allocator<PoolTrafficSlots>
-{
-};
-
-struct TrafficSpotsAllocator : Allocator<PoolTrafficSpots>
-{
-};
-
-struct TrafficGridAllocator : Allocator<PoolTrafficGrid>
-{
-};
-
-struct TrafficNullAreasAllocator : Allocator<PoolTrafficNullAreas>
-{
-};
-
-struct TrafficPersistentLanesAllocator : Allocator<PoolTrafficPersistentLanes>
-{
-};
-
-struct TrafficCollisionMapAllocator : Allocator<PoolTrafficCollisionMap>
-{
-};
-
-struct TrafficLookupAllocator : Allocator<PoolTrafficLookup>
-{
-};
-
-struct TrafficDynamicMovementAllocator : Allocator<PoolTrafficDynamicMovement>
-{
-};
-
-struct TrafficDynamicMovement_PedeAllocator : Allocator<PoolTrafficDynamicMovement_Pede>
-{
-};
-
-struct TrafficDynamicMovement_VehiAllocator : Allocator<PoolTrafficDynamicMovement_Vehi>
-{
-};
-
-struct TDM_V_RepresentationAllocator : Allocator<TDM_V_Representation>
-{
-};
-
-struct TDM_V_SegmentsAllocator : Allocator<TDM_V_Segments>
-{
-};
-
-struct TDM_V_LookupsAllocator : Allocator<TDM_V_Lookups>
-{
-};
-
-struct TDM_P_RepresentationAllocator : Allocator<TDM_P_Representation>
-{
-};
-
-struct NavigationDebugAllocator : Allocator<PoolNavigationDebug>
-{
-};
-
-struct TrafficDebugAllocator : Allocator<PoolTrafficDebug>
-{
-};
-
-struct TextAllocator : Allocator<PoolText>
-{
-};
-
-struct Text_RichDecoratorAllocator : Allocator<PoolText_RichDecorator>
-{
-};
-
-struct Text_MarkupAllocator : Allocator<PoolText_Markup>
-{
-};
-
-struct Text_LayoutAllocator : Allocator<PoolText_Layout>
-{
-};
-
-struct Text_Layout_BreakAllocator : Allocator<PoolText_Layout_Break>
-{
-};
-
-struct Text_Layout_BlockAllocator : Allocator<PoolText_Layout_Block>
-{
-};
-
-struct Text_Layout_ModelAllocator : Allocator<PoolText_Layout_Model>
-{
-};
-
-struct Text_Layout_ViewAllocator : Allocator<PoolText_Layout_View>
-{
-};
-
-struct Text_Layout_DirectionAllocator : Allocator<PoolText_Layout_Direction>
-{
-};
-
-struct Text_ShaperAllocator : Allocator<PoolText_Shaper>
-{
-};
-
-struct Text_TypographyAllocator : Allocator<PoolText_Typography>
-{
-};
-
-struct Text_FontAllocator : Allocator<PoolText_Font>
-{
-};
-
-struct Text_FormatterAllocator : Allocator<PoolText_Formatter>
-{
-};
-
-struct Text_ParamsAllocator : Allocator<PoolText_Params>
-{
-};
-
-struct Text_HBAllocator : Allocator<PoolText_HB>
-{
-};
-
-struct Text_HB_InternalAllocator : Allocator<PoolText_HB_Internal>
-{
-};
-
-struct Text_ICUAllocator : Allocator<PoolText_ICU>
-{
-};
-
-struct Text_ICU_InternalAllocator : Allocator<PoolText_ICU_Internal>
-{
-};
-
-struct Text_ICU_Data_PackagaeAllocator : Allocator<PoolText_ICU_Data_Packagae>
-{
-};
-
-struct Text_RunAllocator : Allocator<PoolText_Run>
-{
-};
-
-struct Text_GlyphCacheAllocator : Allocator<PoolText_GlyphCache>
-{
-};
-
-struct Text_UTF16Allocator : Allocator<PoolText_UTF16>
-{
-};
-
 struct GMPL_ObjectsAllocator : Allocator<PoolGMPL_Objects>
 {
 };
@@ -1429,6 +394,10 @@ struct GMPL_Population_Community_SAllocator : Allocator<PoolGMPL_Population_Comm
 };
 
 struct GMPL_Population_CrowdAllocator : Allocator<PoolGMPL_Population_Crowd>
+{
+};
+
+struct GMPL_PreventionSystem_RadioAllocator : Allocator<PoolGMPL_PreventionSystem_Radio>
 {
 };
 
@@ -1896,7 +865,375 @@ struct GMPL_ObjectCarrySystemAllocator : Allocator<PoolGMPL_ObjectCarrySystem>
 {
 };
 
-struct GOGRewardsAllocator : Allocator<PoolGOGRewards>
+struct GMPL_RazerAllocator : Allocator<PoolGMPL_Razer>
+{
+};
+
+struct GMPL_EffectSpawnerSaveAllocator : Allocator<PoolGMPL_EffectSpawnerSave>
+{
+};
+
+struct _OnlineFeaturesAllocator : Allocator<Pool_OnlineFeatures>
+{
+};
+
+struct EntityResourceAllocator : Allocator<PoolEntityResource>
+{
+};
+
+struct SerializableAllocator : Allocator<PoolSerializable>
+{
+};
+
+struct EntityAssemblerAllocator : Allocator<PoolEntityAssembler>
+{
+};
+
+struct EntityAppearanceAllocator : Allocator<PoolEntityAppearance>
+{
+};
+
+struct EntityParametersAllocator : Allocator<PoolEntityParameters>
+{
+};
+
+struct EntityParameterGarmentAllocator : Allocator<PoolEntityParameterGarment>
+{
+};
+
+struct EntityParameterCorpseAllocator : Allocator<PoolEntityParameterCorpse>
+{
+};
+
+struct EntityParameterHitRepresentAllocator : Allocator<PoolEntityParameterHitRepresent>
+{
+};
+
+struct EntityAllocator : Allocator<PoolEntity>
+{
+};
+
+struct ComponentAllocator : Allocator<PoolComponent>
+{
+};
+
+struct DismembermentAllocator : Allocator<PoolDismemberment>
+{
+};
+
+struct Dismemberment_DataBaseAllocator : Allocator<PoolDismemberment_DataBase>
+{
+};
+
+struct Dismemberment_LookupAllocator : Allocator<PoolDismemberment_Lookup>
+{
+};
+
+struct Dismemberment_RenderDataAllocator : Allocator<PoolDismemberment_RenderData>
+{
+};
+
+struct GalaxyAllocator : Allocator<PoolGalaxy>
+{
+};
+
+struct GameServicesAllocator : Allocator<PoolGameServices>
+{
+};
+
+struct InkRenderingAllocator : Allocator<PoolInkRendering>
+{
+};
+
+struct UIAllocator : Allocator<PoolUI>
+{
+};
+
+struct InkRendering_UncategorizedAllocator : Allocator<PoolInkRendering_Uncategorized>
+{
+};
+
+struct InkRendering_OneFrameRenderAllocator : Allocator<PoolInkRendering_OneFrameRender>
+{
+};
+
+struct InkRendering_EffectsAllocator : Allocator<PoolInkRendering_Effects>
+{
+};
+
+struct InkRendering_MathAllocator : Allocator<PoolInkRendering_Math>
+{
+};
+
+struct InkRendering_TextAllocator : Allocator<PoolInkRendering_Text>
+{
+};
+
+struct InkRendering_WorldAllocator : Allocator<PoolInkRendering_World>
+{
+};
+
+struct InkRendering_TexturesAllocator : Allocator<PoolInkRendering_Textures>
+{
+};
+
+struct InkRendering_FSCCompositionAllocator : Allocator<PoolInkRendering_FSCComposition>
+{
+};
+
+struct InkRendering_CompositionAllocator : Allocator<PoolInkRendering_Composition>
+{
+};
+
+struct InkRendering_DrawStackAllocator : Allocator<PoolInkRendering_DrawStack>
+{
+};
+
+struct JSONAllocator : Allocator<PoolJSON>
+{
+};
+
+struct ResourceAllocator : Allocator<PoolResource>
+{
+};
+
+struct AudioAllocator : Allocator<PoolAudio>
+{
+};
+
+struct AudioMetadataAllocator : Allocator<PoolAudioMetadata>
+{
+};
+
+struct AudioGeometryAllocator : Allocator<PoolAudioGeometry>
+{
+};
+
+struct AudioSystemsAllocator : Allocator<PoolAudioSystems>
+{
+};
+
+struct AudioSystemsGroupItemsAllocator : Allocator<PoolAudioSystemsGroupItems>
+{
+};
+
+struct AudioEmittersAllocator : Allocator<PoolAudioEmitters>
+{
+};
+
+struct AudioDecoratorsAllocator : Allocator<PoolAudioDecorators>
+{
+};
+
+struct AudioPropertyStreamAllocator : Allocator<PoolAudioPropertyStream>
+{
+};
+
+struct AudioPositionStreamAllocator : Allocator<PoolAudioPositionStream>
+{
+};
+
+struct LocalizationAndVoAllocator : Allocator<PoolLocalizationAndVo>
+{
+};
+
+struct AudioAmbientsAllocator : Allocator<PoolAudioAmbients>
+{
+};
+
+struct AudioGroupingAllocator : Allocator<PoolAudioGrouping>
+{
+};
+
+struct AudioSystemInterfacesAllocator : Allocator<PoolAudioSystemInterfaces>
+{
+};
+
+struct AudioWeaponsAllocator : Allocator<PoolAudioWeapons>
+{
+};
+
+struct AudioMusicAndRadioAllocator : Allocator<PoolAudioMusicAndRadio>
+{
+};
+
+struct SoundComponentAllocator : Allocator<PoolSoundComponent>
+{
+};
+
+struct AudioMixingAndSceneAllocator : Allocator<PoolAudioMixingAndScene>
+{
+};
+
+struct AudioReverbAllocator : Allocator<PoolAudioReverb>
+{
+};
+
+struct AudioAcousticNodesAllocator : Allocator<PoolAudioAcousticNodes>
+{
+};
+
+struct AudioAcousticNodeConnectionAllocator : Allocator<PoolAudioAcousticNodeConnection>
+{
+};
+
+struct AudioAcousticNodeOctreesAllocator : Allocator<PoolAudioAcousticNodeOctrees>
+{
+};
+
+struct AudioAcousticsPathfindingAllocator : Allocator<PoolAudioAcousticsPathfinding>
+{
+};
+
+struct AudioAcousticZonesAllocator : Allocator<PoolAudioAcousticZones>
+{
+};
+
+struct AudioAcousticStreamingAllocator : Allocator<PoolAudioAcousticStreaming>
+{
+};
+
+struct NetworkAllocator : Allocator<PoolNetwork>
+{
+};
+
+struct MultiplayerAllocator : Allocator<PoolMultiplayer>
+{
+};
+
+struct ScenesAllocator : Allocator<PoolScenes>
+{
+};
+
+struct SceneSystemAllocator : Allocator<PoolSceneSystem>
+{
+};
+
+struct SceneResourcesAllocator : Allocator<PoolSceneResources>
+{
+};
+
+struct NetworkSessionRecordingToolAllocator : Allocator<PoolNetworkSessionRecordingTool>
+{
+};
+
+struct NavigationAllocator : Allocator<PoolNavigation>
+{
+};
+
+struct AIAllocator : Allocator<PoolAI>
+{
+};
+
+struct NavmeshNavigationAllocator : Allocator<PoolNavmeshNavigation>
+{
+};
+
+struct PathfindingNavigationAllocator : Allocator<PoolPathfindingNavigation>
+{
+};
+
+struct TrafficNavigationAllocator : Allocator<PoolTrafficNavigation>
+{
+};
+
+struct InfluenceMapNavigationAllocator : Allocator<PoolInfluenceMapNavigation>
+{
+};
+
+struct OffmeshlinkNavigationAllocator : Allocator<PoolOffmeshlinkNavigation>
+{
+};
+
+struct NavigationComponentsAllocator : Allocator<PoolNavigationComponents>
+{
+};
+
+struct NavigationScriptsAllocator : Allocator<PoolNavigationScripts>
+{
+};
+
+struct TrafficLanesAllocator : Allocator<PoolTrafficLanes>
+{
+};
+
+struct TrafficStaticCollisionsAllocator : Allocator<PoolTrafficStaticCollisions>
+{
+};
+
+struct TrafficDynamicCollisionsAllocator : Allocator<PoolTrafficDynamicCollisions>
+{
+};
+
+struct TrafficCrowdAvoidanceAllocator : Allocator<PoolTrafficCrowdAvoidance>
+{
+};
+
+struct TrafficCrowdPathsAllocator : Allocator<PoolTrafficCrowdPaths>
+{
+};
+
+struct TrafficCrowdMarblesAllocator : Allocator<PoolTrafficCrowdMarbles>
+{
+};
+
+struct TrafficCrowdLocomotionAllocator : Allocator<PoolTrafficCrowdLocomotion>
+{
+};
+
+struct TrafficSlotsAllocator : Allocator<PoolTrafficSlots>
+{
+};
+
+struct TrafficSpotsAllocator : Allocator<PoolTrafficSpots>
+{
+};
+
+struct TrafficGridAllocator : Allocator<PoolTrafficGrid>
+{
+};
+
+struct TrafficNullAreasAllocator : Allocator<PoolTrafficNullAreas>
+{
+};
+
+struct TrafficPersistentLanesAllocator : Allocator<PoolTrafficPersistentLanes>
+{
+};
+
+struct TrafficCollisionMapAllocator : Allocator<PoolTrafficCollisionMap>
+{
+};
+
+struct TrafficLookupAllocator : Allocator<PoolTrafficLookup>
+{
+};
+
+struct TrafficDynamicMovementAllocator : Allocator<PoolTrafficDynamicMovement>
+{
+};
+
+struct TrafficDynamicMovement_PedeAllocator : Allocator<PoolTrafficDynamicMovement_Pede>
+{
+};
+
+struct TrafficDynamicMovement_VehiAllocator : Allocator<PoolTrafficDynamicMovement_Vehi>
+{
+};
+
+struct TDM_V_RepresentationAllocator : Allocator<TDM_V_Representation>
+{
+};
+
+struct TDM_P_RepresentationAllocator : Allocator<TDM_P_Representation>
+{
+};
+
+struct NavigationDebugAllocator : Allocator<PoolNavigationDebug>
+{
+};
+
+struct TrafficDebugAllocator : Allocator<PoolTrafficDebug>
 {
 };
 
@@ -2072,7 +1409,679 @@ struct AnimDebugAllocator : Allocator<PoolAnimDebug>
 {
 };
 
-struct GalaxyAllocator : Allocator<PoolGalaxy>
+struct RTTIAllocator : Allocator<PoolRTTI>
+{
+};
+
+struct RTTIFunctionAllocator : Allocator<PoolRTTIFunction>
+{
+};
+
+struct RTTIPropertyAllocator : Allocator<PoolRTTIProperty>
+{
+};
+
+struct TriggersAllocator : Allocator<PoolTriggers>
+{
+};
+
+struct SplineAllocator : Allocator<PoolSpline>
+{
+};
+
+struct CurvesAllocator : Allocator<PoolCurves>
+{
+};
+
+struct AreasAllocator : Allocator<PoolAreas>
+{
+};
+
+struct EffectAllocator : Allocator<PoolEffect>
+{
+};
+
+struct IDRegistryAllocator : Allocator<PoolIDRegistry>
+{
+};
+
+struct EventsAllocator : Allocator<PoolEvents>
+{
+};
+
+struct EventAllocator : Allocator<PoolEvent>
+{
+};
+
+struct EventBrokerAllocator : Allocator<PoolEventBroker>
+{
+};
+
+struct ResourceLoadingJobsAllocator : Allocator<PoolResourceLoadingJobs>
+{
+};
+
+struct InteropAllocator : Allocator<PoolInterop>
+{
+};
+
+struct StringAllocator : Allocator<PoolString>
+{
+};
+
+struct ArchiveAllocator : Allocator<PoolArchive>
+{
+};
+
+struct NodeAllocator : Allocator<PoolNode>
+{
+};
+
+struct TicketAllocator : Allocator<PoolTicket>
+{
+};
+
+struct FoliageNodeAllocator : Allocator<PoolFoliageNode>
+{
+};
+
+struct InteriorMapAllocator : Allocator<PoolInteriorMap>
+{
+};
+
+struct MinimapAllocator : Allocator<PoolMinimap>
+{
+};
+
+struct WeatherAllocator : Allocator<PoolWeather>
+{
+};
+
+struct MarkerAllocator : Allocator<PoolMarker>
+{
+};
+
+struct NodeSourceAllocator : Allocator<PoolNodeSource>
+{
+};
+
+struct NodeInstanceAllocator : Allocator<PoolNodeInstance>
+{
+};
+
+struct IDPathRegistryAllocator : Allocator<PoolIDPathRegistry>
+{
+};
+
+struct IDStringRegistryAllocator : Allocator<PoolIDStringRegistry>
+{
+};
+
+struct IDStringBufferAllocator : Allocator<PoolIDStringBuffer>
+{
+};
+
+struct CompiledSetupInfoAllocator : Allocator<PoolCompiledSetupInfo>
+{
+};
+
+struct MeshLocalBoundsCacheAllocator : Allocator<PoolMeshLocalBoundsCache>
+{
+};
+
+struct StreamingQueryAllocator : Allocator<PoolStreamingQuery>
+{
+};
+
+struct HTTPAllocator : Allocator<PoolHTTP>
+{
+};
+
+struct HTTP_CurlAllocator : Allocator<PoolHTTP_Curl>
+{
+};
+
+struct HTTP_UWPAllocator : Allocator<PoolHTTP_UWP>
+{
+};
+
+struct HTTP_PS4Allocator : Allocator<PoolHTTP_PS4>
+{
+};
+
+struct ReplicationAllocator : Allocator<PoolReplication>
+{
+};
+
+struct ReplicationProfilerAllocator : Allocator<PoolReplicationProfiler>
+{
+};
+
+struct ReplicationRTTIAllocator : Allocator<PoolReplicationRTTI>
+{
+};
+
+struct SaveDataAllocator : Allocator<PoolSaveData>
+{
+};
+
+struct AI_BehaviourAllocator : Allocator<PoolAI_Behaviour>
+{
+};
+
+struct AI_InstancesAllocator : Allocator<PoolAI_Instances>
+{
+};
+
+struct AI_ScriptAllocator : Allocator<PoolAI_Script>
+{
+};
+
+struct AI_SystemsAllocator : Allocator<PoolAI_Systems>
+{
+};
+
+struct AI_AttitudesAllocator : Allocator<PoolAI_Attitudes>
+{
+};
+
+struct AI_InfluenceMapAllocator : Allocator<PoolAI_InfluenceMap>
+{
+};
+
+struct AI_SmartObjectsAllocator : Allocator<PoolAI_SmartObjects>
+{
+};
+
+struct AI_SensesAllocator : Allocator<PoolAI_Senses>
+{
+};
+
+struct AI_ComponentsAllocator : Allocator<PoolAI_Components>
+{
+};
+
+struct AI_MovementAllocator : Allocator<PoolAI_Movement>
+{
+};
+
+struct AI_MovementPoliciesAllocator : Allocator<PoolAI_MovementPolicies>
+{
+};
+
+struct AI_WorkspotsAllocator : Allocator<PoolAI_Workspots>
+{
+};
+
+struct AI_GuardAreasAllocator : Allocator<PoolAI_GuardAreas>
+{
+};
+
+struct AI_TargetTrackingAllocator : Allocator<PoolAI_TargetTracking>
+{
+};
+
+struct AI_TweakActionsAllocator : Allocator<PoolAI_TweakActions>
+{
+};
+
+struct AI_VehiclesAllocator : Allocator<PoolAI_Vehicles>
+{
+};
+
+struct AI_LegacyAllocator : Allocator<PoolAI_Legacy>
+{
+};
+
+struct AI_SORuntimeDataAllocator : Allocator<PoolAI_SORuntimeData>
+{
+};
+
+struct AI_SOCompiledResourcesAllocator : Allocator<PoolAI_SOCompiledResources>
+{
+};
+
+struct AI_SOCoversAllocator : Allocator<PoolAI_SOCovers>
+{
+};
+
+struct AI_SOAnimDBAllocator : Allocator<PoolAI_SOAnimDB>
+{
+};
+
+struct AI_SONodesAllocator : Allocator<PoolAI_SONodes>
+{
+};
+
+struct AI_SORawResourcesAllocator : Allocator<PoolAI_SORawResources>
+{
+};
+
+struct _DebugContextsAllocator : Allocator<Pool_DebugContexts>
+{
+};
+
+struct ReplicatedEntitySystemAllocator : Allocator<PoolReplicatedEntitySystem>
+{
+};
+
+struct LocLocalizedTextAllocator : Allocator<PoolLocLocalizedText>
+{
+};
+
+struct TelemetryAllocator : Allocator<PoolTelemetry>
+{
+};
+
+struct InputAllocator : Allocator<PoolInput>
+{
+};
+
+struct InputInternalAllocator : Allocator<PoolInputInternal>
+{
+};
+
+struct InkAllocator : Allocator<PoolInk>
+{
+};
+
+struct Ink_UncategorizedAllocator : Allocator<PoolInk_Uncategorized>
+{
+};
+
+struct Ink_WidgetsAllocator : Allocator<PoolInk_Widgets>
+{
+};
+
+struct Ink_LibraryAllocator : Allocator<PoolInk_Library>
+{
+};
+
+struct Ink_EventsAllocator : Allocator<PoolInk_Events>
+{
+};
+
+struct Ink_BindingAllocator : Allocator<PoolInk_Binding>
+{
+};
+
+struct Ink_AnimationsAllocator : Allocator<PoolInk_Animations>
+{
+};
+
+struct Ink_RenderingAllocator : Allocator<PoolInk_Rendering>
+{
+};
+
+struct Ink_EffectsAllocator : Allocator<PoolInk_Effects>
+{
+};
+
+struct Ink_BrushesAllocator : Allocator<PoolInk_Brushes>
+{
+};
+
+struct Ink_StylesAllocator : Allocator<PoolInk_Styles>
+{
+};
+
+struct Ink_ControllersAllocator : Allocator<PoolInk_Controllers>
+{
+};
+
+struct Ink_LayersAllocator : Allocator<PoolInk_Layers>
+{
+};
+
+struct Ink_Layers_StateMachineAllocator : Allocator<PoolInk_Layers_StateMachine>
+{
+};
+
+struct Ink_Layers_WorldLayerAllocator : Allocator<PoolInk_Layers_WorldLayer>
+{
+};
+
+struct Ink_Layers_MenuLayerAllocator : Allocator<PoolInk_Layers_MenuLayer>
+{
+};
+
+struct Ink_Layers_LoadingScreenAllocator : Allocator<PoolInk_Layers_LoadingScreen>
+{
+};
+
+struct Ink_Layers_SystemNotificatiAllocator : Allocator<PoolInk_Layers_SystemNotificati>
+{
+};
+
+struct Ink_Layers_GameNotificationAllocator : Allocator<PoolInk_Layers_GameNotification>
+{
+};
+
+struct Ink_Layers_ViewportWrapperAllocator : Allocator<PoolInk_Layers_ViewportWrapper>
+{
+};
+
+struct Ink_Layers_EventBrokerAllocator : Allocator<PoolInk_Layers_EventBroker>
+{
+};
+
+struct Ink_JobsAllocator : Allocator<PoolInk_Jobs>
+{
+};
+
+struct Ink_TextAllocator : Allocator<PoolInk_Text>
+{
+};
+
+struct Ink_HitTestAllocator : Allocator<PoolInk_HitTest>
+{
+};
+
+struct Ink_SystemAllocator : Allocator<PoolInk_System>
+{
+};
+
+struct Ink_ScriptsAllocator : Allocator<PoolInk_Scripts>
+{
+};
+
+struct Ink_MappinsAllocator : Allocator<PoolInk_Mappins>
+{
+};
+
+struct Ink_MinimapGeometryAllocator : Allocator<PoolInk_MinimapGeometry>
+{
+};
+
+struct Ink_OffscreenAllocator : Allocator<PoolInk_Offscreen>
+{
+};
+
+struct Ink_SpawningAllocator : Allocator<PoolInk_Spawning>
+{
+};
+
+struct Ink_ResourcesAllocator : Allocator<PoolInk_Resources>
+{
+};
+
+struct Ink_VideosAllocator : Allocator<PoolInk_Videos>
+{
+};
+
+struct TextureAllocator : Allocator<PoolTexture>
+{
+};
+
+struct MeshAllocator : Allocator<PoolMesh>
+{
+};
+
+struct BinkAllocator : Allocator<PoolBink>
+{
+};
+
+struct FontAllocator : Allocator<PoolFont>
+{
+};
+
+struct FreeTypeAllocator : Allocator<PoolFreeType>
+{
+};
+
+struct FontCacheAllocator : Allocator<PoolFontCache>
+{
+};
+
+struct GlyphCacheAllocator : Allocator<PoolGlyphCache>
+{
+};
+
+struct RenderDebugAllocator : Allocator<PoolRenderDebug>
+{
+};
+
+struct GIDebugAllocator : Allocator<PoolGIDebug>
+{
+};
+
+struct GPUProfilingAllocator : Allocator<PoolGPUProfiling>
+{
+};
+
+struct Rendering_Allocator : Allocator<PoolRendering_>
+{
+};
+
+struct FrameRenderingAllocator : Allocator<PoolFrameRendering>
+{
+};
+
+struct DoubleBufferedFrameRenderinAllocator : Allocator<PoolDoubleBufferedFrameRenderin>
+{
+};
+
+struct RenderingCoreAllocator : Allocator<PoolRenderingCore>
+{
+};
+
+struct SurfaceCacheAllocator : Allocator<PoolSurfaceCache>
+{
+};
+
+struct ShaderCacheAllocator : Allocator<PoolShaderCache>
+{
+};
+
+struct ShaderCacheShadersAllocator : Allocator<PoolShaderCacheShaders>
+{
+};
+
+struct ShaderCacheDataAllocator : Allocator<PoolShaderCacheData>
+{
+};
+
+struct ShaderCompilationAllocator : Allocator<PoolShaderCompilation>
+{
+};
+
+struct PSOAllocator : Allocator<PoolPSO>
+{
+};
+
+struct ShaderCacheData_ShaderBinarAllocator : Allocator<PoolShaderCacheData_ShaderBinar>
+{
+};
+
+struct RenderProxyAllocator : Allocator<PoolRenderProxy>
+{
+};
+
+struct RenderProxyInternals_MeshAllocator : Allocator<PoolRenderProxyInternals_Mesh>
+{
+};
+
+struct RenderProxy_CustomDataAllocator : Allocator<PoolRenderProxy_CustomData>
+{
+};
+
+struct RenderProxy_InstanceDataAllocator : Allocator<PoolRenderProxy_InstanceData>
+{
+};
+
+struct RenderProxy_HandlesAllocator : Allocator<PoolRenderProxy_Handles>
+{
+};
+
+struct RenderResourcesAllocator : Allocator<PoolRenderResources>
+{
+};
+
+struct RenderMeshAllocator : Allocator<PoolRenderMesh>
+{
+};
+
+struct RenderDynamicTextureAllocator : Allocator<PoolRenderDynamicTexture>
+{
+};
+
+struct MaterialsAllocator : Allocator<PoolMaterials>
+{
+};
+
+struct RenderMaterialAllocator : Allocator<PoolRenderMaterial>
+{
+};
+
+struct MaterialTechniquesAllocator : Allocator<PoolMaterialTechniques>
+{
+};
+
+struct MaterialStagePassDataAllocator : Allocator<PoolMaterialStagePassData>
+{
+};
+
+struct MaterialStagePassCacheAllocator : Allocator<PoolMaterialStagePassCache>
+{
+};
+
+struct RenderMaterialParamsAllocator : Allocator<PoolRenderMaterialParams>
+{
+};
+
+struct MaterialExtractedDataAllocator : Allocator<PoolMaterialExtractedData>
+{
+};
+
+struct MaterialModifierAllocator : Allocator<PoolMaterialModifier>
+{
+};
+
+struct DecalsAllocator : Allocator<PoolDecals>
+{
+};
+
+struct ParticleDataAllocator : Allocator<PoolParticleData>
+{
+};
+
+struct RenderGraphAllocator : Allocator<PoolRenderGraph>
+{
+};
+
+struct FlowAllocatorAllocator : Allocator<PoolFlowAllocator>
+{
+};
+
+struct VideoPlayerAllocator : Allocator<PoolVideoPlayer>
+{
+};
+
+struct RenderDataAllocator : Allocator<PoolRenderData>
+{
+};
+
+struct GIAllocator : Allocator<PoolGI>
+{
+};
+
+struct RenderBlobsAllocator : Allocator<PoolRenderBlobs>
+{
+};
+
+struct RenderBlobsBuffersAllocator : Allocator<PoolRenderBlobsBuffers>
+{
+};
+
+struct RenderSceneAllocator : Allocator<PoolRenderScene>
+{
+};
+
+struct RenderScene_ProxiesAllocator : Allocator<PoolRenderScene_Proxies>
+{
+};
+
+struct RenderScene_ProxyDataAllocator : Allocator<PoolRenderScene_ProxyData>
+{
+};
+
+struct RenderScene_PendingOpsAllocator : Allocator<PoolRenderScene_PendingOps>
+{
+};
+
+struct RenderScene_RuntimeSystemAllocator : Allocator<PoolRenderScene_RuntimeSystem>
+{
+};
+
+struct VisBVHAllocator : Allocator<PoolVisBVH>
+{
+};
+
+struct SkinningDataAllocator : Allocator<PoolSkinningData>
+{
+};
+
+struct FrameInfoAllocator : Allocator<PoolFrameInfo>
+{
+};
+
+struct FoliageAllocator : Allocator<PoolFoliage>
+{
+};
+
+struct BatchersAllocator : Allocator<PoolBatchers>
+{
+};
+
+struct RenderCommandHandlerAllocator : Allocator<PoolRenderCommandHandler>
+{
+};
+
+struct PostProcessAndEffectsAllocator : Allocator<PoolPostProcessAndEffects>
+{
+};
+
+struct EnvironmentAllocator : Allocator<PoolEnvironment>
+{
+};
+
+struct ImageProcessingAllocator : Allocator<PoolImageProcessing>
+{
+};
+
+struct RenderingUIAllocator : Allocator<PoolRenderingUI>
+{
+};
+
+struct ReflectionProbesAllocator : Allocator<PoolReflectionProbes>
+{
+};
+
+struct LightingAllocator : Allocator<PoolLighting>
+{
+};
+
+struct DataRegistryAllocator : Allocator<PoolDataRegistry>
+{
+};
+
+struct CamerasAllocator : Allocator<PoolCameras>
+{
+};
+
+struct RaytraceAllocator : Allocator<PoolRaytrace>
+{
+};
+
+struct VisibilitySystemAllocator : Allocator<PoolVisibilitySystem>
+{
+};
+
+struct VisibilitySceneAllocator : Allocator<PoolVisibilityScene>
+{
+};
+
+struct OccluderShapesAllocator : Allocator<PoolOccluderShapes>
 {
 };
 
@@ -2080,7 +2089,95 @@ struct FunctionalTestsAllocator : Allocator<PoolFunctionalTests>
 {
 };
 
-struct MultiplayerGameplayAllocator : Allocator<PoolMultiplayerGameplay>
+struct TextAllocator : Allocator<PoolText>
+{
+};
+
+struct Text_RichDecoratorAllocator : Allocator<PoolText_RichDecorator>
+{
+};
+
+struct Text_MarkupAllocator : Allocator<PoolText_Markup>
+{
+};
+
+struct Text_LayoutAllocator : Allocator<PoolText_Layout>
+{
+};
+
+struct Text_Layout_BreakAllocator : Allocator<PoolText_Layout_Break>
+{
+};
+
+struct Text_Layout_BlockAllocator : Allocator<PoolText_Layout_Block>
+{
+};
+
+struct Text_Layout_ModelAllocator : Allocator<PoolText_Layout_Model>
+{
+};
+
+struct Text_Layout_ViewAllocator : Allocator<PoolText_Layout_View>
+{
+};
+
+struct Text_Layout_DirectionAllocator : Allocator<PoolText_Layout_Direction>
+{
+};
+
+struct Text_ShaperAllocator : Allocator<PoolText_Shaper>
+{
+};
+
+struct Text_TypographyAllocator : Allocator<PoolText_Typography>
+{
+};
+
+struct Text_FontAllocator : Allocator<PoolText_Font>
+{
+};
+
+struct Text_FormatterAllocator : Allocator<PoolText_Formatter>
+{
+};
+
+struct Text_ParamsAllocator : Allocator<PoolText_Params>
+{
+};
+
+struct Text_HBAllocator : Allocator<PoolText_HB>
+{
+};
+
+struct Text_HB_InternalAllocator : Allocator<PoolText_HB_Internal>
+{
+};
+
+struct Text_ICUAllocator : Allocator<PoolText_ICU>
+{
+};
+
+struct Text_ICU_InternalAllocator : Allocator<PoolText_ICU_Internal>
+{
+};
+
+struct Text_ICU_Data_PackagaeAllocator : Allocator<PoolText_ICU_Data_Packagae>
+{
+};
+
+struct Text_RunAllocator : Allocator<PoolText_Run>
+{
+};
+
+struct Text_GlyphCacheAllocator : Allocator<PoolText_GlyphCache>
+{
+};
+
+struct Text_UTF16Allocator : Allocator<PoolText_UTF16>
+{
+};
+
+struct RazerChromaAllocator : Allocator<PoolRazerChroma>
 {
 };
 
@@ -2132,127 +2229,27 @@ struct WorkspotResGraphAllocator : Allocator<PoolWorkspotResGraph>
 {
 };
 
-struct LocLocalizedTextAllocator : Allocator<PoolLocLocalizedText>
+struct MultiplayerServerAllocator : Allocator<PoolMultiplayerServer>
 {
 };
 
-struct AudioAllocator : Allocator<PoolAudio>
+struct MultiplayerGameplayAllocator : Allocator<PoolMultiplayerGameplay>
 {
 };
 
-struct ReplicatedEntitySystemAllocator : Allocator<PoolReplicatedEntitySystem>
+struct NetworkServicesAllocator : Allocator<PoolNetworkServices>
 {
 };
 
-struct WwiseAllocator : Allocator<PoolWwise>
+struct Ink_BackendAllocator : Allocator<PoolInk_Backend>
 {
 };
 
-struct AudioMetadataAllocator : Allocator<PoolAudioMetadata>
+struct Ink_DebugAllocator : Allocator<PoolInk_Debug>
 {
 };
 
-struct AudioGeometryAllocator : Allocator<PoolAudioGeometry>
-{
-};
-
-struct AudioSystemsAllocator : Allocator<PoolAudioSystems>
-{
-};
-
-struct AudioSystemsGroupItemsAllocator : Allocator<PoolAudioSystemsGroupItems>
-{
-};
-
-struct AudioEmittersAllocator : Allocator<PoolAudioEmitters>
-{
-};
-
-struct AudioDecoratorsAllocator : Allocator<PoolAudioDecorators>
-{
-};
-
-struct AudioPropertyStreamAllocator : Allocator<PoolAudioPropertyStream>
-{
-};
-
-struct AudioPositionStreamAllocator : Allocator<PoolAudioPositionStream>
-{
-};
-
-struct LocalizationAndVoAllocator : Allocator<PoolLocalizationAndVo>
-{
-};
-
-struct AudioAmbientsAllocator : Allocator<PoolAudioAmbients>
-{
-};
-
-struct AudioGroupingAllocator : Allocator<PoolAudioGrouping>
-{
-};
-
-struct AudioSystemInterfacesAllocator : Allocator<PoolAudioSystemInterfaces>
-{
-};
-
-struct AudioWeaponsAllocator : Allocator<PoolAudioWeapons>
-{
-};
-
-struct AudioMusicAndRadioAllocator : Allocator<PoolAudioMusicAndRadio>
-{
-};
-
-struct SoundComponentAllocator : Allocator<PoolSoundComponent>
-{
-};
-
-struct AudioMixingAndSceneAllocator : Allocator<PoolAudioMixingAndScene>
-{
-};
-
-struct AudioReverbAllocator : Allocator<PoolAudioReverb>
-{
-};
-
-struct AudioAcousticNodesAllocator : Allocator<PoolAudioAcousticNodes>
-{
-};
-
-struct AudioAcousticNodeConnectionAllocator : Allocator<PoolAudioAcousticNodeConnection>
-{
-};
-
-struct AudioAcousticNodeOctreesAllocator : Allocator<PoolAudioAcousticNodeOctrees>
-{
-};
-
-struct AudioAcousticsPathfindingAllocator : Allocator<PoolAudioAcousticsPathfinding>
-{
-};
-
-struct AudioAcousticZonesAllocator : Allocator<PoolAudioAcousticZones>
-{
-};
-
-struct AudioAcousticStreamingAllocator : Allocator<PoolAudioAcousticStreaming>
-{
-};
-
-struct ReplicationAllocator : Allocator<PoolReplication>
-{
-};
-
-struct ReplicationProfilerAllocator : Allocator<PoolReplicationProfiler>
-{
-};
-
-struct ReplicationRTTIAllocator : Allocator<PoolReplicationRTTI>
-{
-};
-
-struct InputAllocator : Allocator<PoolInput>
+struct LibTreeAllocator : Allocator<PoolLibTree>
 {
 };
 
@@ -2384,7 +2381,11 @@ struct PSOCacheAllocator : Allocator<PoolPSOCache>
 {
 };
 
-struct D3D12Allocator : Allocator<PoolD3D12Allocator>
+struct MetalAllocatorAllocator : Allocator<PoolMetalAllocator>
+{
+};
+
+struct TextureSizeCacheAllocator : Allocator<PoolTextureSizeCache>
 {
 };
 
@@ -2564,6 +2565,10 @@ struct GPUM_TG_System_MorphTargetsAllocator : Allocator<GPUM_TG_System_MorphTarg
 {
 };
 
+struct GPUM_TG_System_DynamicTextureAllocator : Allocator<GPUM_TG_System_DynamicTexture>
+{
+};
+
 struct MirrorBuffersAllocator : Allocator<PoolMirrorBuffers>
 {
 };
@@ -2688,6 +2693,10 @@ struct GPUM_Buffer_RaytracingASAllocator : Allocator<GPUM_Buffer_RaytracingAS>
 {
 };
 
+struct GPUM_Buffer_RaytracingOMMAllocator : Allocator<GPUM_Buffer_RaytracingOMM>
+{
+};
+
 struct GPUM_Buffer_DecalsAllocator : Allocator<GPUM_Buffer_Decals>
 {
 };
@@ -2713,6 +2722,10 @@ struct GPUM_Buffer_MiscAllocator : Allocator<GPUM_Buffer_Misc>
 };
 
 struct GPUM_Buffer_MorphTargetsAllocator : Allocator<GPUM_Buffer_MorphTargets>
+{
+};
+
+struct WwiseAllocator : Allocator<PoolWwise>
 {
 };
 } // namespace Memory
