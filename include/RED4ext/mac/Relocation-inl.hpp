@@ -21,17 +21,21 @@ RED4EXT_INLINE inline uint32_t RED4ext::RelocBase::GetImageIndex()
         for (uint32_t currImageIndex = 0; currImageIndex < _dyld_image_count(); currImageIndex++)
         {
             std::string_view imageName = _dyld_get_image_name(currImageIndex);
-            if (imageName.ends_with("Cyberpunk2077.app/Contents/MacOS/Cyberpunk2077"))
+            if (imageName.ends_with("Cyberpunk2077"))
                 return currImageIndex;
         }
-        return -1;
+        return 0;
     }();
     return imageIndex;
 }
 
 RED4EXT_INLINE uintptr_t RED4ext::RelocBase::GetImageBase()
 {
-    static const auto base = std::bit_cast<uintptr_t>(_dyld_get_image_header(RED4ext::RelocBase::GetImageIndex()));
+    if (GetImageIndex() == 0)
+    {
+        return 0;
+    }
+    static const auto base = std::bit_cast<uintptr_t>(_dyld_get_image_header(GetImageIndex()));
 
     return base;
 }
