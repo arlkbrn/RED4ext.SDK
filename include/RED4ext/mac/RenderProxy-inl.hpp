@@ -85,6 +85,10 @@ RED4EXT_INLINE void IRenderProxy::sub_78(void* a1)
     func(this, a1);
 }
 
+RED4EXT_INLINE void IRenderProxy::sub_80_MAC(void* a1)
+{
+}
+
 RED4EXT_INLINE void IRenderProxy::sub_80(void* a1, void* a2)
 {
     using func_t = void (*)(IRenderProxy*, void*, void*);
