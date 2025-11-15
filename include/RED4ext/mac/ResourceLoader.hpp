@@ -4,7 +4,7 @@
 
 #include <RED4ext/Callback.hpp>
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/DynArray.hpp>
 #include <RED4ext/HashMap.hpp>
 #include <RED4ext/JobQueue.hpp>
@@ -31,13 +31,14 @@ struct ResourceToken
         if (!IsFinished())
         {
             using CancelUnk38_t = void (*)(void*);
-            static UniversalRelocFunc<CancelUnk38_t> CancelUnk38(Detail::AddressHashes::ResourceToken_CancelUnk38);
+            static UniversalRelocFunc<CancelUnk38_t> CancelUnk38(Detail::Addresses::ResourceToken_CancelUnk38);
             CancelUnk38(unk38);
         }
 
-        using DestructUnk38_t = void (*)(void**);
-        static UniversalRelocFunc<DestructUnk38_t> DestructUnk38(Detail::AddressHashes::ResourceToken_DestructUnk38);
-        DestructUnk38(&unk38);
+        // TODO: Reimplement ResourceToken_DestructUnk38 as it's inlined in the Mac build.
+        // using DestructUnk38_t = void (*)(void**);
+        // static UniversalRelocFunc<DestructUnk38_t> DestructUnk38(Detail::Addresses::ResourceToken_DestructUnk38);
+        // DestructUnk38(&unk38);
     }
 
     /**
@@ -48,7 +49,7 @@ struct ResourceToken
     void OnLoaded(LoadedCallback&& aCallback)
     {
         using OnLoaded_t = JobHandle* (*)(ResourceToken*, JobHandle*, LoadedCallback*);
-        static UniversalRelocFunc<OnLoaded_t> func(Detail::AddressHashes::ResourceToken_OnLoaded);
+        static UniversalRelocFunc<OnLoaded_t> func(Detail::Addresses::ResourceToken_OnLoaded);
 
         JobHandle handle{};
         func(this, &handle, &aCallback);
@@ -62,7 +63,7 @@ struct ResourceToken
     Handle<T>& Fetch()
     {
         using Fetch_t = Handle<T>& (*)(ResourceToken*);
-        static UniversalRelocFunc<Fetch_t> func(Detail::AddressHashes::ResourceToken_Fetch);
+        static UniversalRelocFunc<Fetch_t> func(Detail::Addresses::ResourceToken_Fetch);
 
         return func(this);
     }
@@ -148,7 +149,7 @@ struct ResourceLoader
     SharedPtr<ResourceToken<T>> LoadAsync(ResourcePath aPath)
     {
         using LoadAsync_t = uintptr_t (*)(ResourceLoader*, SharedPtr<ResourceToken<T>>&, ResourcePath);
-        static UniversalRelocFunc<LoadAsync_t> func(Detail::AddressHashes::ResourceLoader_IssueLoadingRequestByPath);
+        static UniversalRelocFunc<LoadAsync_t> func(Detail::Addresses::ResourceLoader_IssueLoadingRequestByPath);
 
         SharedPtr<ResourceToken<T>> token;
         func(this, token, aPath);
@@ -160,7 +161,7 @@ struct ResourceLoader
     SharedPtr<ResourceToken<T>> LoadAsync(const ResourceRequest& aRequest)
     {
         using LoadAsync_t = uintptr_t (*)(ResourceLoader*, SharedPtr<ResourceToken<T>>&, const ResourceRequest&);
-        static UniversalRelocFunc<LoadAsync_t> func(Detail::AddressHashes::ResourceLoader_IssueLoadingRequest);
+        static UniversalRelocFunc<LoadAsync_t> func(Detail::Addresses::ResourceLoader_IssueLoadingRequest);
 
         SharedPtr<ResourceToken<T>> token;
         func(this, token, aRequest);
@@ -172,7 +173,7 @@ struct ResourceLoader
     SharedPtr<ResourceToken<T>> FindToken(ResourcePath aPath)
     {
         using FindToken_t = uintptr_t (*)(ResourceLoader*, SharedPtr<ResourceToken<T>>*, ResourcePath);
-        static UniversalRelocFunc<FindToken_t> func(Detail::AddressHashes::ResourceLoader_FindTokenFast);
+        static UniversalRelocFunc<FindToken_t> func(Detail::Addresses::ResourceLoader_FindTokenFast);
 
         std::shared_lock<SharedSpinLock> _(tokenLock);
 

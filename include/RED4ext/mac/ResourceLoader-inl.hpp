@@ -4,7 +4,7 @@
 #include <RED4ext/ResourceLoader.hpp>
 #endif
 
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE RED4ext::ResourceRequest::ResourceRequest(ResourcePath aPath)
@@ -25,6 +25,6 @@ RED4EXT_INLINE RED4ext::ResourceRequest::ResourceRequest(ResourcePath aPath)
 
 RED4EXT_INLINE RED4ext::ResourceLoader* RED4ext::ResourceLoader::Get()
 {
-    static UniversalRelocPtr<ResourceLoader*> ptr(Detail::AddressHashes::ResourceLoader);
+    static UniversalRelocPtr<ResourceLoader*> ptr(Detail::Addresses::ResourceLoader);
     return ptr;
 }

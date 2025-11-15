@@ -122,8 +122,8 @@ template<typename T>
 class UniversalRelocFunc : private UniversalRelocBase
 {
 public:
-    UniversalRelocFunc(uint32_t aHash)
-        : m_address(reinterpret_cast<T>(Resolve(aHash)))
+    UniversalRelocFunc(uintptr_t aAddress)
+        : m_address(reinterpret_cast<T>(aAddress))
     {
     }
 

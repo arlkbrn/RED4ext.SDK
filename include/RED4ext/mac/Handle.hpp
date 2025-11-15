@@ -2,7 +2,7 @@
 
 #include <type_traits>
 
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Memory/SharedPtr.hpp>
 #include <RED4ext/Relocation.hpp>
 
@@ -26,7 +26,7 @@ public:
 
     explicit Handle(T* aPtr)
     {
-        static UniversalRelocFunc<Handle* (*)(Handle*, T*)> ctor(Detail::AddressHashes::Handle_ctor);
+        static UniversalRelocFunc<Handle* (*)(Handle*, T*)> ctor(Detail::Addresses::Handle_ctor);
         ctor(this, aPtr);
     }
 

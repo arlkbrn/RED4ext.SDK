@@ -6,7 +6,7 @@
 #include <type_traits>
 
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Memory/Allocators.hpp>
 #include <RED4ext/Relocation.hpp>
 #include <RED4ext/Utils.hpp>
@@ -333,7 +333,7 @@ private:
         using func_t = void (*)(DynArray* aThis, uint32_t aCapacity, uint32_t aElementSize, uint32_t aAlignment,
                                 void (*aMoveFunc)(T* aDstBuffer, T* aSrcBuffer, int32_t aSrcSize, DynArray* aSrcArray));
 
-        static UniversalRelocFunc<func_t> func(Detail::AddressHashes::DynArray_Realloc);
+        static UniversalRelocFunc<func_t> func(Detail::Addresses::DynArray_Realloc);
         func(this, aNewCapacity, sizeof(T), alignment >= 8 ? alignment : 8, nullptr);
     }
 

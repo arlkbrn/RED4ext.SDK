@@ -3,14 +3,14 @@
 #endif
 
 #include <RED4ext/CString.hpp>
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Memory/Allocators.hpp>
 #include <RED4ext/RTTITypes.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE RED4ext::ISerializable::ISerializable()
 {
-    static UniversalRelocPtr<volatile int64_t> s_globalIDCounter{Detail::AddressHashes::ISerializable_Counter};
+    static UniversalRelocPtr<volatile int64_t> s_globalIDCounter{Detail::Addresses::ISerializable_Counter};
 
     unk28 = __atomic_add_fetch(s_globalIDCounter.GetAddr(), 1, __ATOMIC_SEQ_CST);
 }
@@ -37,7 +37,7 @@ RED4EXT_INLINE void RED4ext::ISerializable::PostLoad(const RED4ext::PostLoadPara
 RED4EXT_INLINE bool RED4ext::ISerializable::sub_30()
 {
     using func_t = bool (*)(ISerializable*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::ISerializable_sub_30);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::ISerializable_sub_30);
     return func(this);
 }
 
@@ -48,7 +48,7 @@ RED4EXT_INLINE void RED4ext::ISerializable::sub_38()
 RED4EXT_INLINE bool RED4ext::ISerializable::sub_40(BaseStream* aStream)
 {
     using func_t = bool (*)(ISerializable*, BaseStream*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::ISerializable_sub_40);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::ISerializable_sub_40);
     return func(this, aStream);
 }
 
@@ -87,7 +87,7 @@ RED4EXT_INLINE bool RED4ext::ISerializable::sub_70()
 RED4EXT_INLINE int64_t RED4ext::ISerializable::sub_78(int64_t a1, int64_t a2, uint8_t a3, int64_t a4, int64_t a5)
 {
     using func_t = int64_t (*)(ISerializable*, int64_t, int64_t, uint8_t, int64_t, int64_t);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::ISerializable_sub_78);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::ISerializable_sub_78);
     return func(this, a1, a2, a3, a4, a5);
 }
 
@@ -114,7 +114,7 @@ RED4EXT_INLINE void* RED4ext::ISerializable::sub_A0()
 {
     // This is an allocation, but for what?
     using func_t = void* (*)(ISerializable*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::ISerializable_sub_A0);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::ISerializable_sub_A0);
     return func(this);
 }
 
@@ -139,7 +139,7 @@ RED4EXT_INLINE RED4ext::CString RED4ext::ISerializable::sub_B8()
 RED4EXT_INLINE void* RED4ext::ISerializable::sub_C0(void* a1)
 {
     using func_t = void* (*)(ISerializable*, void*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::ISerializable_sub_C0);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::ISerializable_sub_C0);
     return func(this, a1);
 }
 

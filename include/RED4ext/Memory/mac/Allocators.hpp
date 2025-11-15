@@ -5,7 +5,7 @@
 #pragma once
 
 #include <RED4ext/Common.hpp>
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Memory/Pools.hpp>
 #include <RED4ext/Relocation.hpp>
 
@@ -82,7 +82,7 @@ struct Allocator : IAllocator
     virtual AllocationResult Alloc(uint64_t aSize) const override
     {
         using alloc_t = AllocationResult(RED4EXT_CALL*)(Vault*, uint64_t);
-        static UniversalRelocFunc<alloc_t> alloc(Detail::AddressHashes::Memory_Vault_Alloc);
+        static UniversalRelocFunc<alloc_t> alloc(Detail::Addresses::Memory_Vault_Alloc);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
@@ -99,7 +99,7 @@ struct Allocator : IAllocator
     virtual AllocationResult AllocAligned(uint64_t aSize, uint32_t aAlignment) const override
     {
         using alloc_t = AllocationResult (*)(Vault*, uint64_t, uint32_t);
-        static UniversalRelocFunc<alloc_t> alloc(Detail::AddressHashes::Memory_Vault_AllocAligned);
+        static UniversalRelocFunc<alloc_t> alloc(Detail::Addresses::Memory_Vault_AllocAligned);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
@@ -116,7 +116,7 @@ struct Allocator : IAllocator
     virtual AllocationResult Realloc(AllocationResult& aAllocation, uint64_t aSize) const override
     {
         using realloc_t = AllocationResult (*)(Vault*, AllocationResult&, uint64_t);
-        static UniversalRelocFunc<realloc_t> realloc(Detail::AddressHashes::Memory_Vault_Realloc);
+        static UniversalRelocFunc<realloc_t> realloc(Detail::Addresses::Memory_Vault_Realloc);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
@@ -134,7 +134,7 @@ struct Allocator : IAllocator
                                             uint32_t aAlignment) const override
     {
         using realloc_t = AllocationResult (*)(Vault*, AllocationResult&, uint64_t, uint32_t);
-        static UniversalRelocFunc<realloc_t> realloc(Detail::AddressHashes::Memory_Vault_ReallocAligned);
+        static UniversalRelocFunc<realloc_t> realloc(Detail::Addresses::Memory_Vault_ReallocAligned);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
@@ -151,7 +151,7 @@ struct Allocator : IAllocator
     virtual void Free(AllocationResult& aAllocation) const override
     {
         using func_t = void (*)(Vault*, AllocationResult&);
-        static UniversalRelocFunc<func_t> func(Detail::AddressHashes::Memory_Vault_Free);
+        static UniversalRelocFunc<func_t> func(Detail::Addresses::Memory_Vault_Free);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
@@ -162,7 +162,7 @@ struct Allocator : IAllocator
     virtual void sub_28(void* a2) const override
     {
         using func_t = void (*)(Vault*, void*);
-        static UniversalRelocFunc<func_t> func(Detail::AddressHashes::Memory_Vault_Unk1);
+        static UniversalRelocFunc<func_t> func(Detail::Addresses::Memory_Vault_Unk1);
 
         auto pool = T::Get();
         auto storage = pool->storage->template GetAllocatorStorage<Vault>();
@@ -186,7 +186,7 @@ private:
     inline void OOM(uint64_t aSize, uint32_t aAlignment) const
     {
         using oom_t = AllocationResult (*)(PoolStorage*, uint64_t, uint32_t);
-        static UniversalRelocFunc<oom_t> oom(Detail::AddressHashes::Memory_PoolStorage_OOM);
+        static UniversalRelocFunc<oom_t> oom(Detail::Addresses::Memory_PoolStorage_OOM);
 
         auto pool = T::Get();
         oom(pool->storage, aSize, aAlignment);

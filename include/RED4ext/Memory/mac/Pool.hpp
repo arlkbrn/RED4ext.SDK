@@ -12,6 +12,7 @@ namespace RED4ext::Memory
 struct Vault;
 
 // Thanks @expired6978 for decoding the base structs.
+// Matches Mac build. -Ariel
 struct PoolStorage
 {
     uint64_t allocatorStorage;  // 00
@@ -29,6 +30,7 @@ struct PoolStorage
 };
 RED4EXT_ASSERT_SIZE(PoolStorage, 0x28);
 
+// Matches Mac build. -Ariel
 struct PoolInfo
 {
     uint64_t budget;                // 00

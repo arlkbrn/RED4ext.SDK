@@ -6,7 +6,7 @@
 
 #include <cstdlib>
 
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/RTTISystem.hpp>
 #include <RED4ext/Relocation.hpp>
 
@@ -163,7 +163,7 @@ RED4EXT_INLINE bool RED4ext::TweakDB::UpdateRecord(gamedataTweakDBRecord* aRecor
     // Meaning we have to pass our own TweakDB class. sorry -Sombra
 
     using CreateTDBRecord_t = void (*)(TweakDB*, uint32_t aBaseMurmur3, TweakDBID aDBID);
-    static UniversalRelocFunc<CreateTDBRecord_t> CreateTDBRecord(Detail::AddressHashes::TweakDB_CreateRecord);
+    static UniversalRelocFunc<CreateTDBRecord_t> CreateTDBRecord(Detail::Addresses::TweakDB_CreateRecord);
 
     TweakDB fakeTweakDB;
     struct FakeAllocator : Memory::IAllocator
@@ -255,7 +255,7 @@ RED4EXT_INLINE bool RED4ext::TweakDB::CreateRecord(TweakDBID aDBID, CBaseRTTITyp
 RED4EXT_INLINE bool RED4ext::TweakDB::CreateRecord(TweakDBID aDBID, uint32_t aTweakBaseHash)
 {
     using CreateTDBRecord_t = void (*)(TweakDB*, uint32_t aBaseMurmur3, TweakDBID aDBID);
-    static UniversalRelocFunc<CreateTDBRecord_t> CreateTDBRecord(Detail::AddressHashes::TweakDB_CreateRecord);
+    static UniversalRelocFunc<CreateTDBRecord_t> CreateTDBRecord(Detail::Addresses::TweakDB_CreateRecord);
 
     if (!aDBID.IsValid())
         return false;
@@ -442,7 +442,7 @@ RED4EXT_INLINE const RED4ext::TweakDB::FlatValue* RED4ext::TweakDB::GetDefaultFl
 RED4EXT_INLINE RED4ext::TweakDB* RED4ext::TweakDB::Get()
 {
     using Get_t = TweakDB* (*)();
-    static UniversalRelocFunc<Get_t> func(Detail::AddressHashes::TweakDB_Get);
+    static UniversalRelocFunc<Get_t> func(Detail::Addresses::TweakDB_Get);
     return func();
 }
 

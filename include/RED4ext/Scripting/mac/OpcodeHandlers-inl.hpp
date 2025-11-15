@@ -4,12 +4,12 @@
 #include <RED4ext/Scripting/OpcodeHandlers.hpp>
 #endif
 
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Relocation.hpp>
 
 RED4EXT_INLINE RED4ext::OpcodeHandlers::Handler_t RED4ext::OpcodeHandlers::Get(uint8_t aOpcode)
 {
-    static UniversalRelocPtr<Handler_t> opcodes(Detail::AddressHashes::OpcodeHandlers);
+    static UniversalRelocPtr<Handler_t> opcodes(Detail::Addresses::OpcodeHandlers);
     return opcodes.GetAddr()[aOpcode];
 }
 

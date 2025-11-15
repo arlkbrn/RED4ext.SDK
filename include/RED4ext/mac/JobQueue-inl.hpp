@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <memory>
 
-#include <RED4ext/Detail/AddressHashes.hpp>
+#include <RED4ext/Detail/Addresses.hpp>
 #include <RED4ext/Hashing/FNV1a.hpp>
 #include <RED4ext/Relocation.hpp>
 #include <RED4ext/TLS.hpp>
@@ -87,7 +87,7 @@ RED4EXT_INLINE RED4ext::JobHandle::~JobHandle()
 RED4EXT_INLINE void RED4ext::JobHandle::Join(const JobHandle& aOther)
 {
     using func_t = void (*)(JobHandle*, const JobHandle&);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobHandle_Join);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobHandle_Join);
 
     func(this, aOther);
 }
@@ -95,7 +95,7 @@ RED4EXT_INLINE void RED4ext::JobHandle::Join(const JobHandle& aOther)
 RED4EXT_INLINE void RED4ext::JobHandle::AcquireInternalHandle(uintptr_t aUnk)
 {
     using func_t = JobInternalHandle* (*)(void*, uintptr_t);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobInternalHandle_Acquire);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobInternalHandle_Acquire);
 
     internal = func(nullptr, aUnk);
 }
@@ -117,7 +117,7 @@ RED4EXT_INLINE void RED4ext::JobHandle::ReleaseInternalHandle()
     if (internal)
     {
         using func_t = void (*)(JobHandle*);
-        static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobHandle_dtor);
+        static UniversalRelocFunc<func_t> func(Detail::Addresses::JobHandle_dtor);
 
         func(this);
     }
@@ -126,7 +126,7 @@ RED4EXT_INLINE void RED4ext::JobHandle::ReleaseInternalHandle()
 RED4EXT_INLINE RED4ext::JobQueue::JobQueue(const JobGroup& aGroup)
 {
     using func_t = JobQueue* (*)(JobQueue*, const JobGroup&);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobQueue_ctor_FromGroup);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobQueue_ctor_FromGroup);
 
     func(this, aGroup);
 }
@@ -134,7 +134,7 @@ RED4EXT_INLINE RED4ext::JobQueue::JobQueue(const JobGroup& aGroup)
 RED4EXT_INLINE RED4ext::JobQueue::JobQueue(JobParamSet aParams, uintptr_t aUnk)
 {
     using func_t = JobQueue* (*)(JobQueue*, uint8_t, uint8_t, uint64_t);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobQueue_ctor_FromParams);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobQueue_ctor_FromParams);
 
     func(this, aParams.unk00, aParams.unk01, aUnk);
 }
@@ -142,7 +142,7 @@ RED4EXT_INLINE RED4ext::JobQueue::JobQueue(JobParamSet aParams, uintptr_t aUnk)
 RED4EXT_INLINE RED4ext::JobQueue::~JobQueue()
 {
     using func_t = void (*)(JobQueue*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobQueue_dtor);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobQueue_dtor);
 
     func(this);
 }
@@ -155,7 +155,7 @@ RED4EXT_INLINE void RED4ext::JobQueue::Wait(const JobHandle& aJob)
 [[nodiscard]] RED4EXT_INLINE RED4ext::JobHandle RED4ext::JobQueue::Capture()
 {
     using func_t = JobHandle* (*)(JobQueue*, JobHandle*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobQueue_Capture);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobQueue_Capture);
 
     JobHandle handle{};
     func(this, &handle);
@@ -166,8 +166,8 @@ RED4EXT_INLINE void RED4ext::JobQueue::Wait(const JobHandle& aJob)
 RED4EXT_INLINE void RED4ext::JobQueue::DispatchJob(const JobInstance& aJob)
 {
     using func_t = uint32_t (*)(void*, const JobInstance&, uint8_t, JobInternalHandle*, JobInternalHandle*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobDispatcher_DispatchJob);
-    static UniversalRelocPtr<void*> dispatcher(Detail::AddressHashes::JobDispatcher);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobDispatcher_DispatchJob);
+    static UniversalRelocPtr<void*> dispatcher(Detail::Addresses::JobDispatcher);
 
     func(dispatcher, aJob, params.unk00, unk10.internal, unk18.internal);
 }
@@ -175,7 +175,7 @@ RED4EXT_INLINE void RED4ext::JobQueue::DispatchJob(const JobInstance& aJob)
 RED4EXT_INLINE void RED4ext::JobQueue::SyncWait()
 {
     using func_t = void (*)(JobQueue*);
-    static UniversalRelocFunc<func_t> func(Detail::AddressHashes::JobQueue_SyncWait);
+    static UniversalRelocFunc<func_t> func(Detail::Addresses::JobQueue_SyncWait);
 
     func(this);
 }

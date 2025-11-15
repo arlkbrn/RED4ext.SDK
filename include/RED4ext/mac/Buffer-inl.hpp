@@ -108,7 +108,7 @@ RED4EXT_INLINE RED4ext::RawBuffer::operator bool() const noexcept
 RED4EXT_INLINE RED4ext::SharedPtr<RED4ext::DeferredDataBufferToken> RED4ext::DeferredDataBuffer::LoadAsync()
 {
     using LoadBufferAsync_t = JobHandle* (*)(DeferredDataBuffer*, JobHandle*, int64_t);
-    static UniversalRelocFunc<LoadBufferAsync_t> func(Detail::AddressHashes::DeferredDataBuffer_LoadAsync);
+    static UniversalRelocFunc<LoadBufferAsync_t> func(Detail::Addresses::DeferredDataBuffer_LoadAsync);
 
     JobHandle loadingJob;
     func(this, &loadingJob, 0);
@@ -119,7 +119,7 @@ RED4EXT_INLINE RED4ext::SharedPtr<RED4ext::DeferredDataBufferToken> RED4ext::Def
 RED4EXT_INLINE RED4ext::SharedPtr<RED4ext::DeferredDataBufferCopyToken> RED4ext::DeferredDataBuffer::LoadCopyAsync()
 {
     using LoadBufferRefAsync_t = void* (*)(DeferredDataBuffer*, SharedPtr<DeferredDataBufferCopyToken>*, int8_t);
-    static UniversalRelocFunc<LoadBufferRefAsync_t> func(Detail::AddressHashes::DeferredDataBuffer_LoadRefAsync);
+    static UniversalRelocFunc<LoadBufferRefAsync_t> func(Detail::Addresses::DeferredDataBuffer_LoadRefAsync);
 
     SharedPtr<DeferredDataBufferCopyToken> token;
     func(this, &token, 0);
@@ -144,9 +144,10 @@ RED4EXT_INLINE void RED4ext::DeferredDataBufferToken::OnLoaded(LoadedCallback&& 
 
 RED4EXT_INLINE RED4ext::DeferredDataBufferCopyToken::~DeferredDataBufferCopyToken()
 {
-    using DestructUnk28_t = void (*)(void**);
-    static UniversalRelocFunc<DestructUnk28_t> DestructUnk28(Detail::AddressHashes::ResourceToken_DestructUnk38);
-    DestructUnk28(&unk28);
+    // TODO: Reimplement ResourceToken_DestructUnk38 as it's inlined in the Mac build.
+    // using DestructUnk28_t = void (*)(void**);
+    // static UniversalRelocFunc<DestructUnk28_t> DestructUnk28(Detail::Addresses::ResourceToken_DestructUnk38);
+    // DestructUnk28(&unk28);
 }
 
 RED4EXT_INLINE void RED4ext::DeferredDataBufferCopyToken::OnLoaded(LoadedCallback&& aCallback) const
