@@ -9,7 +9,11 @@
 #include <filesystem>
 #include <fstream>
 #include <functional>
+
+#if defined(_WIN32)
 #include <intrin.h>
+#endif
+
 #include <iomanip>
 #include <map>
 #include <memory>
@@ -30,4 +34,6 @@
 #include <variant>
 #include <vector>
 
+#if defined(_WIN32)
 #include <Windows.h>
+#endif
