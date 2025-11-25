@@ -29,7 +29,7 @@ constexpr uintptr_t CBaseRTTIType_sub_A0 = 0x1021b01e0 - ImageBase;
 
 #pragma region CBitfield
 constexpr uintptr_t CBitfield_Unserialize = 0x1021967a0 - ImageBase; // [rtti::BitFieldType::Serialize ?]
-constexpr uintptr_t CBitfield_ToString = 0x102e91360 - ImageBase; // [rtti::BitFieldType::ToString]
+constexpr uintptr_t CBitfield_ToString = 0x102196930 - ImageBase; // [rtti::BitFieldType::ToString]
 constexpr uintptr_t CBitfield_FromString = 0x102196a2c - ImageBase; // [rtti:BitFieldType::FromString]
 #pragma endregion
 
