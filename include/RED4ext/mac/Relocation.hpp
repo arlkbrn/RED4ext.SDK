@@ -144,8 +144,8 @@ template<typename T>
 class UniversalRelocPtr : private UniversalRelocBase
 {
 public:
-    UniversalRelocPtr(uint32_t aHash)
-        : m_address(reinterpret_cast<T*>(Resolve(aHash)))
+    UniversalRelocPtr(uintptr_t aAddress)
+        : m_address(reinterpret_cast<T*>(aAddress + RelocBase::GetImageBase()))
     {
     }
 
@@ -170,8 +170,8 @@ private:
 class UniversalRelocVtbl : private UniversalRelocBase
 {
 public:
-    UniversalRelocVtbl(uint32_t aHash)
-        : m_address(reinterpret_cast<uintptr_t*>(Resolve(aHash)))
+    UniversalRelocVtbl(uintptr_t aAddress)
+        : m_address(reinterpret_cast<uintptr_t*>(aAddress + RelocBase::GetImageBase()))
     {
     }
 
